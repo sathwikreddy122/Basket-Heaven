@@ -1,0 +1,277 @@
+/*-------------Top Offers---------------*/
+#ak_topoffers {
+    width: 100%;
+    /* border: 1px solid black; */
+    margin: auto;
+  }
+  
+  #ak_topoffers > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 15px;
+  }
+  
+  #ak_topoffers > div > div > img {
+    width: 100%;
+    border: 1px solid rgb(187, 185, 185);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  #ak_topoffers > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  #ak_topoffers > h2 {
+    color: rgb(51, 50, 50);
+  
+    margin-bottom: 10px;
+  
+  }
+  
+  /*----------------Fruits & Vegetables--------------*/
+  #ak_fruitvegetables {
+    /* border: 1px solid black; */
+    width: 100%;
+    margin: auto;
+  }
+  
+  #ak_fruitvegetables > h2 {
+    color: rgb(51, 50, 50);
+  
+    margin-bottom: 10px;
+  
+  }
+  
+  #ak_fruitvegetables > div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 15px;
+  }
+  
+  
+  #ak_fruitvegetables > div > div > img {
+    width: 100%;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  #ak_fruitvegetables > h2 + hr {
+    border: 0.5px solid #ebebeb;
+    margin-bottom: 20px;
+  }
+  #ak_fruitvegetables > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  /*-------------Your Daily Staples------------*/
+  #ak_yourdailystaples {
+    width: 100%;
+    /* border: 1px solid black; */
+    margin: auto;
+  }
+  
+  #ak_yourdailystaples > h2 {
+    color: rgb(51, 50, 50);
+   
+    margin-bottom: 10px;
+    
+  }
+  
+  #ak_yourdailystaples > div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 10px;
+  }
+  
+  #ak_yourdailystaples > div > div > img {
+    width: 100%;
+    border: 1px solid rgb(194, 191, 191);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  #ak_yourdailystaples > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  /*-------------------beverages-----------------*/
+  #ak_beverages {
+    /* border: 1px solid black; */
+    width: 100%;
+    margin: auto;
+  }
+  
+  #ak_beverages > h2 {
+    color: rgb(51, 50, 50);
+  
+    margin-bottom: 10px;
+    
+  }
+  
+  #ak_beverages > div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 15px;
+  }
+  
+ 
+  
+  #ak_beverages > div > div > img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid rgb(196, 193, 193);
+    cursor: pointer;
+  }
+  
+  #ak_beverages > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  /*----------------Snacks Store----------------*/
+  #ak_snacksstore {
+    width: 100%;
+    /* border: 1px solid black; */
+    margin: auto;
+  }
+  
+  #ak_snacksstore > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 15px;
+  }
+  
+  #ak_snacksstore > div > div > img {
+    width: 100%;
+    border: 1px solid rgb(187, 185, 185);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  #ak_snacksstore > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  #ak_snacksstore > h2 {
+    color: rgb(51, 50, 50);
+    
+    margin-bottom: 10px;
+    
+  }
+  
+  #ak_snacksstore > h2 + hr {
+    border: 0.5px solid #ebebeb;
+    margin-bottom: 20px;
+  }
+  
+  /*---------------Cleaning & Household-----------------*/
+  
+  #ak_cleaninghousehold {
+    width: 100%;
+    /* border: 1px solid black; */
+    margin: auto;
+  }
+  
+  #ak_cleaninghousehold > div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 15px;
+  }
+  
+  #ak_cleaninghousehold > div > div > img {
+    width: 100%;
+    border: 1px solid rgb(187, 185, 185);
+    border-radius: 15px;
+  }
+  
+  #ak_cleaninghousehold > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+  }
+  
+  #ak_cleaninghousehold > h2 {
+    color: rgb(51, 50, 50);
+  
+    margin-bottom: 20px;
+   
+  }
+  
+  /*------------------Beauty and Hygiene------------------*/
+  #ak_beautyandhygiene {
+    /* border: 1px solid black; */
+    width: 100%;
+    margin: auto;
+  }
+  
+  #ak_beautyandhygiene > h2 {
+    color: rgb(51, 50, 50);
+  ;
+    margin-bottom: 10px;
+   
+  }
+  
+  #ak_beautyandhygiene > div {
+    display: grid;
+    grid-template-columns:  repeat(5, 1fr);
+    grid-template-rows: repeat(auto);
+    
+    gap: 10px;
+  }
+  #ak_beautyandhygiene > div > div > img {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid rgb(190, 190, 190);
+    cursor: pointer;
+  }
+  
+  #ak_beautyandhygiene > h2 + hr {
+    border: 0.5px solid #ebebeb;
+    margin-bottom: 20px;
+  }
+  #ak_beautyandhygiene > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  /*----------------Home and Kitchen--------------*/
+  #ak_homeandkitchen {
+    width: 100%;
+    /* border: 1px solid black; */
+    margin: auto;
+  }
+  
+  #ak_homeandkitchen > h2 {
+    color: rgb(51, 50, 50);
+ 
+    margin-bottom: 10px;
+  
+  }
+  
+  #ak_homeandkitchen > div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(auto);
+    gap: 10px;
+  }
+  
+  #ak_homeandkitchen > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  
+  #ak_homeandkitchen > div > div > img {
+    width: 100%;
+    border: 1px solid rgb(194, 191, 191);
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  
+  #ak_homeandkitchen > h2 + hr {
+    border: 0.5px solid #ebebeb;
+    margin-bottom: 20px;
+  }
+  
