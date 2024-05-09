@@ -172,7 +172,7 @@
   /*---------------Cleaning & Household-----------------*/
   
   #cleaninghousehold {
-    width: 90%;
+    width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
@@ -197,55 +197,32 @@
   
   #cleaninghousehold > h2 {
     color: rgb(51, 50, 50);
-    text-align: center;
+  
     margin-bottom: 20px;
-    font-weight: lighter;
+   
   }
   
   /*------------------Beauty and Hygiene------------------*/
   #beautyandhygiene {
     /* border: 1px solid black; */
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
   
   #beautyandhygiene > h2 {
     color: rgb(51, 50, 50);
-    text-align: center;
+  ;
     margin-bottom: 10px;
-    font-weight: lighter;
+   
   }
   
   #beautyandhygiene > div {
     display: grid;
-    grid-template-columns: 50% repeat(2, 1fr);
+    grid-template-columns:  repeat(5, 1fr);
     grid-template-rows: repeat(auto);
-    grid-template-areas:
-      "fir sec thr"
-      "fir fou fif";
+    
     gap: 10px;
   }
-  
-  #beautyandhygiene > div > div:nth-child(1) {
-    grid-area: fir;
-  }
-  
-  #beautyandhygiene > div > div:nth-child(2) {
-    grid-area: sec;
-  }
-  
-  #beautyandhygiene > div > div:nth-child(3) {
-    grid-area: thr;
-  }
-  
-  #beautyandhygiene > div > div:nth-child(4) {
-    grid-area: fou;
-  }
-  
-  #beautyandhygiene > div > div:nth-child(5) {
-    grid-area: fif;
-  }
-  
   #beautyandhygiene > div > div > img {
     width: 100%;
     border-radius: 15px;
@@ -257,19 +234,22 @@
     border: 0.5px solid #ebebeb;
     margin-bottom: 20px;
   }
+  #beautyandhygiene > div > div > img:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
   
   /*----------------Home and Kitchen--------------*/
   #homeandkitchen {
-    width: 90%;
+    width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
   
   #homeandkitchen > h2 {
     color: rgb(51, 50, 50);
-    text-align: center;
+ 
     margin-bottom: 10px;
-    font-weight: lighter;
+  
   }
   
   #homeandkitchen > div {
