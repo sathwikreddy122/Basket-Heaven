@@ -30,5 +30,384 @@
       "password": "xg5redsfddff",
       "id": 6
     }
+  ],
+  "products":[
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40216157_6-sri-sri-tattva-organic-brown-sugar.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Organic Brown Rice",
+      "quantity": "5 kg",
+      "original_price": "₹300",
+      "discounted_price": "₹270",
+      "brand_name": "Nature's Best",
+      "rating": 4.5,
+      "category": "Foodgrains, Oil & Masala"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40179976_5-kelloggs-corn-flakes-original.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "Kellogg's Corn Flakes",
+      "quantity": "500 g",
+      "original_price": "₹150",
+      "discounted_price": "₹128",
+      "brand_name": "Kellogg's",
+      "rating": 4.7,
+      "category": "Snacks & Branded Foods"
+    },
+  
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/1228372_1-fortune-premium-kachi-ghani-pure-mustard-oil.jpg?tr=w-1920,q=80",
+      "discount": "8% Off",
+      "product": "Fortune Mustard Oil",
+      "quantity": "1 L",
+      "original_price": "₹180",
+      "discounted_price": "₹165",
+      "brand_name": "Fortune",
+      "rating": 4.4,
+      "category": "Foodgrains, Oil & Masala"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40018854_5-himalaya-purifying-neem-face-wash.jpg?tr=w-1920,q=80",
+      "discount": "5% Off",
+      "product": "Himalaya Neem Face Wash",
+      "quantity": "150 ml",
+      "original_price": "₹120",
+      "discounted_price": "₹114",
+      "brand_name": "Himalaya",
+      "rating": 4.6,
+      "category": "Beauty & Hygiene"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40121581_4-tetley-green-tea-immune-with-added-vitamin-c-ginger-mint-lemon.jpg?tr=w-1920,q=80",
+      "discount": "12% Off",
+      "product": "Tetley Green Tea Bags",
+      "quantity": "50 Bags",
+      "original_price": "₹200",
+      "discounted_price": "₹176",
+      "brand_name": "Tetley",
+      "rating": 4.8,
+      "category": "Beverages"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40005079_6-dettol-antiseptic-disinfectant-liquid.jpg?tr=w-1920,q=80",
+      "discount": "18% Off",
+      "product": "Dettol Antiseptic Liquid",
+      "quantity": "500 ml",
+      "original_price": "₹150",
+      "discounted_price": "₹123",
+      "brand_name": "Dettol",
+      "rating": 4.5,
+      "category": "Cleaning & Household"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/259856_13-whiskas-dry-cat-food-ocean-fish-flavour-for-adult-cats-1-year.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Whiskas Cat Food",
+      "quantity": "1 kg",
+      "original_price": "₹250",
+      "discounted_price": "₹225",
+      "brand_name": "Whiskas",
+      "rating": 4.4,
+      "category": "Kitchen, Garden & Pets"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/266109_23-maggi-2-minute-instant-noodles-masala.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "Maggi Masala Noodles",
+      "quantity": "420 g",
+      "original_price": "₹60",
+      "discounted_price": "₹51",
+      "brand_name": "Maggi",
+      "rating": 4.7,
+      "category": "Snacks & Branded Foods"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/263698_11-dabur-amla-hair-oil-for-strong-long-thick-hair.jpg?tr=w-1920,q=80",
+      "discount": "8% Off",
+      "product": "Dabur Amla Hair Oil",
+      "quantity": "200 ml",
+      "original_price": "₹120",
+      "discounted_price": "₹110",
+      "brand_name": "Dabur",
+      "rating": 4.3,
+      "category": "Beauty & Hygiene"
+    }
+  ,
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/10000407_13-bb-royal-refined-sugar-sulphurless.jpg?tr=w-1920,q=80",
+      "discount": "18% Off",
+      "product": "Uttam Sugar Sulphurless Sugar",
+      "quantity": "1 kg",
+      "original_price": "₹65",
+      "discounted_price": "₹53",
+      "brand_name": "Uttam",
+      "rating": 4.0,
+      "category": "Foodgrains, Oil & Masala"
+    },
+    
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40033824_23-fresho-apple-red-delicious-regular.jpg?tr=w-1920,q=80",
+      "discount": "20% Off",
+      "product": "Fresh Organic Apples",
+      "quantity": "1 kg",
+      "original_price": "₹120",
+      "discounted_price": "₹96",
+      "brand_name": "Organica",
+      "rating": 4.6,
+      "category": "Fruits & Vegetables"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/276757_8-dhara-refined-sunflower-oil.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Sundrop Refined Sunflower Oil",
+      "quantity": "1 L",
+      "original_price": "₹120",
+      "discounted_price": "₹108",
+      "brand_name": "Sundrop",
+      "rating": 4.4,
+      "category": "Foodgrains, Oil & Masala"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/104864_8-amul-butter-pasteurised.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "Amul Butter",
+      "quantity": "500 g",
+      "original_price": "₹220",
+      "discounted_price": "₹187",
+      "brand_name": "Amul",
+      "rating": 4.8,
+      "category": "Bakery, Cakes & Dairy"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40092353_15-emperia-green-tea-honey-lemon.jpg?tr=w-1920,q=80",
+      "discount": "8% Off",
+      "product": "Tetley Green Tea",
+      "quantity": "100 g",
+      "original_price": "₹150",
+      "discounted_price": "₹138",
+      "brand_name": "Tetley",
+      "rating": 4.2,
+      "category": "Beverages"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/1212518_7-lays-potato-chips-classic-salted.jpg?tr=w-1920,q=80",
+      "discount": "25% Off",
+      "product": "Lays Classic Potato Chips",
+      "quantity": "200 g",
+      "original_price": "₹80",
+      "discounted_price": "₹60",
+      "brand_name": "Lays",
+      "rating": 4.7,
+      "category": "Snacks & Branded Foods"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40141851_7-dove-intense-repair-shampoo.jpg?tr=w-1920,q=80",
+      "discount": "5% Off",
+      "product": "Dove Intensive Repair Shampoo",
+      "quantity": "200 ml",
+      "original_price": "₹180",
+      "discounted_price": "₹171",
+      "brand_name": "Dove",
+      "rating": 4.6,
+      "category": "Beauty & Hygiene"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40134836_6-surf-excel-detergent-powder-matic-front-load.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Surf Excel Matic Front Load Detergent Powder",
+      "quantity": "2 kg",
+      "original_price": "₹350",
+      "discounted_price": "₹315",
+      "brand_name": "Surf Excel",
+      "rating": 4.5,
+      "category": "Cleaning & Household"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40274216_3-neelam-stainless-steel-dinner-set-laser-etched-floral.jpg?tr=w-1920,q=80",
+      "discount": "5% Off",
+      "product": "Solimo Premium Stainless Steel Dinner Set",
+      "quantity": "24 Pieces",
+      "original_price": "₹1500",
+      "discounted_price": "₹1425",
+      "brand_name": "Solimo",
+      "rating": 4.3,
+      "category": "Kitchen, Garden & Pets"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40132741_7-milton-executive-stainless-steel-lunchtiffin-box-with-containers-cover-green.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "Milton Econa 3 Containers Lunch Box",
+      "quantity": "800 ml",
+      "original_price": "₹350",
+      "discounted_price": "₹297",
+      "brand_name": "Milton",
+      "rating": 4.1,
+      "category": "Lunch Boxes & Bags"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40199066_4-itc-master-chef-chicken-seekh-kebab.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Venky's Chicken Drumsticks",
+      "quantity": "500 g",
+      "original_price": "₹200",
+      "discounted_price": "₹180",
+      "brand_name": "Venky's",
+      "rating": 4.4,
+      "category": "Eggs, Meat & Fish"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/119705_12-maggi-hot-sweet-tomato-chilli-sauce.jpg?tr=w-1920,q=80",
+      "discount": "12% Off",
+      "product": "Maggi Hot & Sweet Tomato Chilli Sauce",
+      "quantity": "1 kg",
+      "original_price": "₹120",
+      "discounted_price": "₹105",
+      "brand_name": "Maggi",
+      "rating": 4.6,
+      "category": "Gourmet & World Food"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/100526377_6-himalaya-baby-baby-powder.jpg?tr=w-1920,q=80",
+      "discount": "8% Off",
+      "product": "Himalaya Herbals Baby Powder",
+      "quantity": "200 g",
+      "original_price": "₹100",
+      "discounted_price": "₹92",
+      "brand_name": "Himalaya",
+      "rating": 4.5,
+      "category": "Baby Care"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40205472_1-bb-royal-mitha-pan-mouth-freshener.jpg?tr=w-1920,q=80",
+      "discount": "5% Off",
+      "product": "Rajnigandha Pan Masala",
+      "quantity": "100 g",
+      "original_price": "₹150",
+      "discounted_price": "₹142",
+      "brand_name": "Rajnigandha",
+      "rating": 4.3,
+      "category": "Paan Corner"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/1228372_1-fortune-premium-kachi-ghani-pure-mustard-oil.jpg?tr=w-1920,q=80",
+      "discount": "12% Off",
+      "product": "Fortune Sunlite Refined Sunflower Oil",
+      "quantity": "5 L",
+      "original_price": "₹600",
+      "discounted_price": "₹528",
+      "brand_name": "Fortune",
+      "rating": 4.4,
+      "category": "Foodgrains, Oil & Masala"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/1223299_1-kwality-walls-frozen-dessert-choc-and-roll-choco-brownie-fudge.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "Kwality Walls Feast Choco Almond Ice Cream",
+      "quantity": "1 L",
+      "original_price": "₹200",
+      "discounted_price": "₹170",
+      "brand_name": "Kwality Walls",
+      "rating": 4.8,
+      "category": "Bakery, Cakes & Dairy"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/13379_2-red-bull-energy-drink.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Red Bull Energy Drink",
+      "quantity": "250 ml",
+      "original_price": "₹100",
+      "discounted_price": "₹90",
+      "brand_name": "Red Bull",
+      "rating": 4.5,
+      "category": "Beverages"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/1212775_4-lays-potato-chips-american-style-cream-onion-flavour.jpg?tr=w-1920,q=80",
+      "discount": "8% Off",
+      "product": "Lay's American Style Cream & Onion Chips",
+      "quantity": "100 g",
+      "original_price": "₹50",
+      "discounted_price": "₹46",
+      "brand_name": "Lay's",
+      "rating": 4.6,
+      "category": "Snacks & Branded Foods"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40322058_3-dettol-original-germ-protection-bathing-soap-bar.jpg?tr=w-1920,q=80",
+      "discount": "12% Off",
+      "product": "Dettol Original Soap",
+      "quantity": "75 g",
+      "original_price": "₹40",
+      "discounted_price": "₹35",
+      "brand_name": "Dettol",
+      "rating": 4.7,
+      "category": "Beauty & Hygiene"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40075260_4-patanjali-honey.jpg?tr=w-1920,q=80",
+      "discount": "10% Off",
+      "product": "Patanjali Honey",
+      "quantity": "500 g",
+      "original_price": "₹150",
+      "discounted_price": "₹135",
+      "brand_name": "Patanjali",
+      "rating": 4.5,
+      "category": "Foodgrains, Oil & Masala"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/100586897_8-tresemme-smooth-shine-shampoo.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "TRESemme Smooth & Shine Shampoo",
+      "quantity": "580 ml",
+      "original_price": "₹250",
+      "discounted_price": "₹213",
+      "brand_name": "TRESemme",
+      "rating": 4.4,
+      "category": "Beauty & Hygiene"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/100423649_6-scotch-brite-scrub-sponge-large.jpg?tr=w-1920,q=80",
+      "discount": "5% Off",
+      "product": "Scotch-Brite Heavy Duty Scrub Sponge",
+      "quantity": "2 Pieces",
+      "original_price": "₹50",
+      "discounted_price": "₹48",
+      "brand_name": "Scotch-Brite",
+      "rating": 4.3,
+      "category": "Cleaning & Household"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40076612_7-nanonine-steel-lunchtiffin-box-set-with-plate-bag-small-plus-mid-day.jpg?tr=w-1920,q=80",
+      "discount": "8% Off",
+      "product": "Tupperware Classic Lunch Box with Bag",
+      "quantity": "900 ml",
+      "original_price": "₹350",
+      "discounted_price": "₹322",
+      "brand_name": "Tupperware",
+      "rating": 4.5,
+      "category": "Lunch Boxes & Bags"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/10000180_15-fresho-sapota.jpg?tr=w-1920,q=80",
+      "discount": "12% Off",
+      "product": "Chickoo",
+      "quantity": "1 kg",
+      "original_price": "₹90",
+      "discounted_price": "₹79",
+      "brand_name": "Farm Fresh",
+      "rating": 4.4,
+      "category": "Fruits & Vegetables"
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/274148_14-fortune-sun-lite-sunflower-refined-oil.jpg?tr=w-1920,q=80",
+      "discount": "15% Off",
+      "product": "Fortune Vivo Diabetes Care Oil",
+      "quantity": "1 L",
+      "original_price": "₹200",
+      "discounted_price": "₹170",
+      "brand_name": "Fortune",
+      "rating": 4.6,
+      "category": "Foodgrains, Oil & Masala"
+    }
   ]
 }

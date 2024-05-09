@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <link
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,304 +16,644 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+    <style>
+      /* Style for the filter container */
+      .w-25 {
+        width: 25%;
+      }
+
+      /* Style for the border */
+      .border {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      /* Style for the category links */
+      .category-link {
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Hover effect for category links */
+      .category-link:hover {
+        background-color: #f0f0f0;
+        margin: 10px 0px 10px 0px;
+      }
+      #filter_category {
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+      .rating-checkbox {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      #filter_rating {
+        margin-top: 10px;
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+      .rating-options {
+        display: flex;
+        flex-direction: column; /* Display options in column fashion */
+      }
+      .rating-checkbox {
+        margin-bottom: 10px;
+      }
+      .price-options {
+        display: flex;
+        flex-direction: column; /* Display options in column fashion */
+      }
+      #filter_price {
+        margin-top: 10px;
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+      .price-checkbox {
+        margin-bottom: 10px;
+      }
+      .discount-options {
+        display: flex;
+        flex-direction: column; /* Display options in column fashion */
+      }
+      #filter_discount {
+        margin-top: 10px;
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+      .discount-radio {
+        margin-bottom: 10px;
+      }
+      #card_products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      .product-card {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    </style>
+  </head>
+  <body>
     <nav class="">
-        <!-- mohan -->
-        <div class="nav-bar pb-1">
-          <div class="first-bar d-flex align-items-center mt-1">
-            <div class="d-flex align-items-center flex-column">
-              <div class="d-flex align-items-end">
-                <img
-                  src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
-                  width="25"
-                  alt=""
-                  height="25"
-                />
-                <span class="fs-5 fw-medium px-1" style="translate: 0 5px"
-                  ><b class="text-danger">big</b>basket</span
-                >
-              </div>
-              <p
-                class="fw-semibold text-primary lh-lg m-0"
-                style="font-size: 12px"
+      <!-- mohan -->
+      <div class="nav-bar pb-1">
+        <div class="first-bar d-flex align-items-center mt-1">
+          <div class="d-flex align-items-center flex-column">
+            <div class="d-flex align-items-end">
+              <img
+                src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
+                width="25"
+                alt=""
+                height="25"
+              />
+              <span class="fs-5 fw-medium px-1" style="translate: 0 5px"
+                ><b class="text-danger">big</b>basket</span
               >
-                A <b>TATA</b> Enterprise
-              </p>
             </div>
-  
-            <input
-              type="text"
-              placeholder="Search for Products..."
-              class="mx-4 px-3 rounded fs-6"
-              style="width: 450px; height: 45px; opacity: 0.7"
-            />
-  
-            <button class="p-2 me-4 border fw-semibold rounded">
-              <i class="fa-solid fa-location-dot"></i> Select Location
-            </button>
-  
-            <button
-              class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
-              style="font-size: 13px"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+            <p
+              class="fw-semibold text-primary lh-lg m-0"
+              style="font-size: 12px"
             >
-              Login/Sign <br />Up
-            </button>
-  
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body d-flex p-0">
-                    <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+              A <b>TATA</b> Enterprise
+            </p>
+          </div>
+
+          <input
+            type="text"
+            placeholder="Search for Products..."
+            class="mx-4 px-3 rounded fs-6"
+            style="width: 450px; height: 45px; opacity: 0.7"
+          />
+
+          <button class="p-2 me-4 border fw-semibold rounded">
+            <i class="fa-solid fa-location-dot"></i> Select Location
+          </button>
+
+          <button
+            class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
+            style="font-size: 13px"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Login/Sign <br />Up
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body d-flex p-0">
+                  <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+                    <p
+                      class="text-center text-opacity-25"
+                      style="font-size: 12px"
+                    >
+                      Why choose BigBasket?
+                    </p>
+                    <div class="d-flex flex-wrap p-2">
+                      <div
+                        class="w-50 mb-3 d-flex flex-column align-items-center"
+                      >
+                        <i
+                          class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">Quality</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column align-items-center">
+                        <i
+                          class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">On time</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column align-items-center">
+                        <i
+                          class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">Return Policy</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column align-items-center">
+                        <i
+                          class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">Free Delivery</p>
+                      </div>
+                    </div>
+
+                    <hr class="w-75 m-auto" style="border-width: 2.5px" />
+
+                    <div
+                      class="p-3 mt-3 d-flex justify-content-center align-items-center"
+                    >
                       <p
-                        class="text-center text-opacity-25"
+                        class="d-inline-block me-4 mb-0 text-center text-opacity-25"
                         style="font-size: 12px"
                       >
-                        Why choose BigBasket?
+                        Find us on
                       </p>
-                      <div class="d-flex flex-wrap p-2">
-                        <div
-                          class="w-50 mb-3 d-flex flex-column align-items-center"
-                        >
-                          <i
-                            class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">Quality</p>
-                        </div>
-                        <div class="w-50 d-flex flex-column align-items-center">
-                          <i
-                            class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">On time</p>
-                        </div>
-                        <div class="w-50 d-flex flex-column align-items-center">
-                          <i
-                            class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">Return Policy</p>
-                        </div>
-                        <div class="w-50 d-flex flex-column align-items-center">
-                          <i
-                            class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">Free Delivery</p>
-                        </div>
+
+                      <div class="border border-dark rounded me-3">
+                        <img
+                          src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
+                          alt=""
+                          width="40"
+                        />
                       </div>
-  
-                      <hr class="w-75 m-auto" style="border-width: 2.5px" />
-  
-                      <div
-                        class="p-3 mt-3 d-flex justify-content-center align-items-center"
-                      >
-                        <p
-                          class="d-inline-block me-4 mb-0 text-center text-opacity-25"
-                          style="font-size: 12px"
-                        >
-                          Find us on
-                        </p>
-  
-                        <div class="border border-dark rounded me-3">
-                          <img
-                            src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
-                            alt=""
-                            width="40"
-                          />
-                        </div>
-  
-                        <div class="p-1 px-2 border bg-light border-dark rounded">
-                          <i class="fa-brands fa-apple fs-3"></i>
-                        </div>
+
+                      <div class="p-1 px-2 border bg-light border-dark rounded">
+                        <i class="fa-brands fa-apple fs-3"></i>
                       </div>
                     </div>
-  
-                    <div class="w-75 bg-black text-white p-3 px-5">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="d-inline-block">Login/Sign Up</h5>
-                        <p
-                          class="status d-inline-block pb-1"
-                          style="border-bottom: 2px solid red"
-                        ></p>
-                      </div>
-  
-                      <form class="login" action="#">
-                        <input
-                          type="email"
-                          class="rounded w-75 p-1 px-2 mx-4 m-3"
-                          placeholder="Enter Email Id"
-                          required
-                        />
-  
-                        <input
-                          type="password"
-                          class="rounded w-75 p-1 px-2 mx-4"
-                          placeholder="Enter Password"
-                          minlength="8"
-                          required
-                        />
-  
-                        <input
-                          type="submit"
-                          class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
-                          value="Submit"
-                        />
-                      </form>
-  
+                  </div>
+
+                  <div class="w-75 bg-black text-white p-3 px-5">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="d-inline-block">Login/Sign Up</h5>
                       <p
-                        class="policy w-75 m-4 mt-1 text-center"
-                        style="font-size: 13px"
-                      >
-                        By continuing, I accept
-                        <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
-                        <a href="#">Privacy Policy</a> This site is protected by
-                        reCAPTCHA and the Google -
-                        <a href="#">Privacy Policy</a> and &
-                        <a href="#">Terms of Service</a> apply.
-                      </p>
+                        class="status d-inline-block pb-1"
+                        style="border-bottom: 2px solid red"
+                      ></p>
                     </div>
+
+                    <form class="login" action="#">
+                      <input
+                        type="email"
+                        class="rounded w-75 p-1 px-2 mx-4 m-3"
+                        placeholder="Enter Email Id"
+                        required
+                      />
+
+                      <input
+                        type="password"
+                        class="rounded w-75 p-1 px-2 mx-4"
+                        placeholder="Enter Password"
+                        minlength="8"
+                        required
+                      />
+
+                      <input
+                        type="submit"
+                        class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
+                        value="Submit"
+                      />
+                    </form>
+
+                    <p
+                      class="policy w-75 m-4 mt-1 text-center"
+                      style="font-size: 13px"
+                    >
+                      By continuing, I accept
+                      <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
+                      <a href="#">Privacy Policy</a> This site is protected by
+                      reCAPTCHA and the Google -
+                      <a href="#">Privacy Policy</a> and &
+                      <a href="#">Terms of Service</a> apply.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-  
-            <div class="p-2 rounded" style="background-color: pink; opacity: 0.7">
-              <div
-                class="rounded-circle text-center"
-                style="background-color: red; width: 26px; height: 26px"
-              >
-                <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+          </div>
+
+          <div class="p-2 rounded" style="background-color: pink; opacity: 0.7">
+            <div
+              class="rounded-circle text-center"
+              style="background-color: red; width: 26px; height: 26px"
+            >
+              <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="second-bar d-flex align-items-center mt-1">
+          <div class="category dropdown" style="width: 150px">
+            <a
+              class="btn text-white p-1 px-2 d-flex align-items-center justify-content-between dropdown-toggle fw-semibold"
+              style="font-size: 11px; background-color: rgb(94, 148, 0)"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="">
+                <p class="m-0 text-start">Shop by</p>
+                <p class="m-0" style="font-size: 14px">Category</p>
+              </div>
+            </a>
+
+            <div class="dropdown-menu multi-column columns-3">
+              <div class="row">
+                <div class="col">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#">Fruits & Vegetables</a></li>
+                    <li><a href="#">Foodgrains, Oil & Masala </a></li>
+                    <li>
+                      <a href="#">Bakery , Cakes & Dairy</a>
+                    </li>
+                    <li><a href="#">Beverages</a></li>
+                    <li><a href="#">Snacks & Branded Foods</a></li>
+                    <li><a href="#">Beauty & Hygiene</a></li>
+                    <li><a href="#">Cleaning & Household</a></li>
+                    <li>
+                      <a href="#">Kitchen, Garden & Pets</a>
+                    </li>
+                    <li><a href="#">Launch Boxes & Bags</a></li>
+                    <li><a href="#">Eggs,Meat & Fish</a></li>
+                    <li><a href="#">Gourmet & World Food</a></li>
+                    <li><a href="#">Baby Care</a></li>
+                  </ul>
+                </div>
+
+                <div class="col">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#">Cuts & Sprouts</a></li>
+                    <li><a href="#">Exotic Fruits & Veggies</a></li>
+                    <li><a href="#">Flower Bouquets,Bunches</a></li>
+                    <li><a href="#">Fresh Fruits</a></li>
+                    <li><a href="#">Fresh Vegetables</a></li>
+                    <li><a href="#">Herbs & Seasonings</a></li>
+                    <li><a href="#">Organic Fruits & Vegetables</a></li>
+                  </ul>
+                </div>
+
+                <div class="col">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#">Cut & Peeled Veggies</a></li>
+                    <li><a href="#">Cut Fruit,Tender Coconut</a></li>
+                    <li><a href="#">Fresh Juices & Milk Shakes</a></li>
+                    <li><a href="#">Fresh Salads & Sprouts</a></li>
+                    <li><a href="#">Recipe Packs</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="second-bar d-flex align-items-center mt-1">
-            <div class="category dropdown" style="width: 150px">
-              <a
-                class="btn text-white p-1 px-2 d-flex align-items-center justify-content-between dropdown-toggle fw-semibold"
-                style="font-size: 11px; background-color: rgb(94, 148, 0)"
-                href="#"
-                role="button"
+
+          <div class="d-flex flex-grow-1 justify-content-evenly fs-6">
+            <a href="#">Exotic Fruits & V...</a>
+            <a href="#">Tea</a>
+            <a href="#">Ghee</a>
+            <a href="#">Nandini</a>
+
+            <div class="dropdown">
+              <button
+                class="border-0 bg-white"
+                type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <div class="">
-                  <p class="m-0 text-start">Shop by</p>
-                  <p class="m-0" style="font-size: 14px">Category</p>
-                </div>
-              </a>
-  
-              <div class="dropdown-menu multi-column columns-3">
-                <div class="row">
-                  <div class="col">
-                    <ul class="multi-column-dropdown">
-                      <li><a href="#">Fruits & Vegetables</a></li>
-                      <li><a href="#">Foodgrains, Oil & Masala </a></li>
-                      <li>
-                        <a href="#">Bakery , Cakes & Dairy</a>
-                      </li>
-                      <li><a href="#">Beverages</a></li>
-                      <li><a href="#">Snacks & Branded Foods</a></li>
-                      <li><a href="#">Beauty & Hygiene</a></li>
-                      <li><a href="#">Cleaning & Household</a></li>
-                      <li>
-                        <a href="#">Kitchen, Garden & Pets</a>
-                      </li>
-                      <li><a href="#">Launch Boxes & Bags</a></li>
-                      <li><a href="#">Eggs,Meat & Fish</a></li>
-                      <li><a href="#">Gourmet & World Food</a></li>
-                      <li><a href="#">Baby Care</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="col">
-                    <ul class="multi-column-dropdown">
-                      <li><a href="#">Cuts & Sprouts</a></li>
-                      <li><a href="#">Exotic Fruits & Veggies</a></li>
-                      <li><a href="#">Flower Bouquets,Bunches</a></li>
-                      <li><a href="#">Fresh Fruits</a></li>
-                      <li><a href="#">Fresh Vegetables</a></li>
-                      <li><a href="#">Herbs & Seasonings</a></li>
-                      <li><a href="#">Organic Fruits & Vegetables</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="col">
-                    <ul class="multi-column-dropdown">
-                      <li><a href="#">Cut & Peeled Veggies</a></li>
-                      <li><a href="#">Cut Fruit,Tender Coconut</a></li>
-                      <li><a href="#">Fresh Juices & Milk Shakes</a></li>
-                      <li><a href="#">Fresh Salads & Sprouts</a></li>
-                      <li><a href="#">Recipe Packs</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                <!-- <i class="fa-solid fa-circle-chevron-right"></i> -->
+                <i class="fa-solid fa-chevron-right"></i
+                ><i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <ul class="dropdown-menu rounded" style="width: 200px">
+                <li><a class="dropdown-item my-2" href="#">Kellogs</a></li>
+                <li><a class="dropdown-item my-2" href="#">Milk</a></li>
+                <li><a class="dropdown-item my-2" href="#">Chocolates</a></li>
+                <li>
+                  <a class="dropdown-item my-2" href="#">Fresh Chicken</a>
+                </li>
+                <li><a class="dropdown-item my-2" href="#">Eggs</a></li>
+                <li><a class="dropdown-item my-2" href="#">Honey</a></li>
+                <li>
+                  <a class="dropdown-item my-2" href="#">Cup Noodles</a>
+                </li>
+                <li><a class="dropdown-item my-2" href="#">Hair Care</a></li>
+                <li><a class="dropdown-item my-2" href="#">Drinks</a></li>
+              </ul>
             </div>
-  
-            <div class="d-flex flex-grow-1 justify-content-evenly fs-6">
-              <a href="#">Exotic Fruits & V...</a>
-              <a href="#">Tea</a>
-              <a href="#">Ghee</a>
-              <a href="#">Nandini</a>
-  
-              <div class="dropdown">
-                <button
-                  class="border-0 bg-white"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <!-- <i class="fa-solid fa-circle-chevron-right"></i> -->
-                  <i class="fa-solid fa-chevron-right"></i
-                  ><i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <ul class="dropdown-menu rounded" style="width: 200px">
-                  <li><a class="dropdown-item my-2" href="#">Kellogs</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Milk</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Chocolates</a></li>
-                  <li>
-                    <a class="dropdown-item my-2" href="#">Fresh Chicken</a>
-                  </li>
-                  <li><a class="dropdown-item my-2" href="#">Eggs</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Honey</a></li>
-                  <li>
-                    <a class="dropdown-item my-2" href="#">Cup Noodles</a>
-                  </li>
-                  <li><a class="dropdown-item my-2" href="#">Hair Care</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Drinks</a></li>
-                </ul>
-              </div>
-            </div>
-  
+          </div>
+
+          <img
+            src="https://www.bigbasket.com/media/uploads/banner_images/Smart_basket-250124-1.png"
+            alt=""
+            class="me-4"
+          />
+
+          <img
+            src="https://www.bigbasket.com/media/uploads/banner_images/hp_cmc_m_offer_28_220921_all.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- subhankar from carousel till footer -->
+      <div
+        id="carouselExampleAutoplaying"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" style="border-radius: 10px">
+          <div class="carousel-item active">
             <img
-              src="https://www.bigbasket.com/media/uploads/banner_images/Smart_basket-250124-1.png"
-              alt=""
-              class="me-4"
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250923_400.jpg?tr=w-3840,q=80"
+              class="d-block w-100"
+              alt="..."
             />
-  
+          </div>
+          <div class="carousel-item">
             <img
-              src="https://www.bigbasket.com/media/uploads/banner_images/hp_cmc_m_offer_28_220921_all.png"
-              alt=""
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_health_suppliment_250923_400.jpg?tr=w-3840,q=80"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250923_400.jpg?tr=w-3840,q=80"
+              class="d-block w-100"
+              alt="..."
             />
           </div>
         </div>
-      </nav>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+          style="
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            margin-top: 15%;
+            border-radius: 50%;
+          "
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+          style="
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            margin-top: 15%;
+            border-radius: 50%;
+          "
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!-- corousel ends here -->
+      <main>
+        <div id="main-container" class="d-flex">
+          <div class="w-25 border">
+            <div id="filter_category">
+              <h4>Shop By Category</h4>
+              <div id="category-filter">
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Fruits & Vegetables"
+                  >Fruits & Vegetables</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Foodgrains, Oil & Masala"
+                  >Foodgrains, Oil & Masala</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Bakery , Cakes & Dairy"
+                  >Bakery , Cakes & Dairy</a
+                >
+                <a href="#" class="category-link" data-category="Beverages"
+                  >Beverages</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Snacks & Branded Foods"
+                  >Snacks & Branded Foods</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Beauty & Hygiene"
+                  >Beauty & Hygiene</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Cleaning & Household"
+                  >Cleaning & Household</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Kitchen, Garden & Pets"
+                  >Kitchen, Garden & Pets</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Launch Boxes & Bags"
+                  >Launch Boxes & Bags</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Eggs,Meat & Fish"
+                  >Eggs,Meat & Fish</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Gourmet & World Food"
+                  >Gourmet & World Food</a
+                >
+                <a href="#" class="category-link" data-category="Baby Care"
+                  >Baby Care</a
+                >
+              </div>
+            </div>
+            <div id="filter_rating">
+              <h4>Shop By Rating</h4>
+              <div id="rating-filter" class="rating-options">
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="5" />
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="4" />
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="3" />
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="2" />
+                  <i class="fa-solid fa-star" style="color: orange"></i>
+                  <i class="fa-solid fa-star" style="color: orange"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="1" />
+                  <i class="fa-solid fa-star" style="color: red"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <!-- Add more checkboxes for other rating levels -->
+              </div>
+            </div>
 
-</body>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <div id="filter_price">
+              <h4>Shop By Price</h4>
+              <div id="price-filter" class="price-options">
+                <label
+                  ><input type="checkbox" class="price-checkbox" value="0-10" />
+                  ₹0 - ₹10</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="10-20"
+                  />
+                  ₹10 - ₹20</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="20-30"
+                  />
+                  ₹20 - ₹30</label
+                >
+                <!-- Add more checkboxes for other price ranges -->
+              </div>
+            </div>
+            <div id="filter_discount">
+              <h4>Shop By Discount</h4>
+              <div id="discount-filter" class="discount-options">
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="5"
+                  />
+                  Upto 5%</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="10-20"
+                  />
+                  5% - 10%</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="10-20"
+                  />
+                  10% - 20%</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="20"
+                  />
+                  More than 20%</label
+                >
+                <!-- Add more radio buttons for other discount ranges -->
+              </div>
+            </div>
+          </div>
+          <div id="card_products" class="w-75 border"></div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/product.js"></script>
 </html>
