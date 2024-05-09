@@ -81,13 +81,13 @@ function successful() {
 
   loginStatus.style.display = 'inline';
   loginStatus.style.borderBottomColor = 'green';
-
+  loginStatus.innerText = '';
+  loginBtn.innerHTML = 'Logout';
+  loginBtn.style.padding = '12px 56px';
+  loginBtn.dataset.bsToggle = '';
   setTimeout(() => {
     modal.hide();
-    loginStatus.innerText = '';
-    loginBtn.innerHTML = 'Logout';
-    loginBtn.style.padding = '12px 56px';
-    loginBtn.dataset.bsToggle = '';
+   
   }, 1200);
 }
 
