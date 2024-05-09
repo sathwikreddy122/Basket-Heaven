@@ -1,29 +1,29 @@
 /*-------------Top Offers---------------*/
-#topoffers {
+#ak_topoffers {
     width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
   
-  #topoffers > div {
+  #ak_topoffers > div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto);
     gap: 15px;
   }
   
-  #topoffers > div > div > img {
+  #ak_topoffers > div > div > img {
     width: 100%;
     border: 1px solid rgb(187, 185, 185);
     border-radius: 15px;
     cursor: pointer;
   }
   
-  #topoffers > div > div > img:hover {
+  #ak_topoffers > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
-  #topoffers > h2 {
+  #ak_topoffers > h2 {
     color: rgb(51, 50, 50);
   
     margin-bottom: 10px;
@@ -31,20 +31,20 @@
   }
   
   /*----------------Fruits & Vegetables--------------*/
-  #fruitvegetables {
+  #ak_fruitvegetables {
     /* border: 1px solid black; */
     width: 100%;
     margin: auto;
   }
   
-  #fruitvegetables > h2 {
+  #ak_fruitvegetables > h2 {
     color: rgb(51, 50, 50);
   
     margin-bottom: 10px;
   
   }
   
-  #fruitvegetables > div {
+  #ak_fruitvegetables > div {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto);
@@ -52,68 +52,68 @@
   }
   
   
-  #fruitvegetables > div > div > img {
+  #ak_fruitvegetables > div > div > img {
     width: 100%;
     border: 1px solid rgb(190, 190, 190);
     border-radius: 15px;
     cursor: pointer;
   }
   
-  #fruitvegetables > h2 + hr {
+  #ak_fruitvegetables > h2 + hr {
     border: 0.5px solid #ebebeb;
     margin-bottom: 20px;
   }
-  #fruitvegetables > div > div > img:hover {
+  #ak_fruitvegetables > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
   /*-------------Your Daily Staples------------*/
-  #yourdailystaples {
+  #ak_yourdailystaples {
     width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
   
-  #yourdailystaples > h2 {
+  #ak_yourdailystaples > h2 {
     color: rgb(51, 50, 50);
    
     margin-bottom: 10px;
     
   }
   
-  #yourdailystaples > div {
+  #ak_yourdailystaples > div {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto);
     gap: 10px;
   }
   
-  #yourdailystaples > div > div > img {
+  #ak_yourdailystaples > div > div > img {
     width: 100%;
     border: 1px solid rgb(194, 191, 191);
     border-radius: 15px;
     cursor: pointer;
   }
   
-  #yourdailystaples > div > div > img:hover {
+  #ak_yourdailystaples > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
   /*-------------------beverages-----------------*/
-  #beverages {
+  #ak_beverages {
     /* border: 1px solid black; */
     width: 100%;
     margin: auto;
   }
   
-  #beverages > h2 {
+  #ak_beverages > h2 {
     color: rgb(51, 50, 50);
   
     margin-bottom: 10px;
     
   }
   
-  #beverages > div {
+  #ak_beverages > div {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(auto);
@@ -122,80 +122,80 @@
   
  
   
-  #beverages > div > div > img {
+  #ak_beverages > div > div > img {
     width: 100%;
     border-radius: 15px;
     border: 1px solid rgb(196, 193, 193);
     cursor: pointer;
   }
   
-  #beverages > div > div > img:hover {
+  #ak_beverages > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   /*----------------Snacks Store----------------*/
-  #snacksstore {
+  #ak_snacksstore {
     width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
   
-  #snacksstore > div {
+  #ak_snacksstore > div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto);
     gap: 15px;
   }
   
-  #snacksstore > div > div > img {
+  #ak_snacksstore > div > div > img {
     width: 100%;
     border: 1px solid rgb(187, 185, 185);
     border-radius: 15px;
     cursor: pointer;
   }
   
-  #snacksstore > div > div > img:hover {
+  #ak_snacksstore > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
-  #snacksstore > h2 {
+  #ak_snacksstore > h2 {
     color: rgb(51, 50, 50);
     
     margin-bottom: 10px;
     
   }
   
-  #snacksstore > h2 + hr {
+  #ak_snacksstore > h2 + hr {
     border: 0.5px solid #ebebeb;
     margin-bottom: 20px;
   }
   
   /*---------------Cleaning & Household-----------------*/
   
-  #cleaninghousehold {
+  #ak_cleaninghousehold {
     width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
   
-  #cleaninghousehold > div {
+  #ak_cleaninghousehold > div {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto);
     gap: 15px;
   }
   
-  #cleaninghousehold > div > div > img {
+  #ak_cleaninghousehold > div > div > img {
     width: 100%;
     border: 1px solid rgb(187, 185, 185);
     border-radius: 15px;
   }
   
-  #cleaninghousehold > div > div > img:hover {
+  #ak_cleaninghousehold > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     cursor: pointer;
   }
   
-  #cleaninghousehold > h2 {
+  #ak_cleaninghousehold > h2 {
     color: rgb(51, 50, 50);
   
     margin-bottom: 20px;
@@ -203,74 +203,74 @@
   }
   
   /*------------------Beauty and Hygiene------------------*/
-  #beautyandhygiene {
+  #ak_beautyandhygiene {
     /* border: 1px solid black; */
     width: 100%;
     margin: auto;
   }
   
-  #beautyandhygiene > h2 {
+  #ak_beautyandhygiene > h2 {
     color: rgb(51, 50, 50);
   ;
     margin-bottom: 10px;
    
   }
   
-  #beautyandhygiene > div {
+  #ak_beautyandhygiene > div {
     display: grid;
     grid-template-columns:  repeat(5, 1fr);
     grid-template-rows: repeat(auto);
     
     gap: 10px;
   }
-  #beautyandhygiene > div > div > img {
+  #ak_beautyandhygiene > div > div > img {
     width: 100%;
     border-radius: 15px;
     border: 1px solid rgb(190, 190, 190);
     cursor: pointer;
   }
   
-  #beautyandhygiene > h2 + hr {
+  #ak_beautyandhygiene > h2 + hr {
     border: 0.5px solid #ebebeb;
     margin-bottom: 20px;
   }
-  #beautyandhygiene > div > div > img:hover {
+  #ak_beautyandhygiene > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
   /*----------------Home and Kitchen--------------*/
-  #homeandkitchen {
+  #ak_homeandkitchen {
     width: 100%;
     /* border: 1px solid black; */
     margin: auto;
   }
   
-  #homeandkitchen > h2 {
+  #ak_homeandkitchen > h2 {
     color: rgb(51, 50, 50);
  
     margin-bottom: 10px;
   
   }
   
-  #homeandkitchen > div {
+  #ak_homeandkitchen > div {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(auto);
     gap: 10px;
   }
   
-  #homeandkitchen > div > div > img:hover {
+  #ak_homeandkitchen > div > div > img:hover {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
   
-  #homeandkitchen > div > div > img {
+  #ak_homeandkitchen > div > div > img {
     width: 100%;
     border: 1px solid rgb(194, 191, 191);
     border-radius: 15px;
     cursor: pointer;
   }
   
-  #homeandkitchen > h2 + hr {
+  #ak_homeandkitchen > h2 + hr {
     border: 0.5px solid #ebebeb;
     margin-bottom: 20px;
   }
