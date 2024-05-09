@@ -1,0 +1,55 @@
+.sa_links_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sa_links_container .link_box {
+  width: 140px;
+  height: 50px;
+  margin: 0 35px;
+  background-color: lightgray;
+  text-align: center;
+  border-radius: 10px;
+}
+.sa_links_container .link_box a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+.sa_links_container .link_box a img {
+  width: 100%;
+  height: 100%;
+}
+.sa_links_container #ayurveda {
+  background-color: darkolivegreen;
+  padding: 10px 0 0 0;
+}
+.sa_links_container #ayurveda a {
+  color: rgb(255, 255, 255);
+}
+.sa_links_container #combo {
+  padding: 10px 0 0 0;
+}
+
+#sa_bank_cards h4 {
+  margin: 30px 40px;
+  font-weight: 700;
+}
+#sa_bank_cards .sa_cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+#sa_bank_cards .sa_img_card {
+  width: 310px;
+  height: 190px;
+  margin: 0 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  overflow: hidden;
+}
+#sa_bank_cards .sa_img_card img {
+  width: 100%;
+  height: 100%;
+}/*# sourceMappingURL=styles.css.map */
