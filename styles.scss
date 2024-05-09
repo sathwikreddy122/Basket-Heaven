@@ -1,3 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 936px;
+  margin: auto;
+}
+
+.nav-bar {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    .policy{
+        opacity:0.5;
+
+        a {
+            color: white;
+            cursor: pointer;
+          }
+       }
+
+  .second-bar {
+    .category {
+      // margin: 12px;
+
+      .dropdown-menu {
+        width: max-content;
+        border-radius: 12px;
+        padding: 0;
+
+        .row {
+          padding: 0;
+          font-size: 12px;
+
+          div:nth-child(1) {
+            background-color: black;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+
+            ul {
+              padding: 0;
+
+              a {
+                color: white;
+                text-decoration: none;
+              }
+
+              li {
+                padding: 8px 12px;
+                margin: 6px;
+              }
+
+              li:hover {
+                background-color: grey;
+                border-radius: 12px;
+              }
+            }
+          }
+
+          div:nth-child(2) {
+            background-color: rgba(212, 211, 211, 0.5);
+
+            ul {
+              padding: 0;
+
+              a {
+                color: black;
+                text-decoration: none;
+              }
+
+              li {
+                padding: 8px 12px;
+                margin: 6px;
+              }
+
+              li:hover {
+                background-color: white;
+                border-radius: 12px;
+              }
+            }
+          }
+
+          div:nth-child(3) {
+            //   background-color: black;
+            ul {
+              padding: 0;
+
+              a {
+                color: black;
+                text-decoration: none;
+              }
+
+              li {
+                padding: 8px 12px;
+                margin: 6px;
+              }
+
+              li:hover {
+                background-color: rgba(212, 211, 211, 0.5);
+                border-radius: 12px;
+              }
+            }
+          }
+        }
+
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+
+    div:nth-child(2) {
+      a {
+        text-decoration: none;
+        color: black;
+        cursor: pointer;
+      }
+
+      a:hover {
+        color: red;
+        text-decoration: underline;
+      }
+    }
+
+  }
+}
 .sa_links_container{
     display: flex;
     justify-content: center;
