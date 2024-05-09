@@ -81,13 +81,13 @@ function successful() {
 
   loginStatus.style.display = 'inline';
   loginStatus.style.borderBottomColor = 'green';
+  loginBtn.innerHTML = 'Logout';
+  loginBtn.style.padding = '12px 56px';
+  loginBtn.dataset.bsToggle = '';
 
   setTimeout(() => {
     modal.hide();
     loginStatus.innerText = '';
-    loginBtn.innerHTML = 'Logout';
-    loginBtn.style.padding = '12px 56px';
-    loginBtn.dataset.bsToggle = '';
   }, 1200);
 }
 
@@ -103,11 +103,11 @@ function failed() {
   }, 2500);
 }
 
-loginBtn.addEventListener('click',()=>{
-    if(loginBtn.innerText=='Logout'){
-        localStorage.setItem('user', JSON.stringify(''));
-        loginBtn.innerHTML=`Login/Sign <br />Up`;
-        loginBtn.dataset.bsToggle = 'modal';
-        loginBtn.style.padding = '0';
-    }
-})
+loginBtn.addEventListener('click', () => {
+  if (loginBtn.innerText == 'Logout') {
+    localStorage.setItem('user', JSON.stringify(''));
+    loginBtn.innerHTML = `Login/Sign <br />Up`;
+    loginBtn.dataset.bsToggle = 'modal';
+    loginBtn.style.padding = '0';
+  }
+});
