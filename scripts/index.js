@@ -1,14 +1,14 @@
-const loginForm = document.querySelector(".login");
-const loginBtn = document.querySelector(".auth");
-const loginStatus = document.querySelector(".status");
-const modal = new bootstrap.Modal(document.querySelector(".modal"));
-let user = JSON.parse(localStorage.getItem("user")) || "";
+const loginForm = document.querySelector('.login');
+const loginBtn = document.querySelector('.auth');
+const loginStatus = document.querySelector('.status');
+const modal = new bootstrap.Modal(document.querySelector('.modal'));
+let user = JSON.parse(localStorage.getItem('user')) || '';
 
 console.log(user);
 
-loginForm.addEventListener("submit", async (e) => {
+loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
-  console.log("Hi");
+  console.log('Hi');
 
   const email = document.querySelector('.login>input[type="email"]').value;
   const password = document.querySelector(
@@ -21,12 +21,12 @@ loginForm.addEventListener("submit", async (e) => {
 
   status == 1 ? successful() : failed();
 
-  localStorage.setItem("user", JSON.stringify(user));
+  localStorage.setItem('user', JSON.stringify(user));
 });
 
 async function isUser(email, password) {
   try {
-    const users = await fetch("http://localhost:3000/users");
+    const users = await fetch('http://localhost:3000/users');
     const datas = await users.json();
 
     let status = 0;
@@ -60,10 +60,10 @@ async function addUser(email, password) {
       password,
     };
 
-    const users = await fetch("http://localhost:3000/users", {
-      method: "POST",
+    const users = await fetch('http://localhost:3000/users', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
@@ -76,51 +76,38 @@ async function addUser(email, password) {
 }
 
 function successful() {
-  loginStatus.innerText = "Login Successful✅";
+  loginStatus.innerText = 'Login Successful✅';
   // console.log(loginStatus.innerText);
 
-  loginStatus.style.display = "inline";
-  loginStatus.style.borderBottomColor = "green";
-  loginStatus.innerText = "";
-  loginBtn.innerHTML = "Logout";
-  loginBtn.style.padding = "12px 56px";
-  loginBtn.dataset.bsToggle = "";
+  loginStatus.style.display = 'inline';
+  loginStatus.style.borderBottomColor = 'green';
+
   setTimeout(() => {
     modal.hide();
+    loginStatus.innerText = '';
+    loginBtn.innerHTML = 'Logout';
+    loginBtn.style.padding = '12px 56px';
+    loginBtn.dataset.bsToggle = '';
   }, 1200);
 }
 
 function failed() {
-  loginStatus.innerText = "Invalid Credentials❌";
+  loginStatus.innerText = 'Invalid Credentials❌';
   // console.log(loginStatus.innerText);
 
-  loginStatus.style.display = "inline";
-  loginStatus.style.borderBottomColor = "red";
+  loginStatus.style.display = 'inline';
+  loginStatus.style.borderBottomColor = 'red';
 
   setTimeout(() => {
-    loginStatus.innerText = "";
+    loginStatus.innerText = '';
   }, 2500);
 }
 
-loginBtn.addEventListener("click", () => {
-  if (loginBtn.innerText == "Logout") {
-    localStorage.setItem("user", JSON.stringify(""));
-    loginBtn.innerHTML = `Login/Sign <br />Up`;
-    loginBtn.dataset.bsToggle = "modal";
-    loginBtn.style.padding = "0";
-  }
-});
-
-// add event to show less data
-
-var btnN = document.getElementById("btnN");
-var ulN = document.querySelector(".ulN2");
-var aNList = ulN.querySelectorAll("a.aN2");
-btnN.addEventListener("click", function () {
-  for (var i = 12; i < aNList.length; i++) {
-    console.log(aNList[i].classList);
-    aNList[i].classList.toggle("hide");
-  }
-  btnN.textContent =
-    btnN.textContent === "Show less-" ? "Show more+" : "Show less-"; // Toggle button text
-});
+loginBtn.addEventListener('click',()=>{
+    if(loginBtn.innerText=='Logout'){
+        localStorage.setItem('user', JSON.stringify(''));
+        loginBtn.innerHTML=`Login/Sign <br />Up`;
+        loginBtn.dataset.bsToggle = 'modal';
+        loginBtn.style.padding = '0';
+    }
+})
