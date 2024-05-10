@@ -4,8 +4,9 @@ let arrays = [];
 fetch('db.json')
   .then(response => response.json())
   .then(data => {
-    arrays = [data.products, data.products];
-     // Two sets of products
+    let filteredArray = data.products.filter(element => element.original_price <= 30);
+    console.log(filteredArray);
+    arrays = [data.products, filteredArray];
      console.log(arrays);
     renderProducts();
   })
@@ -20,19 +21,20 @@ function renderProducts() {
       let div = document.createElement("div");
       div.addEventListener("click", ()=>{
         console.log("clicked");
+        runfunction(el);
         window.location.href = "productDetails.html";
       })
       div.style.minWidth = "24%";
       let img = document.createElement("img");
-      img.src = el.imgurl;
-      img.alt = el.name;
-      img.addEventListener("click", () => showProductDetails(index));
+      img.src = el.image;
+      img.alt = el.product;
+      // img.addEventListener("click", () => showProductDetails(index));
       let h3 = document.createElement("h3");
-      h3.innerText = el.name;
+      h3.innerText = el.product;
       let p1 = document.createElement("p");
-      p1.innerText = el.brand;
+      p1.innerText = el.brand_name;
       let p2 = document.createElement("p");
-      p2.innerText = "Rs " + el.mrp;
+      p2.innerText = "Rs " + el.original_price;
       let addButton = document.createElement("button");
       addButton.innerText = "Add";
       addButton.classList.add("addButton");
@@ -42,20 +44,28 @@ function renderProducts() {
   });
 }
 
-function showProductDetails(index) {
-  let product = arrays.flat()[index];
-  document.getElementById("productName").innerText = product.name;
-  document.getElementById("productImage").src = product.imgurl;
-  document.getElementById("productBrand").innerText = "Brand: " + product.brand;
-  document.getElementById("productDiscount").innerText = "Discount: " + product.discount;
-  document.getElementById("productKg").innerText = "Weight: " + product.Kg;
-  document.getElementById("productMRP").innerText = "MRP: Rs " + product.mrp;
-  document.getElementById("productDelivery").innerText = "Delivery: " + product.dur;
+let detailArray = [];
 
-  document.getElementById("bestsellers1").style.display = "none";
-  document.getElementById("bestsellers2").style.display = "none";
-  document.getElementById("productDetails").style.display = "block";
+function runfunction(elem) {
+  console.log(elem.imgurl);
+  let obj = {
+    image: elem.imgurl,
+    name: elem.name,
+    brand: elem.brand,
+    strike: elem.strike,
+    price: elem.mrp,
+  };
+  detailArray.push(obj);
+
+  localStorage.setItem("productdetail", JSON.stringify(detailArray));
+  console.log(detailArray);
 }
+
+// function showProductDetails(index) {
+//   let product = arrays.flat()[index];
+//   let queryString = `?name=${encodeURIComponent(product.name)}&imgurl=${encodeURIComponent(product.imgurl)}&brand=${encodeURIComponent(product.brand)}&discount=${encodeURIComponent(product.discount)}&Kg=${encodeURIComponent(product.Kg)}&mrp=${encodeURIComponent(product.mrp)}&dur=${encodeURIComponent(product.dur)};
+//   window.location.href = productdetails.html${queryString}`;
+// }
 
 function scrollSlide(direction, slideId) {
   let bestsellersSlide = document.getElementById(slideId);

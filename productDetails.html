@@ -16,8 +16,102 @@
         />
         <link rel="stylesheet" href="./style.css"/>
         <link rel="stylesheet" href="ak_style.css">
-        <link rel="stylesheet" href="products.css">
         <title>BigBasket</title>
+
+        <style>
+            #containerN {
+              background-color: black;
+              height: 100%;
+              width: 100%;
+            }
+            #MaindivN {
+              display: flex;
+              justify-content: space-evenly;
+              color: white;
+              font-size: 0.875rem;
+            }
+      
+            #ImgN {
+              margin-top: 30px;
+            }
+            .aN {
+              color: white;
+              text-decoration: none;
+            }
+            .aN:hover {
+              text-decoration: underline;
+            }
+            ul {
+              list-style: none;
+              padding: 0;
+            }
+            .hide {
+              display: none;
+            }
+            #hrN {
+              margin-left: 100px;
+              margin-right: 100px;
+              border: none;
+              height: 1px;
+              background-image: linear-gradient(to right, white 33%, transparent 0%);
+              background-size: 6px 1px;
+            }
+            #h3N {
+              color: white;
+              text-align: center;
+            }
+            .iconN {
+              display: flex;
+              margin-top: 10px;
+              gap: 40px;
+            }
+            .iconN i {
+              font-size: 30px;
+            }
+      
+            .SpanN {
+              color: white;
+              text-align: center;
+              /* margin-right: 5px; */
+            }
+            #divSpanN {
+              margin-left: 100px;
+              margin-right: 100px;
+            }
+            .liN {
+              margin-top: 10px;
+            }
+            #lastDivN {
+              display: flex;
+              gap: 10px;
+              color: white;
+              margin-left: 100px;
+              margin-right: 100px;
+            }
+            .ulN {
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 6%;
+            }
+            #undivN1 {
+              height: 300px;
+              width: 600px;
+            }
+            #undivN2 {
+              height: 300px;
+              width: 600px;
+            }
+            #btnN {
+              margin-top: 80px;
+              margin-left: 400px;
+            }
+            #PcopyN {
+              margin-left: 200px;
+              color: white;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            }
+        </style>
     </head>
 <body>
     <nav class="">
@@ -314,11 +408,573 @@
         </div>
     </nav>
 
-    <div class="product_container">
-         
+    <div class="container">
+        
+        <!-- <!-- <div id="bestsellers1">
+            <h2>Best Sellers 
+              <button onclick="scrollSlide('left', 'bestsellersSlide1')">&laquo;</button>
+              <button onclick="scrollSlide('right', 'bestsellersSlide1')">&raquo;</button>
+            </h2>
+            <hr />
+            <div id="bestsellersSlide1">
+              
+            </div>
+        </div> -->
+        <div id="imgapend" class="pdetail">
+        </div>
+        <div class="rightdiv">
+        <p id="brand"></p>
+        <p id="name"></p>
+        <p><strike id="strikoff"></strike></p>
+        <h2 id="price"></h2>
+        <h5 id="saving"></h5>
+        <input class="qty1" type="number" value="1" />
+        <button id="addtocart" class="btngroup">
+          ADD TO BASKET <span class="fa fa-shopping-basket"></span>
+        </button>
+        <button class="save">save</button><br />
+        <p>Pack Size</p>
+        <div class="boxdiv">500 g <span class="fas fa-check"></span></div>
+        <div class="boxdiv">1 kg <span class="fas fa-check"></span></div>
+        <!-- <div class="boxdiv">250 g <span class="fas fa-check"></span></div> -->
+        <div class="boxdiv">2 kg <span class="fas fa-check"></span></div>
+        <!-- <div class="boxdiv"> 5 kg <span class="fas fa-check"></span></div> -->
+      </div>
     </div>
+        <footer id="containerN">
+            <!-- nikita -->
+            <div id="MaindivN">
+              <div id="footdiv1N">
+                <h3>Bigbasket</h3>
+                <ul>
+                  <li class="liN">
+                    <a href="" class="aN">About us</a>
+                  </li>
+    
+                  <li class="liN">
+                    <a href="" class="aN">Become A bigbasket Rider</a>
+                  </li>
+    
+                  <li class="liN">
+                    <a href="" class="aN">In News</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Green bigbasket</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Privacy Policy</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Affiliate</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Terms and Conditions</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Careers At bigbasket</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">bb Instants</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">bb Daily</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">bb Blog</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">bbnow</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="secondDivN">
+                <h3>Help</h3>
+                <ul>
+                  <li class="liN">
+                    <a href="" class="aN">FAQs</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Contact Us</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">bb Wallet FAQs</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">bb Wallet T&Cs</a>
+                  </li>
+                  <li class="liN">
+                    <a href="" class="aN">Vendor Connect</a>
+                  </li>
+                </ul>
+              </div>
+              <div id="div3N">
+                <div>
+                  <img
+                    height="100"
+                    id="ImgN"
+                    src="https://tse2.mm.bing.net/th?id=OIP.8gAqO2EhKGHYvqCW6ucsmAHaEW&pid=Api&P=0&h=180"
+                  />
+                </div>
+                <div>
+                  <img src="./images/googlePlay.png" alt="" />
+                  <img src="./images/appStore.png" alt="" />
+                </div>
+                <div class="iconN">
+                  <div>
+                    <i class="fab fa-facebook"></i>
+                  </div>
+                  <div>
+                    <i class="fab fa-instagram"></i>
+                  </div>
+                  <div>
+                    <i class="fab fa-twitter"></i>
+                  </div>
+                  <div>
+                    <i class="fab fa-pinterest"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="MiddleN"><hr id="hrN" /></div>
+            <h3 id="h3N">Cities We Serve</h3>
+            <div id="divSpanN">
+              <span class="SpanN">
+                Cuddapah | Kadiri | Arsikere | Karur | Gurdaspur | Pratapgarh
+                District | Guntakal | Muzaffarnagar District | Meerut District |
+                Ludhiana District | Hooghly District | Gonda District | Fatehgarh
+                Sahib District | Baghpat District | Amroha District | Mahabubnagar |
+                Korba | Sringeri | Kanakapura | Khurai | Raisen | Gondia | Rahatgarh
+                | Bhiwadi | Goa | Bahadurgarh | Raichur | Sindudurg | Sangareddy |
+                Kurnool | Jadcherla | North Dinajpur | Jawad | Mahe | Hubli |
+                Prakasam | Nalgonda | Karnal | Panipat | Rohtak | Renigunta |
+                Patiala | Trichy | Keshoraipatan | Keylong | Khadda | Khajuraho |
+                Khalilabad | Khandela | Khanna | Khanpur | Khategaon | Khatima |
+                Tirap | Prakasam District | Haridwar | Vinukonda | Kotagiri |
+                Muthukulathur | Pathapatnam | Haripal | Kodumudi | Ichchapuram |
+                Chintapalli | Narsipatnam | Narasannapeta | Kurupam | Palasa |
+                Chodavaram | Belthangady | West Siang | Pennadam | Addateegala |
+                Chirala | Yerragonda Palem | Kukanoor | Kushalnagar | Holenarasipur
+                | Madakasira | Kavali | Eedu | Bagalkot | Mahalingpur | Humnabad |
+                Yaragatti | Munger | Chilakaluripet | Bhimavaram | Narayanpet |
+                Jannaram | Rayaparthi | Mogullapally | Bhinga | Bhinmal | Mahadevpur
+                | Rudrangi | Bhawani Mandi | Bhilwara | Bhimtal | Bhind | Bhadohi |
+                Bhanpura | Bhatewar | Bhathat | Rewari | Chhoti Sadri | Katangi |
+                Aluva | Kayamkulam | Ezhupunna | Charkhi Dadri | Attingal |
+                Chhatarpur | Chamoli | Chandauli | Chandausi | Chanderi | Vaishali |
+                Tuensang | Choutuppal | Ladakh | Mananthavadi | Thodupuzha |
+                Kattappana | Vadakara | Kuthuparamba | Sonipat | Thamarassery |
+                Mundakayam | Rishikesh | Robertsganj | Aunrihar | Atarra | Azamgarh
+                | Auraiya | Babrala | Baberu | Badlapur | Baddi | Bageshwar |
+                Badnaur | Poonchh | Pratapgarh-RJ | Pilkhuwa | Pindwara | Piparcity
+                | Pithoragarh | Pokhran | Polay Kalan | Pooh | Poonch | Shamli |
+                Yemmiganur | Siyana | Tawang | Bagru | Mirzapur | East Kameng |
+                Mohali | Mohammadabad | Meham | Menhdawal | Merta | Milak |
+                Mohammadi | Morena | Mominpet | Rampur Naikin | Rampura Phul |
+                Memari | Bolpur | Ramganj Mandi | Bangaon | Habra | Tamluk |
+                Basirhat | Barakar | Chittaranjan | Gohana | Amritsar | Paota |
+                Paonta Sahib | Gummudipoondi | Pathankot | Parasia | Danthalapally |
+                Saundatti | Baraut | Rewa | Allagadda | Pauri | Patti-UP | Kittur |
+                Motebeennura | Haveri | Kalghatgi | Hangal | Harihara | Gadag |
+                Haliyal | Akola | Katol | Kendujhar | Godhra | Kawardha | Karimganj
+                | Karbi Anglong | Hathras | Yadgir | Khergam | Masrakh | Bakhtiarpur
+                | Hassan | Nagapattinam | Baripada | Soro | Shadnagar | Bhongir |
+                Kazipet | Tanakpur | Pamuru | Vyara | CHHENDIPADA | CHHAPRA | Chatra
+                | Madhugiri | Howrah | Hooghly | HINJILICUT | CHIKITI | Hosanagar |
+                Malavalli | IMAMGANJ | ILIPUR | Koratagere | Magadi | Madikeri |
+                Dabaspete | South Tripura | SULTANGANJ | South Garo Hills | South
+                Sikkim | SURAJGARHA | Surguja | Sundergarh | Shikohabad |
+                SWARUPNAGAR | Thoubal | Shivpuri | Shorapur | Afzalpur | Chincholi |
+                Dimapur | Jamkhandi | Sullia | Assaigoli | Virajpet | Pandua |
+                Koppal | Jamuria | Khairabad | Byndoor | Manvi | Amalapuram |
+                Addanki | Yavatmal | Wardha | Sihora | Panchkula | Naharlagun |
+                Ranebennur | Shiggaon | Savadatti | Sullurupeta | Makrana | Kuchaman
+                City | Zahirabad | Warora | Cochin | Arakkonam | Puducherry |
+                RUNNISAIDPUR | Rohtas | Nellore | Ambala | Agra | Madurai | Sircilla
+                District | South 24 Parganas District | Sultanpur District |
+                Pipariya | Faridabad | Raipur | Cherial | Saharsa | Malur | Hardoi |
+                Darbhanga | Gaya | Motihari | Angul | Chhindwara | Ganjam | Bassi |
+                Hindaun | Lalsot | Karauli | Dausa | Himachal Pradesh | Gangapur
+                City | Seoni | Poinachi | Chandrapur | KAMAKHYANAGAR | Surat |
+                Bagula | Sathupally | Ramgarh | Chirgaon | Pendra | Chintpurni |
+                Daryapur Banosa | Chittaurgarh | Amaravathi | Gwalior | Chitrakoot |
+                Allahabad | Bareilly | Jodhpur | Katihar | Palwal | Chomu | Wyra |
+                Cholapur | Pawai | Chunnar | Haripad | Ottapidaram | Sriperumbudur |
+                Thuckalay | Mayiladuthurai | Kesali | Kerakat | Gudalur | Moodabidri
+                | Katni | Kathua | Kelwara | Kadaba | Hoovina Hadagali | Karsog |
+                Kanjarakatte | Bijapur | S Kota | Gajapatinagaram | Thanesar | Araku
+                | Vidyanagar | Koyyuru | Seetharampram | Bheemunipatnam | Garividi |
+                Palakonda | Bobbili | Vadodara | Amarapuram | Kaikaluru | Martur |
+                Gokak | Bapatla | Atmakur-AP | Chimakurthy | Jangareddygudem |
+                Tungaturthi | Belur | Nuzvid | Athani | Turuvukere | Basavana
+                Bagewadi | Manipal | Mudarangady | Ramagundam | Nereducharla |
+                Asifabad | Mulugu | Bhupalpally | Koratla | Kusumanchi | Sikandrabad
+                | Sikriganj | Silwani | Tiryani | Dharmapuri-TS | Dabra |
+                Colonejganj | Punjab | Iddukki | Kannapuram | Narikkuni | Adoor |
+                Kuttiady | Adimali | Kallikkad | Neyyattinkara | Chopan | Shahabad
+                Markanda | Velgodu | Bhagpat | Srinagar | Shimla | Vijayawada-Guntur
+                | Lakhisarai | Thiruttani | Berachampa | Ramnagar | Andaman and
+                Nicobar | Ramannapeta | Padmajiwadi | Huzur Nagar | Madgulapally |
+                Patancheru | Dhanbad | Ashok Nagar | Choppadandi | Anuppur | Aonla |
+                Anantnag | Anpara | Anandnagar | Anandpur Sahib | Boath Buzurg |
+                Kosgi | Rudauli | RS Pura | Parvathipuram | Purba Bardhaman |
+                Vaniyambadi | Salcete | Paderu | Vilathikulam | Salempur | Sivakasi
+                | Weir | Zira | Karimnagar | Saidabad | Pudukkottai | Madhoganj |
+                Machhiwara | Mahendragarh-HR | Madwas | Mahoba | Maheshwar |
+                Mahrauni | Maholi | Maihar | Mahwa | Marthandam | Kovilpatti | Saran
+                | Pushpavanam | Mathura | Maharajapuram | Sundla | Hiranagar | West
+                Khasi Hills | Jhunku | Rampur | Sri City | Aurangabad | Halflong |
+                Kheri | Rath | Ras | Patti | Jehanabad | Dhamnod | Medinipur |
+                Modasa | Gopalganj | Nainital | Koraput | Shilong | Koruprolu |
+                KODALA | Koderma | Faridkot | Asind | Khorda | Howrah | Badnagar |
+                Deesa | Upper Siang | Warangal | Hanamkonda | ULUBERIA | Kannauj |
+                Farrukhabad | Bidhuna | Chhibramau | Khandwa | Khargone | Lakhimpur
+                | Bangarmau | Ramanagara | Ballia | Rawatsar | Guntur-Rural |
+                BONGAON | Boudh | BRAHMAPUR | BRAJRAJNAGAR | Cachar | Champhai |
+                CHANDANKIYARI | CHANDBALI | CHANDIKHOL | Amla | Ongole |
+                Rampachodavaram | Vellore | Thiruvananthapuram | Ujjain | Sikar |
+                Nadia | Bardoli | Bokaro | BACHHRAWAN | Chittor District |
+                Machilipatnam | North 24 Parganas | Godda | Sasaram | Hasanpur |
+                Wani | Ghughus | Shrimadhopur | Chameli | Amritsar | Mancherial |
+                Jagtial | Kumta | Gopalganj | GOPALAPUR | Goalpara | Giridh |
+                Hailakandi | Gumla | GUMIA | GOPALNAGAR | HANSKHALI | HAJIPUR |
+                Rajsamand | Sirohi | NIMAPARA | Singrauli | Seraikela-kharsawan |
+                Serchhip | Mysore | SHEOHAR | Pune | Hyderabad | Kolkata | Chennai |
+                Metpally | Mumbai | Nashik | SHEONAR | Sibsagar | Kodad | Warud |
+                Chandur Bazar | Dhar | Bina | Kalluru | Sitarganj | Kalmeshwar |
+                Morshi | Puttur | Vapi | Bhandara | Ganj Basoda | PEDDAPALLI |
+                Dhenkanal | Srikalahasti | Nagari | Nalanda | North Sikkim |
+                Pattukkottai | DIBRUGARH | Narmetta | Yellareddy | Tirupattur |
+                Kokrajhar | SONBARSA | Cuddalore | Achampet | Bhopal | Jaipur |
+                Ahmedabad-Gandhinagar | Noida-Ghaziabad | Meerut | Vizianagaram |
+                Medak District | East Godavari District | Nizamabad District |
+                Kamareddy District | Lucknow Rural | Noida Rural | Chennai Rural |
+                Vizag Rural | Hyderabad Rural | Kochi | Muzaffarpur | Chhutmalpur |
+                Sholinghur | Palacode | Kaptanganj | Namakkal | Byadagi | Aland |
+                Tenkasi | Thisayanvilai | Jukhala | Junnardeo | Jhalawar | Jubbal |
+                Kangra | Kapasan | KalolHP | Kangan | Chandpur | Tumakuru | Pangodu
+                | Suryapet District | Chaumahla | Edappal | Cherpulassery |
+                chungatra | Koduru | Pileru | Kambadur | Puttaparthi | Puttur-AP |
+                Koothattukulam | Nandikotkur | Gooty | Venkatagirikota | Rayachoti |
+                Manjeshwar | Degana | DeogarhRJ | Dasuya | Dataganj | Damoh |
+                Dariyabad | Dadri | Dalhousie | Kiphire | Deoli-RJ | Deoria |
+                Shoranur | Rajampet | Atmakur | Alur | Srisailam | Doranala |
+                Joginder Nagar | Jiyanpur | North Paravur | Jhansi | Nedumkandam |
+                Malappuram | Jhadol | Jhabua | Kollam | Jaunpur | Kishanganj | East
+                Garo Hills | ARWAL | Varanasi | Yerravaram | Pulivendula | Tezpur |
+                Umreth | Kheragarh | Gudur-TS | Jainoor | Barhalganj | Barhaj |
+                Husnabad | Dahegaon | Pregnapur | Kollapur | Bansi | Bangana |
+                Bandikui | Banda | Bareli | Armoor | Baran | Banswara | Semariya |
+                Raipur-RJ | Kumily | Venkatgiri | West Champaran | Vallioor |
+                Naidupeta | Soraba | Firozabad | Fatehnagar | Fatehpur-RJ |
+                Thalassery | Lohit | Patran | Sahaswan | Sagwara | Sabalgarh |
+                Rudrapur | Rudraprayag | Nawanshahr | Manasa | Manawar | Malout |
+                Malsisar | Malhera | Malihabad | Maksudangarh | Malanjkhand |
+                Mainpuri | Majhgawa | Sindhanur | Thiruvadanai | WAZIRGANJ | Arambag
+                | Azhagappapuram | Rourkela | Dhandhuka | Hayathnagar | Bareja |
+                Pardi | Nayagarh | Ladwa | Garkha | Hagaribommanahalli | KUCHAIKOTE
+                | Koriya | Lakhimpur | KUCHINDA | Angul | Latehar | Bantwal | Guntur
+                | Sanawad | Sitamarhi | Muzaffarpur | Kekri | Gulbaraga | Sambalpur
+                | Jharsuguda | Mandsaur | Dumraon | Jamui | Tripura | Samastipur |
+                Lower Subansiri | Darjiling | Utnoor | Vidisha | Bishnupur | BHUBAN
+                | Aizawl | Birbhum | Bilaspur(CGH) | BHANJANAGAR | BENIPUR | Bhojpur
+                | BHARWARA | Lower Dibang Valley | GOLAGHAT | BONGAIGAON | SILCHAR |
+                JORHAT | DULIAJAN | NAZIRA | SIVASAGAR | Rajnandgaon | MANGALDOI |
+                BAIHATA | Navsari | Hoshangabad | Patan | Siddhpur | Unjha | Kalol |
+                Kadi | Himatnagar | Mehsana | Siliguri | PLASSEY | Puri | Garhwa |
+                Gariaband | GARJANPUR | Gaya | Gajapati | PIPILI | DHOLI |
+                Jagatsinghapur | Debagarh | PIRO | Vissannapetaa | Uravakonda |
+                Malmaliya | KHODAGANJ | Rameswaram | Thalavadi | HELENCHA |
+                Hazaribag | HINGALGANJ | HILSA | Papum Pare | PETERBAR | PAVAPURI |
+                PHUSRO | Phek | Arani | Balaghat | Pandhurna | Sausar | KHIZASARAI |
+                BHORE | Asansol | Bihar Sharif | Ankleshwar | Palitana | Sagar |
+                Bharuch | Madhubani | Bettiah | Ramdurg | BOKAKHAT | SALIPUR |
+                Tadipatri | Nagpur | Hosur | Eluru | Ghaziabad | Muzzafarpur | Delhi
+                | Gurgaon | Bangalore | Chikkaballapura District | Srikakulam
+                Disctrict | Vizianagaram Disctrict | Yanam District | Modinagar
+                District | Coimbatore | Gautam Buddha Nagar District | Anantapur
+                District | SARAIYA | Nagercoil | Perambalur | Karaikal | Perunali |
+                Coonoor | Eral | Sankarapuram | Sattur | Karwar | Gurmatkal |
+                Lingasugur | Indi | Sheikhpura | Kolhar | Surathkal | Kunigal |
+                Gangapur-RJ | Saran | KENDRAPARA | Ikauna | Kozhenchery |
+                Venjaramoodu | Vuyyuru | Kathipudi | Rajahmundry | Kandukur |
+                Samarlakota | Bonakal | Tenali | Kondapi | Bikkavolu | Piduguralla |
+                Dhampur | Kodungallur | Deotalab | Kannur | Kasaragod | Munnar |
+                Dharamkot | Dhanghata | Dholpur | ChakiaUP | Kuthumkal | Perumbavoor
+                | UNNAO | Chinnur | SHRAVASTI | BAHRAICH | Jalore | Jatara |
+                Jayankondam | Kumbakonam | Jalalpur | Jalalpur-UP | Jalaun | Jalesar
+                | Jaisinghnagar | Jaitwara | Jakh | Jalalabad | Tadoor |
+                Yellareddipet | Bonli | Bhainsa | Banswada | Rajpipla | BIRPARA |
+                Pilani | Phulera | Pichhore | Phalsund | Phephna | Petlawad |
+                Phalodi | Pilibanga | Pilibhit | Mahabubabad | Balotra | Nakerakal |
+                Narsapur-TS | Narsampet | Aswaraopeta | Thirumalagiri | Bodhan |
+                Jogipet | Karim Nagar | Baijnath-UK | Bajag | Bajore | Bakewar |
+                Balaran | Balesar | Lal Gopalganj | Laksar | Lambhua | Lalitpur |
+                Laxmangarh | Lavkush Nagar | Linga | Laxmangarh-RJ | Lunkaransar |
+                Lohaghat | Sankaramangalam | Udham-Singh-Nagar | Shambhu | Ukhra |
+                Kozhikode | Valanchery | Fatehabad | Sitapur | Faridpur | Renwal |
+                Reodar | Nizamabad-UP | Nimbahera | Reckong Peo | Reengus | Rehli |
+                Renukoot | Neem ka Thana | Nawalgarh | Nawabganj-UP | Nawabganj |
+                Nighasan | Nichlaul | Nepanagar | Neemuch | Paschim Bardhaman |
+                Rupnagar | SHILLONG | Amreli | DINARA | Barabanki District | Kolasib
+                | Miyanganj | KHUNTI | Perambra | Talbahat | Tahliwal | Suratgarh |
+                Surajpur jhikla | Hatta | Sundar Nagar | Sunam | Herbertpur | Tarana
+                | Tanda | Ranikhet | Chandigarh Tricity | Nagarkurnool | Gadwal |
+                Jahangirabad | Anupshahar | Gudur | Khatauli | Baleswar | Balangir |
+                BAGNAN | BADAMBA | BADAGADA | BABUJANG | Aurangabad(BH) | AUL |
+                ASTARANGA | ASIKA | Vandavasi | Rudhauli | BEHRAMPUR | BENIPATTI |
+                Thiruvarur | Banka | Bankura | BALLIGUDA | BAMRA | BASIRHAT | Bastar
+                | Bardhaman | Bargarh | NAZIRPUR | GOGAMUKH | BARPETA | Nagaon |
+                DOOMDOOMA | TINSUKIA | Nuapada | NULL | DIGBOI | North Tripura |
+                Kamrup | NORTH LAKHIMPUR | North 24 Parganas | North Cachar Hills |
+                Dholka | Kheda | Thanjavur | Udaipura | Gadarwara | Jaora | Nagda |
+                Ratlam | Nadiad | Palanpur | Naina Devi | UTTAR PRADESH_3PL |
+                UTTARAKHAND_3PL | Shimoga | Jagaluru | Siruguppa | Nahan | Penugonda
+                | Hospet | RUNNISAIDPUR | Aklera | Kotturu | Almora | Najibabad |
+                kolar | RAJASTHAN_3PL | Sambalpur | Darrang | Jabalpur | Wanaparthy
+                | Dantewada | Balasore | Kendrapara | BHAGALPUR | RANGPO | Raigarh |
+                RAIRAKHOL | Puruliya | RAGHUNATHPUR-BR | Bhadrak District |
+                Konaseema District | Deoghar | DASPALLA | Theni | Tekkali | Vaidpura
+                | Munuvalli | Ponnamaravathi | Tiruvalla | Pennagaram | Udayagiri |
+                Rasipuram | Rajesultanpur | Narasaraopet | Sivaganga | Raisinghnagar
+                | Harur | Tanuku | Puthukkad | Ludhiana | Jalandhar | Indore |
+                Basavakalyan | Mhow | Pithampur | Ludhiana | Hapur | Bulandshahr |
+                East-Godavari-2 | Chittoor District | Tiruvallur District | Bidar
+                District | Sangareddy District | Ayodhya District | Pench | Raikot |
+                Saoner | Tirwanganj | Ranipet | Velur | Razole | Kovvur |
+                Ramanathapuram | Narsapur | Markapur | Avinashi | Podili | Karaikudi
+                | Gudivada | Aruppukkottai | Robertsonpet | Dwaraka Tirumala | Adoni
+                | Kotturu-AP | Macherla | Tadepalligudem | Chintalpudi | Salur |
+                Mandapeta | Pedapadu | Gannavaram | Koyilandy | Dibai | Ayoor |
+                Kottarakkara | Guruvayoor | Dinanagar | Doiwala | Karimba | Dostpur
+                | Dudhinagar | Karukachal | Areacode | Berhampur | Jahu | Roorkee |
+                Tinsukia | Achrol | Adampur | Abohar | Abu Road | Hisar | Malerkotla
+                | Ajeetgarh | Ajnala | Itawa | Itava | Jagdishpur-UP | Itia Thok |
+                Ramanathapura | Tandur-TL | Ankola | Bhalki | Sakleshpur | Badami |
+                Huliyar | Bhatkal | Dandeli | Channarayapatna | Cheyyar |
+                Rajapalayam | Gudiyattam | Sankari | Salem | Sankarankovil |
+                Khanapur | Paramakudi | Berasia | Beohari | Betul | Berinag | Bayana
+                | Bathinda | Begumganj | Begowal | Shajapur | Bhaderwah | Bhadaur |
+                Pandikkad | Perinthalmanna | Alappuzha | Balussery | Pulpally |
+                Kilimanoor | Manuguru | Babasagar | Bellampalli | Nirmal | Adilabad
+                | Devarakonda | Bhuvanagiri | Bejjanki | Alair | Khanapur-TS |
+                Thrissur | Tuni | Lakheri | Lakhnadon | Kushinagar | Bhadrachalam |
+                Kukshi | Kumarganj | Kotma | Kotputli | Kotdwara | Kalpetta | Tadvai
+                | Khambhat | Ratanpura | ShahpuraMP | Panna | Pansemal | Shahabad-UP
+                | Sewarhi | Shahganj | Shahdol | Shahpura | Shahgarh | Nohar | Nokha
+                | Orai | Pachore | PadampurRJ | Padrauna | Paithani | Pali
+                Birsinghpur | Palladam | Dhuri | Srirangapatna | Parappa | Palani |
+                Tikamgarh | Didihat | Srinagar-UK | Srivijaynagar | Sujangarh |
+                Didwana | Sojat | Someshwar | Soraon | Sri Hargobindpur | Dildar
+                Nagar | Chotila | Sultanpur Lodhi | Sumerpur | Sheopur | Parippally
+                | Amiliya | Changanacherry | Pehowa | Domariyaganj | KHALARI-JR |
+                Khagaria | Lunawada | Mansa | Begusarai | Bihta | ARRAH |
+                Narketpalle | Buxar | Multai | Alleppey | Naini | Lawngtlai | Araria
+                | Lunglei | Bhangar | Butibori | Longleng | Pilakhua District |
+                Kasganj | Tarakeswar | Kanker | Jaisalmer | Mecheda | Shri
+                Dungargarh | Visnagar | Itarsi | Khordha | Dewas | Mulbagal |
+                Kurukshetra | Madanapalle | Polur | Patna | Yamuna Nagar | Kaithal |
+                Ranihati | Mangalore | Mandideep | Madanpur | JHANJHARPUR |
+                Jehanabad | KADOBAHAL | Jharsuguda | Kalahandi | Kaimur (Bhabua) |
+                Manali | KALYANI | Kandhamal | Bulandshahr District | Hanskhali |
+                Guskhara | Thakurnagar | Kangeyam | Erode | Vellakovil | Hoshiarpur
+                | Taherpur | Ugar | Hanur | Molakalmuru | Nagamangala | Harpanahalli
+                | Channagiri | Shanivarasanthe | Shiralakoppa | Krishnarajngr |
+                Chaklasi | Kudligi | Sandur | West Sikkim | Rajgarh-MP | Rajgarh |
+                Dhone | COOCHBEHAR | DINHATA | MALDA | Mandya | AGARTALA |
+                JALPAIGURI | RAJGANJ | Parwanoo | Jajpur | Botad | Ashta |
+                ALIPURDUAR | JAIGAON | Kota | Upper Subansiri | Mussoorie | Amanganj
+                | Sidhi | Rajgarh-HP | Alwar | NAKASHIPARA | Nadia | Nalbari | Alote
+                | NARAYANPUR | NARASINGHPUR | Nayagarh | Nawada | Alirajpur |
+                Nabarangapur | Aliganj | Muddebihal | Mungra Badshahpur | Yelburga |
+                Mungaoli | Gurugram Rural | Indore Rural | Guwahati Rural | Bhopal
+                Rural | Coimbatore Rural | Bhubaneswar Rural | Kolkata Rural | Kochi
+                Rural | Bavla | Sonepur | Mokama | Nawada | Moga | Nakodar | Kanpur
+                | Nabha | Anand | Pavagada | Kamptee | Kapadvanj | Tindivanam |
+                Changlang | Virudhachalam | Sendhwa | Chinnasalem | Virudhunagar |
+                Perundurai | Kothapalli | Repalle | Tiruchengode | Draksharamam |
+                Oddanchatram | Denkanikottai | Avanigadda | Kapurthala | Nallajerla
+                | CumbumAP | Haryana | Tribeni | Gundlupet | Nipani | Ramgarh-RJ |
+                Sawai Madhopur | Kauriram | Sindagi | Sehore | Sathyamangalam |
+                Talikoti | Raipura | Harda | Haripurdhar | Hansi | Hanumangarh |
+                Hamirpur | Hamirpur-UP | Haidargarh | Haldwani | Etawah | Etah |
+                Falna | Faizabad | Dullahpur | Dulchehra | Dwarahat | Dungarpur |
+                Salumbar | Cumbum | Anthiyour | Thiruthuraipoondi | Chetpet |
+                Sirkazhi | Sanchore | Manamelkudi | Tuticorin | Ooty |
+                Tiruvannamalai | Supaul | Sedam | Piriyapatna | Navalgund | Mettala
+                | Ullal | Aurad | Shahapur | Hirekerur | Mundgod | Mettupalayam |
+                Honnavar | Mettur | Melur | Kadpadi | Attur | Uthangarai | Bariya |
+                Barmer | Barhi | Bari Sadri | Barwani | BassiRJ | Barnala | Barodia
+                | Basti | Batala | Nedumangad | Chengannur | Chavassery | Edavanna |
+                Kuttikol | Nenmara | Tirur | Muvattupuzha | Manopad | Pedabayalu |
+                Jhajjar | Yellamanchili | Nileshwar | Manthani | Kashipur |
+                Huzurabad | West Tripura | Krishna District | Usilampatti | Yellare
+                | Agali | West-Godavari | Pathanamthitta | Amarpatan | Muskara |
+                Nadoti | Nadaun | Muktsar | Mughal Sarai | Akbarpur-UP | Akbarpur |
+                Nagina | Nagaur | Ambuj Nagar | Amarwara | Ghator | Ghati Billan |
+                Ghatampur | Gharsana | Ghansali | Garoth | Garhshanker |
+                Ganjdundwara | Sarni | Satna | Sarada | Sardarshahr | Sangaria |
+                Sangrur | Ghosi | Ghazipur | Chingavanam | Songadh | Sultan Bathery
+                | Chintoor | Shujalpur | Shaheed Bhagat Singh Nagar | Tundla | Tonk
+                | Udhampur | Udaipurwati | Dhaurahara | Umaria | Vijayraghavgarh |
+                Uttarkashi | Waraseoni | Viratnagar | Lahar | Una-HP | Zunhebotto |
+                Madhepura | Chintamani | Ambur | Channapatna | Maddur | Nabadwip |
+                Katwa | Kharagpur | Mammit | Kothagudem | Malkangiri | MALMALIYA |
+                MAIRWA | MAKHDUMPUR | MAHARAJGANJ-BH | Mahasamund | Deosar | Parkal
+                | Dhariyawad | Kotkapura | Dharchula | Pazhayannur | Sirathu |
+                Thachanattukara | Vitla | Vikarabad | Churu | Kanthi | Dahegam |
+                Cuttack | Jangaon | Dindigul | Sihor | Dudu | Jagatsinghpur |
+                Udumalaipettai | Pollachi | Vijapur | Dharapuram | Canning | Tiptur
+                | Mehmedabad | Fatehpur | Krishnarajpet | Fatehgarh | Janjgir-champa
+                | Jashpur | Jamtara | Gobichettipalayam | Jaintia Hills | Jajapur |
+                Chinhat | JAGDISHPUR | Imphal West | JAGANNATHPRASAD | Davangere |
+                Visakhapatnam | Simalwara | Peralam | Tiruppur | Bilimora | Kurugodu
+                | Sira | Bethamangala | Nanjangud | Sagara | Kollegala | Shikaripur
+                | Gangavathi | Hiriyur | Hosadurga | Ariyalur | Madanapalli |
+                Tirupati | Miryalaguda | Kalwakurthy | Rayadurgam | Hajipur | Kadapa
+                | Ranchha | Sirvella | Hasnabad | Bhadrak | Pakur | PAKRIBARWAN |
+                East Midnapore | East Khasi Hills | East Sikkim | East Siang | EKMA
+                | East Singhbhum | Ganjam | GALLERI | West Midnapore | Bangalore
+                Rural | West Singhbhum | Galiveedu | Ratangarh-MP | Palamau | Siwani
+                | Gursahaiganj | BIJNOR | BALRAMPUR | Pakala | Rona | Chagalamarri |
+                Kalyandurg | Ratia | Puri | West Kameng | Nagpur Rural | Patna Rural
+                | Mumbai Rural | Mysore Rural | Vadodara Rural | Jaipur Rural | Pune
+                Rural | Surat Rural | Aligarh District | Amethi District | Sirsa |
+                Kishangarh | Nasirabad | Jammu Kashmir | Krishnagiri | Ramtek |
+                Moradabad | Shahjahanpur | Ajmer | Kottayam | Rajamahendravaram |
+                Kakinada | Kundli | Sahibganj | Gudiyatham | DehraDun | Ri Bhoi |
+                Rayagada | Aligarh | Bhogapuram | Bagepalli | Madhubani | Bhimadole
+                | Palakollu | Pamarru | Gokavaram | Kanigiri | Annur | Sompeta |
+                Singarayakonda | Karera-MP | Raniwara | Kodaikanal | Sambhal
+                District | Thuraiyur | Amravati | Jamshedpur | Kolhapur | Kalaburagi
+                | Guwahati | Bhubaneshwar-Cuttack | Gorantla | Raebareli District |
+                Khammam | Saharanpur District | Mudigere | Ratangarh | Saiha |
+                MARHOWARAH | Sohagi | Chitradurga | Siddipet District | Joshimath |
+                Bellary | Khimsar | Kherwara | Ganga Nagar | Khatu Khurd | Kishni |
+                Kinnaur | Khutar | Khinwara | Fazilka | Gulbarga | Konch | Kolayat |
+                Gairsain | Gajraula | Firozpur | Gahmar | Rasulabad | Bhavnagar |
+                Tiruchendur | Kerur | Sleemnabad | Ambasamudram | Kallakurichi |
+                Tirunelveli | Chikkanayakanahalli | Tiruchi | Kanchipuram |
+                Viluppuram | Vadipatti | Dera Bassi | Visakhapatnam District |
+                Phagwara | Jagraon | Narsinghpur | Kowthal | Devadurga | Kalasa |
+                Jewargi | Badvel | Kuppam | B Kothakota | Nandyal | Kudair |
+                Betamcherla | Srinivaspur | Pihani | Billawar | Bilaspur-UP |
+                Bilaspur-HR | Bilaspur-HP | Bilara | Bikaner | Bijpur | Bijainagar |
+                Bichhiya | Bhiwani | Atmakur-TS | Narayankhed | Chalakudy |
+                Kanjiramattom | Alakode | Arimbur | Chaksu | Akaloor | Burhanpur |
+                Bundi | Buhana | Budaun | Brijmanganj | Luxettipet | Bisalpur |
+                Binaganj | Pakyong | Amangal | Mothkur | Jammikunta | Yellandu |
+                CHERLA | Ichoda | Makthal | Navipet | Veenavanka | Sirikonda |
+                Rajkot | RAJGIR | Zirakpur | Anjumoorthy | Mallapur | MADHYA
+                PRADESH_3PL | Nainwa | Nagod | JAMMU & KASHMIR_3PL | Narnaul |
+                Narsinghgarh | PUNJAB_3PL | Nanpara | Naugarh | Nautanwa |
+                HARYANA_3PL | HIMACHAL PRADESH_3PL | Gopiganj | Gorakhpur | Gotan |
+                Gumkhal | Ghugri | Ghumarwin | Giddarbaha | Gogunda | Irinjalakuda |
+                Puranpur | Pukhrayan | Prithvipur | Guna | Chikkamagalur | Raipur
+                Karchulion | Raila | Lucknow | Durg | Rawatbhata | Thirthahalli |
+                Bahal | Tijara | Baheri | Theog | Thikri | Tendukheda | Tharali |
+                Tarsikka | Tehri | Taranagar | Tarn Taran Sahib | Mathania | Marwar
+                Junction | Mariahu | Mandphiya | Mandla | Mandi Dabwali | Mandalgarh
+                | Manda | Mauranipur | Mau | Sirsi | Panja | Mudigubba | Vijayapura
+                | Sidlaghatta | Hindupur | Kalna | Gauribidanur | Doddaballapura |
+                Jewar | Muradnagar | Kaghaznagar | Santipur | Palamaner | JAGDISHPUR
+                | Sultana | West Garo Hills | Borsad | Petlad | Valsad | Daman |
+                Silvassa | Bhojpur | Siwan | Ranchi | Jhunjhunu | West Godavari
+                District | Kundapura | Haldia | Chiramanangad | Bangarpet | Byadgi |
+                Dharampur | Bhadradri Kothagudem District | Channarayapattana |
+                Ghanpur | Athagad | Krishnarajanagara | Sidhauli | Malpura | Dharwad
+                | Barh | Bailhongal | ALNAVAR | Belgaum | Bankapura | Lohardaga |
+                Yellapur | KONARK | MINAKHAN | Mayurbhanj | MOHAMMADPUR | MIRGANJ |
+                Mokokchung | MOHANA | Murshidabad | Munger | Siddapur | Challakere |
+                Kadur | Chamarajanagar | Hunsur | Honnali | MASAURHI | Marigaon |
+                Sonapur | Siwan | Sonitpur | Beawar | SINGHIA | Simdega | Sitamarhi
+                | SIRDALA | Mudhol | South Dinajpur | South 24 Parganas | Kushtagi |
+                Ilkal | Karkala | Gonikoppal | Chittapur | Raibag | Chikodi | East
+                Champaran | DIGAPAHANDI | Dumka | Dhemaji | Dhubri | Dhalai |
+                Dhamtari | DHAKA | DHAKUAKHANA | Vempalli | Proddatur | Ranni |
+                Palakkad | Udgir | Kalinga Nagar | Tirora | Punganur
+              </span>
+            </div>
+            <hr id="hrN" />
+            <div id="lastDivN">
+              <div id="undivN1">
+                <h3>Popular Categories</h3>
+                <ul class="ulN">
+                  <a href="" class="aN">Sunflower Oils</a>
+                  <a href="" class="aN"> Wheat Atta</a>
+                  <a href="" class="aN">Ghee</a>
+                  <a href="" class="aN">Milk</a>
+                  <a href="" class="aN"> Flakes</a>
+                  <a href="" class="aN">Organic F&V</a>
+                  <a href="" class="aN"> Namkeen</a>
+                  <a href="" class="aN"> Eggs</a>
+                  <a href="" class="aN">Floor Cleaners</a>
+                  <a href="" class="aN"> Other Juices</a>
+                  <a href="" class="aN"> Leafy Vegetables</a>
+                  <a href="" class="aN">Frozen Veg Food</a>
+                  <a href="" class="aN"> Diapers & Wipes</a>
+                </ul>
+              </div>
+              <div id="undivN2">
+                <h3>Popular Brands</h3>
+                <ul class="ulN ulN2">
+                  <a href="" class="aN aN2">Amul</a>
+                  <a href="" class="aN aN2"> Nescafe</a>
+                  <a href="" class="aN aN2">MTR</a>
+                  <a href="" class="aN aN2">RED BULL</a>
+                  <a href="" class="aN aN2"> elite cake</a>
+                  <a href="" class="aN aN2">Pediasure</a>
+                  <a href="" class="aN aN2"> Yummiez</a>
+                  <a href="" class="aN aN2"> Yera</a>
+                  <a href="" class="aN aN2"> Yakult</a>
+                  <a href="" class="aN aN2"> Britannia</a>
+                  <a href="" class="aN aN2"> Wow!</a>
+                  <a href="" class="aN aN2"> Momo </a>
+                  <a href="" class="aN aN2"> Fortune</a>
+                  <a href="" class="aN aN2"> Haldiram's </a>
+                  <a href="" class="aN aN2"> Ferrero </a>
+                  <a href="" class="aN aN2"> Ferrero </a>
+                  <a href="" class="aN aN2"> Ferrero </a>
+                  <a href="" class="aN aN2"> Patanjali </a>
+                  <a href="" class="aN aN2"> McCain</a>
+                  <a href="" class="aN aN2"> kwality </a>
+                  <a href="" class="aN aN2"> walls </a>
+                  <a href="" class="aN aN2"> Cadbury</a>
+                  <a href="" class="aN aN2"> Dairy </a>
+                  <a href="" class="aN aN2"> Milk </a>
+                  <a href="" class="aN aN2"> Pedigree</a>
+                </ul>
+              </div>
+            </div>
+            <button id="btnN">Show less-</button>
+            <p id="PcopyN">
+              Copyright © 2023-2025 Supermarket Grocery Supplies Pvt Ltd
+            </p>
+        </footer>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 <script src="scripts/index.js"></script>
 <script src="productPage.js"></script>
+<script src="sa_index.js"></script>
+
+<script>
+    let detail = JSON.parse(localStorage.getItem("productdetail"));
+    detail.forEach(function (elem) {
+        let img = document.createElement("img");
+        img.setAttribute("src", elem.image);
+        img.setAttribute("class", "divimg");
+        document.querySelector("#imgapend").append(img);
+        document.querySelector("#brand").innerText = elem.brand;
+        document.querySelector("#name").innerText = elem.name;
+        document.querySelector("#strikoff").innerText = elem.strike;
+        document.querySelector("#price").innerText = "Rs" + elem.price;
+        document.querySelector("#pname").innerHTML = elem.name;
+        document.querySelector("#pnameAgain").innerText = elem.name;
+        let x = document.querySelectorAll(".nameagain");
+        for (let i = 0; i < x.length; i++) {
+        x[i].innerText = elem.name;
+        }
+  });
+</script>
 </html>
