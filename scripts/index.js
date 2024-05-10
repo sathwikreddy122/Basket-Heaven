@@ -2,9 +2,21 @@ const loginForm = document.querySelector('.login');
 const loginBtn = document.querySelector('.auth');
 const loginStatus = document.querySelector('.status');
 const modal = new bootstrap.Modal(document.querySelector('.modal'));
-let user = JSON.parse(localStorage.getItem('user')) || '';
+const links = document.querySelectorAll('a[href="product.html"]');
 
-console.log(user);
+let user = JSON.parse(localStorage.getItem('user')) || '';
+let category = JSON.parse(localStorage.getItem('category')) || '';
+
+console.log(user,links);
+
+links.forEach(link => {
+  const value=link.innerText;
+
+  link.addEventListener('click',(e)=>{
+    category = value;
+    localStorage.setItem('category',JSON.stringify(category));
+})
+});
 
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
