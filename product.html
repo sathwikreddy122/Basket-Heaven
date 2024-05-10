@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
     <link
       href="node_modules/bootstrap/dist/css/bootstrap.min.css"
       rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
+      type="image/png"
     />
     <link
       rel="stylesheet"
@@ -16,304 +20,1257 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-</head>
-<body>
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* Style for the filter container */
+      .w-25 {
+        width: 25%;
+      }
+
+      /* Style for the border */
+      .border {
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .card {
+        border: 1px solid rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-sizing: border-box;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 0px 8px;
+        height: 430px;
+        position: relative;
+      }
+
+      .productImage {
+        width: 100%;
+        /* height: 200px; */
+        border: 1px solid rgb(189, 189, 189);
+      }
+
+      .title{
+    margin-bottom: 6px;
+    font-size:14px;
+     }
+
+     .addButton{
+    border: 1px solid red;
+    background-color: white;
+    width: 85%;
+    height: 35px;
+    position: absolute;
+    bottom: 20px;
+    font-size: 19px;
+    border-radius:10px;
+   }
+
+   .card>div>div>select{
+    width: 100%;
+    background-color: white;
+    border: 1px solid gray;
+    height:22px;
+    }
+
+
+      /* Style for the category links */
+      .category-link {
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* Hover effect for category links */
+      .category-link:hover {
+        background-color: #f0f0f0;
+        margin: 10px 0px 10px 0px;
+      }
+
+      #main_container {
+        display: flex;
+        position: sticky;
+        height: 100vh;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      #filter_container {
+        overflow: scroll;
+        overflow-x: hidden;
+        padding: 10px;
+      }
+
+      #filter_category {
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+
+      .rating-checkbox {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      #filter_rating {
+        margin-top: 10px;
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+
+      .rating-options {
+        display: flex;
+        flex-direction: column; /* Display options in column fashion */
+      }
+
+      .rating-checkbox {
+        margin-bottom: 10px;
+      }
+
+      .price-options {
+        display: flex;
+        flex-direction: column; /* Display options in column fashion */
+      }
+
+      #filter_price {
+        margin-top: 10px;
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+
+      .price-checkbox {
+        margin-bottom: 10px;
+      }
+
+      .discount-options {
+        display: flex;
+        flex-direction: column; /* Display options in column fashion */
+      }
+
+      #filter_discount {
+        margin-top: 10px;
+        border: 2px solid;
+        padding-left: 10px;
+        border-radius: 7px;
+      }
+
+      .discount-radio {
+        margin-bottom: 10px;
+      }
+
+      #card_products {
+        display: grid;
+        overflow: scroll;
+        max-width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        overflow-x: hidden;
+      }
+
+      .product-card {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+    </style>
+  </head>
+  <body>
     <nav class="">
-        <!-- mohan -->
-        <div class="nav-bar pb-1">
-          <div class="first-bar d-flex align-items-center mt-1">
-            <div class="d-flex align-items-center flex-column">
-              <div class="d-flex align-items-end">
-                <img
-                  src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
-                  width="25"
-                  alt=""
-                  height="25"
-                />
-                <span class="fs-5 fw-medium px-1" style="translate: 0 5px"
-                  ><b class="text-danger">big</b>basket</span
-                >
-              </div>
-              <p
-                class="fw-semibold text-primary lh-lg m-0"
-                style="font-size: 12px"
+      <!-- mohan -->
+      <div class="nav-bar pb-1 px-3">
+        <div class="first-bar d-flex align-items-center mt-1">
+          <div class="d-flex align-items-center flex-column">
+            <div class="d-flex align-items-end">
+              <img
+                src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
+                width="25"
+                alt=""
+                height="25"
+              />
+              <span class="fs-5 fw-medium px-1" style="translate: 0 5px"
+                ><b class="text-danger">big</b>basket</span
               >
-                A <b>TATA</b> Enterprise
-              </p>
             </div>
-  
-            <input
-              type="text"
-              placeholder="Search for Products..."
-              class="mx-4 px-3 rounded fs-6"
-              style="width: 450px; height: 45px; opacity: 0.7"
-            />
-  
-            <button class="p-2 me-4 border fw-semibold rounded">
-              <i class="fa-solid fa-location-dot"></i> Select Location
-            </button>
-  
-            <button
-              class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
-              style="font-size: 13px"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
+            <p
+              class="fw-semibold text-primary lh-lg m-0"
+              style="font-size: 12px"
             >
-              Login/Sign <br />Up
-            </button>
-  
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body d-flex p-0">
-                    <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+              A <b>TATA</b> Enterprise
+            </p>
+          </div>
+
+          <input
+            type="text"
+            placeholder="Search for Products..."
+            class="mx-4 px-3 rounded fs-6"
+            style="width: 450px; height: 45px; opacity: 0.7"
+          />
+
+          <button class="p-2 me-4 border fw-semibold rounded">
+            <i class="fa-solid fa-location-dot"></i> Select Location
+          </button>
+
+          <button
+            class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
+            style="font-size: 13px"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Login/Sign <br />Up
+          </button>
+
+          <div
+            class="modal fade"
+            id="exampleModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body d-flex p-0">
+                  <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+                    <p
+                      class="text-center text-opacity-25"
+                      style="font-size: 12px"
+                    >
+                      Why choose BigBasket?
+                    </p>
+                    <div class="d-flex flex-wrap p-2">
+                      <div
+                        class="w-50 mb-3 d-flex flex-column align-items-center"
+                      >
+                        <i
+                          class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">Quality</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column align-items-center">
+                        <i
+                          class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">On time</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column align-items-center">
+                        <i
+                          class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">Return Policy</p>
+                      </div>
+                      <div class="w-50 d-flex flex-column align-items-center">
+                        <i
+                          class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
+                        ></i>
+                        <p style="font-size: 13px">Free Delivery</p>
+                      </div>
+                    </div>
+
+                    <hr class="w-75 m-auto" style="border-width: 2.5px" />
+
+                    <div
+                      class="p-3 mt-3 d-flex justify-content-center align-items-center"
+                    >
                       <p
-                        class="text-center text-opacity-25"
+                        class="d-inline-block me-4 mb-0 text-center text-opacity-25"
                         style="font-size: 12px"
                       >
-                        Why choose BigBasket?
+                        Find us on
                       </p>
-                      <div class="d-flex flex-wrap p-2">
-                        <div
-                          class="w-50 mb-3 d-flex flex-column align-items-center"
-                        >
-                          <i
-                            class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">Quality</p>
-                        </div>
-                        <div class="w-50 d-flex flex-column align-items-center">
-                          <i
-                            class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">On time</p>
-                        </div>
-                        <div class="w-50 d-flex flex-column align-items-center">
-                          <i
-                            class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">Return Policy</p>
-                        </div>
-                        <div class="w-50 d-flex flex-column align-items-center">
-                          <i
-                            class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
-                          ></i>
-                          <p style="font-size: 13px">Free Delivery</p>
-                        </div>
+
+                      <div class="border border-dark rounded me-3">
+                        <img
+                          src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
+                          alt=""
+                          width="40"
+                        />
                       </div>
-  
-                      <hr class="w-75 m-auto" style="border-width: 2.5px" />
-  
-                      <div
-                        class="p-3 mt-3 d-flex justify-content-center align-items-center"
-                      >
-                        <p
-                          class="d-inline-block me-4 mb-0 text-center text-opacity-25"
-                          style="font-size: 12px"
-                        >
-                          Find us on
-                        </p>
-  
-                        <div class="border border-dark rounded me-3">
-                          <img
-                            src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
-                            alt=""
-                            width="40"
-                          />
-                        </div>
-  
-                        <div class="p-1 px-2 border bg-light border-dark rounded">
-                          <i class="fa-brands fa-apple fs-3"></i>
-                        </div>
+
+                      <div class="p-1 px-2 border bg-light border-dark rounded">
+                        <i class="fa-brands fa-apple fs-3"></i>
                       </div>
                     </div>
-  
-                    <div class="w-75 bg-black text-white p-3 px-5">
-                      <div class="d-flex justify-content-between">
-                        <h5 class="d-inline-block">Login/Sign Up</h5>
-                        <p
-                          class="status d-inline-block pb-1"
-                          style="border-bottom: 2px solid red"
-                        ></p>
-                      </div>
-  
-                      <form class="login" action="#">
-                        <input
-                          type="email"
-                          class="rounded w-75 p-1 px-2 mx-4 m-3"
-                          placeholder="Enter Email Id"
-                          required
-                        />
-  
-                        <input
-                          type="password"
-                          class="rounded w-75 p-1 px-2 mx-4"
-                          placeholder="Enter Password"
-                          minlength="8"
-                          required
-                        />
-  
-                        <input
-                          type="submit"
-                          class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
-                          value="Submit"
-                        />
-                      </form>
-  
+                  </div>
+
+                  <div class="w-75 bg-black text-white p-3 px-5">
+                    <div class="d-flex justify-content-between">
+                      <h5 class="d-inline-block">Login/Sign Up</h5>
                       <p
-                        class="policy w-75 m-4 mt-1 text-center"
-                        style="font-size: 13px"
-                      >
-                        By continuing, I accept
-                        <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
-                        <a href="#">Privacy Policy</a> This site is protected by
-                        reCAPTCHA and the Google -
-                        <a href="#">Privacy Policy</a> and &
-                        <a href="#">Terms of Service</a> apply.
-                      </p>
+                        class="status d-inline-block pb-1"
+                        style="border-bottom: 2px solid red"
+                      ></p>
                     </div>
+
+                    <form class="login" action="#">
+                      <input
+                        type="email"
+                        class="rounded w-75 p-1 px-2 mx-4 m-3"
+                        placeholder="Enter Email Id"
+                        required
+                      />
+
+                      <input
+                        type="password"
+                        class="rounded w-75 p-1 px-2 mx-4"
+                        placeholder="Enter Password"
+                        minlength="8"
+                        required
+                      />
+
+                      <input
+                        type="submit"
+                        class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
+                        value="Submit"
+                      />
+                    </form>
+
+                    <p
+                      class="policy w-75 m-4 mt-1 text-center"
+                      style="font-size: 13px"
+                    >
+                      By continuing, I accept
+                      <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
+                      <a href="#">Privacy Policy</a> This site is protected by
+                      reCAPTCHA and the Google -
+                      <a href="#">Privacy Policy</a> and &
+                      <a href="#">Terms of Service</a> apply.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-  
-            <div class="p-2 rounded" style="background-color: pink; opacity: 0.7">
-              <div
-                class="rounded-circle text-center"
-                style="background-color: red; width: 26px; height: 26px"
-              >
-                <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+          </div>
+
+          <div class="p-2 rounded" style="background-color: pink; opacity: 0.7">
+            <div
+              class="rounded-circle text-center"
+              style="background-color: red; width: 26px; height: 26px"
+            >
+              <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="second-bar d-flex align-items-center mt-1">
+          <div class="category dropdown" style="width: 150px">
+            <a
+              class="btn text-white p-1 px-2 d-flex align-items-center justify-content-between dropdown-toggle fw-semibold"
+              style="font-size: 11px; background-color: rgb(94, 148, 0)"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="">
+                <p class="m-0 text-start">Shop by</p>
+                <p class="m-0" style="font-size: 14px">Category</p>
+              </div>
+            </a>
+
+            <div class="dropdown-menu multi-column columns-3">
+              <div class="row">
+                <div class="col">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#">Fruits & Vegetables</a></li>
+                    <li><a href="#">Foodgrains, Oil & Masala </a></li>
+                    <li>
+                      <a href="#">Bakery , Cakes & Dairy</a>
+                    </li>
+                    <li><a href="#">Beverages</a></li>
+                    <li><a href="#">Snacks & Branded Foods</a></li>
+                    <li><a href="#">Beauty & Hygiene</a></li>
+                    <li><a href="#">Cleaning & Household</a></li>
+                    <li>
+                      <a href="#">Kitchen, Garden & Pets</a>
+                    </li>
+                    <li><a href="#">Launch Boxes & Bags</a></li>
+                    <li><a href="#">Eggs,Meat & Fish</a></li>
+                    <li><a href="#">Gourmet & World Food</a></li>
+                    <li><a href="#">Baby Care</a></li>
+                  </ul>
+                </div>
+
+                <div class="col">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#">Cuts & Sprouts</a></li>
+                    <li><a href="#">Exotic Fruits & Veggies</a></li>
+                    <li><a href="#">Flower Bouquets,Bunches</a></li>
+                    <li><a href="#">Fresh Fruits</a></li>
+                    <li><a href="#">Fresh Vegetables</a></li>
+                    <li><a href="#">Herbs & Seasonings</a></li>
+                    <li><a href="#">Organic Fruits & Vegetables</a></li>
+                  </ul>
+                </div>
+
+                <div class="col">
+                  <ul class="multi-column-dropdown">
+                    <li><a href="#">Cut & Peeled Veggies</a></li>
+                    <li><a href="#">Cut Fruit,Tender Coconut</a></li>
+                    <li><a href="#">Fresh Juices & Milk Shakes</a></li>
+                    <li><a href="#">Fresh Salads & Sprouts</a></li>
+                    <li><a href="#">Recipe Packs</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-  
-          <div class="second-bar d-flex align-items-center mt-1">
-            <div class="category dropdown" style="width: 150px">
-              <a
-                class="btn text-white p-1 px-2 d-flex align-items-center justify-content-between dropdown-toggle fw-semibold"
-                style="font-size: 11px; background-color: rgb(94, 148, 0)"
-                href="#"
-                role="button"
+
+          <div class="links d-flex flex-grow-1 justify-content-evenly fs-6">
+            <a href="#">Exotic Fruits & V...</a>
+            <a href="#">Tea</a>
+            <a href="#">Ghee</a>
+            <a href="#">Nandini</a>
+
+            <div class="dropdown">
+              <button
+                class="border-0 bg-white"
+                type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                <div class="">
-                  <p class="m-0 text-start">Shop by</p>
-                  <p class="m-0" style="font-size: 14px">Category</p>
-                </div>
-              </a>
-  
-              <div class="dropdown-menu multi-column columns-3">
-                <div class="row">
-                  <div class="col">
-                    <ul class="multi-column-dropdown">
-                      <li><a href="#">Fruits & Vegetables</a></li>
-                      <li><a href="#">Foodgrains, Oil & Masala </a></li>
-                      <li>
-                        <a href="#">Bakery , Cakes & Dairy</a>
-                      </li>
-                      <li><a href="#">Beverages</a></li>
-                      <li><a href="#">Snacks & Branded Foods</a></li>
-                      <li><a href="#">Beauty & Hygiene</a></li>
-                      <li><a href="#">Cleaning & Household</a></li>
-                      <li>
-                        <a href="#">Kitchen, Garden & Pets</a>
-                      </li>
-                      <li><a href="#">Launch Boxes & Bags</a></li>
-                      <li><a href="#">Eggs,Meat & Fish</a></li>
-                      <li><a href="#">Gourmet & World Food</a></li>
-                      <li><a href="#">Baby Care</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="col">
-                    <ul class="multi-column-dropdown">
-                      <li><a href="#">Cuts & Sprouts</a></li>
-                      <li><a href="#">Exotic Fruits & Veggies</a></li>
-                      <li><a href="#">Flower Bouquets,Bunches</a></li>
-                      <li><a href="#">Fresh Fruits</a></li>
-                      <li><a href="#">Fresh Vegetables</a></li>
-                      <li><a href="#">Herbs & Seasonings</a></li>
-                      <li><a href="#">Organic Fruits & Vegetables</a></li>
-                    </ul>
-                  </div>
-  
-                  <div class="col">
-                    <ul class="multi-column-dropdown">
-                      <li><a href="#">Cut & Peeled Veggies</a></li>
-                      <li><a href="#">Cut Fruit,Tender Coconut</a></li>
-                      <li><a href="#">Fresh Juices & Milk Shakes</a></li>
-                      <li><a href="#">Fresh Salads & Sprouts</a></li>
-                      <li><a href="#">Recipe Packs</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+                <!-- <i class="fa-solid fa-circle-chevron-right"></i> -->
+                <i class="fa-solid fa-chevron-right"></i
+                ><i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <ul class="dropdown-menu rounded" style="width: 200px">
+                <li><a class="dropdown-item my-2" href="#">Kellogs</a></li>
+                <li><a class="dropdown-item my-2" href="#">Milk</a></li>
+                <li><a class="dropdown-item my-2" href="#">Chocolates</a></li>
+                <li>
+                  <a class="dropdown-item my-2" href="#">Fresh Chicken</a>
+                </li>
+                <li><a class="dropdown-item my-2" href="#">Eggs</a></li>
+                <li><a class="dropdown-item my-2" href="#">Honey</a></li>
+                <li>
+                  <a class="dropdown-item my-2" href="#">Cup Noodles</a>
+                </li>
+                <li><a class="dropdown-item my-2" href="#">Hair Care</a></li>
+                <li><a class="dropdown-item my-2" href="#">Drinks</a></li>
+              </ul>
             </div>
-  
-            <div class="d-flex flex-grow-1 justify-content-evenly fs-6">
-              <a href="#">Exotic Fruits & V...</a>
-              <a href="#">Tea</a>
-              <a href="#">Ghee</a>
-              <a href="#">Nandini</a>
-  
-              <div class="dropdown">
-                <button
-                  class="border-0 bg-white"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <!-- <i class="fa-solid fa-circle-chevron-right"></i> -->
-                  <i class="fa-solid fa-chevron-right"></i
-                  ><i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <ul class="dropdown-menu rounded" style="width: 200px">
-                  <li><a class="dropdown-item my-2" href="#">Kellogs</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Milk</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Chocolates</a></li>
-                  <li>
-                    <a class="dropdown-item my-2" href="#">Fresh Chicken</a>
-                  </li>
-                  <li><a class="dropdown-item my-2" href="#">Eggs</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Honey</a></li>
-                  <li>
-                    <a class="dropdown-item my-2" href="#">Cup Noodles</a>
-                  </li>
-                  <li><a class="dropdown-item my-2" href="#">Hair Care</a></li>
-                  <li><a class="dropdown-item my-2" href="#">Drinks</a></li>
-                </ul>
-              </div>
-            </div>
-  
+          </div>
+
+          <img
+            src="https://www.bigbasket.com/media/uploads/banner_images/Smart_basket-250124-1.png"
+            alt=""
+            class="me-4"
+          />
+
+          <img
+            src="https://www.bigbasket.com/media/uploads/banner_images/hp_cmc_m_offer_28_220921_all.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <!-- subhankar from carousel till footer -->
+      <div
+        id="carouselExampleAutoplaying"
+        class="carousel slide my-3"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner" style="border-radius: 10px">
+          <div class="carousel-item active">
             <img
-              src="https://www.bigbasket.com/media/uploads/banner_images/Smart_basket-250124-1.png"
-              alt=""
-              class="me-4"
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250923_400.jpg?tr=w-3840,q=80"
+              class="d-block w-100"
+              alt="..."
             />
-  
+          </div>
+          <div class="carousel-item">
             <img
-              src="https://www.bigbasket.com/media/uploads/banner_images/hp_cmc_m_offer_28_220921_all.png"
-              alt=""
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_health_suppliment_250923_400.jpg?tr=w-3840,q=80"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250923_400.jpg?tr=w-3840,q=80"
+              class="d-block w-100"
+              alt="..."
             />
           </div>
         </div>
-      </nav>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+          style="
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            margin-top: 15%;
+            border-radius: 50%;
+          "
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+          style="
+            background-color: black;
+            width: 40px;
+            height: 40px;
+            margin-top: 15%;
+            border-radius: 50%;
+          "
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <p class="stats"></p>
+      <!-- corousel ends here -->
+      <main>
+        <div id="main_container" class="">
+          <div id="filter_container" class="w-25">
+            <div id="filter_category">
+              <h4>Shop By Category</h4>
+              <div id="category-filter">
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Fruits & Vegetables"
+                  >Fruits & Vegetables</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Foodgrains, Oil & Masala"
+                  >Foodgrains, Oil & Masala</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Bakery , Cakes & Dairy"
+                  >Bakery , Cakes & Dairy</a
+                >
+                <a href="#" class="category-link" data-category="Beverages"
+                  >Beverages</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Snacks & Branded Foods"
+                  >Snacks & Branded Foods</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Beauty & Hygiene"
+                  >Beauty & Hygiene</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Cleaning & Household"
+                  >Cleaning & Household</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Kitchen, Garden & Pets"
+                  >Kitchen, Garden & Pets</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Launch Boxes & Bags"
+                  >Launch Boxes & Bags</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Eggs,Meat & Fish"
+                  >Eggs,Meat & Fish</a
+                >
+                <a
+                  href="#"
+                  class="category-link"
+                  data-category="Gourmet & World Food"
+                  >Gourmet & World Food</a
+                >
+                <a href="#" class="category-link" data-category="Baby Care"
+                  >Baby Care</a
+                >
+              </div>
+            </div>
+            <div id="filter_rating">
+              <h4>Shop By Rating</h4>
+              <div id="rating-filter" class="rating-options">
+                <label>
+                  <input type="checkbox" class="rating-checkbox" value="5" />
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="4" />
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="3" />
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-solid fa-star" style="color: green"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="2" />
+                  <i class="fa-solid fa-star" style="color: orange"></i>
+                  <i class="fa-solid fa-star" style="color: orange"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <label
+                  ><input type="checkbox" class="rating-checkbox" value="1" />
+                  <i class="fa-solid fa-star" style="color: red"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                  <i class="fa-regular fa-star"></i>
+                </label>
+                <!-- Add more checkboxes for other rating levels -->
+              </div>
+            </div>
 
-</body>
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            <div id="filter_price">
+              <h4>Shop By Price</h4>
+              <div id="price-filter" class="price-options">
+                <label
+                  ><input type="checkbox" class="price-checkbox" value="0,20" />
+                  Less than Rs 20</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="20,50"
+                  />
+                  Rs 20 to Rs 50</label
+                >
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="51,100"
+                  />
+                  Rs 51 to Rs 100</label
+                >
+
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="101,200"
+                  />
+                  Rs 101 to Rs 200</label
+                >
+
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="201,500"
+                  />
+                  Rs 201 to Rs 500</label
+                >
+
+                <label
+                  ><input
+                    type="checkbox"
+                    class="price-checkbox"
+                    value="500,1500"
+                  />
+                  More than 500</label
+                >
+                <!-- Add more checkboxes for other price ranges -->
+              </div>
+            </div>
+            <div id="filter_discount">
+              <h4>Shop By Discount</h4>
+              <div id="discount-filter" class="discount-options">
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="0,5"
+                  />
+                  Upto 5%</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="5,10"
+                  />
+                  5% - 10%</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="10,20"
+                  />
+                  10% - 20%</label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="discount"
+                    class="discount-radio"
+                    value="20,33"
+                  />
+                  More than 20%</label
+                >
+                <!-- Add more radio buttons for other discount ranges -->
+              </div>
+            </div>
+          </div>
+          <div id="card_products" class="w-75"></div>
+        </div>
+      </main>
+
+      <footer id="containerN">
+        <!-- nikita -->
+        <div id="MaindivN">
+          <div id="footdiv1N">
+            <h3>Bigbasket</h3>
+            <ul>
+              <li class="liN">
+                <a href="" class="aN">About us</a>
+              </li>
+
+              <li class="liN">
+                <a href="" class="aN">Become A bigbasket Rider</a>
+              </li>
+
+              <li class="liN">
+                <a href="" class="aN">In News</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Green bigbasket</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Privacy Policy</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Affiliate</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Terms and Conditions</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Careers At bigbasket</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">bb Instants</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">bb Daily</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">bb Blog</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">bbnow</a>
+              </li>
+            </ul>
+          </div>
+          <div id="secondDivN">
+            <h3>Help</h3>
+            <ul>
+              <li class="liN">
+                <a href="" class="aN">FAQs</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Contact Us</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">bb Wallet FAQs</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">bb Wallet T&Cs</a>
+              </li>
+              <li class="liN">
+                <a href="" class="aN">Vendor Connect</a>
+              </li>
+            </ul>
+          </div>
+          <div id="div3N">
+            <div>
+              <img
+                height="100"
+                id="ImgN"
+                src="https://tse2.mm.bing.net/th?id=OIP.8gAqO2EhKGHYvqCW6ucsmAHaEW&pid=Api&P=0&h=180"
+              />
+            </div>
+            <div>
+              <img src="./images/googlePlay.png" alt="" />
+              <img src="./images/appStore.png" alt="" />
+            </div>
+            <div class="iconN">
+              <div>
+                <i class="fab fa-facebook"></i>
+              </div>
+              <div>
+                <i class="fab fa-instagram"></i>
+              </div>
+              <div>
+                <i class="fab fa-twitter"></i>
+              </div>
+              <div>
+                <i class="fab fa-pinterest"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="MiddleN"><hr id="hrN" /></div>
+        <h3 id="h3N">Cities We Serve</h3>
+        <div id="divSpanN">
+          <span class="SpanN">
+            Cuddapah | Kadiri | Arsikere | Karur | Gurdaspur | Pratapgarh
+            District | Guntakal | Muzaffarnagar District | Meerut District |
+            Ludhiana District | Hooghly District | Gonda District | Fatehgarh
+            Sahib District | Baghpat District | Amroha District | Mahabubnagar |
+            Korba | Sringeri | Kanakapura | Khurai | Raisen | Gondia | Rahatgarh
+            | Bhiwadi | Goa | Bahadurgarh | Raichur | Sindudurg | Sangareddy |
+            Kurnool | Jadcherla | North Dinajpur | Jawad | Mahe | Hubli |
+            Prakasam | Nalgonda | Karnal | Panipat | Rohtak | Renigunta |
+            Patiala | Trichy | Keshoraipatan | Keylong | Khadda | Khajuraho |
+            Khalilabad | Khandela | Khanna | Khanpur | Khategaon | Khatima |
+            Tirap | Prakasam District | Haridwar | Vinukonda | Kotagiri |
+            Muthukulathur | Pathapatnam | Haripal | Kodumudi | Ichchapuram |
+            Chintapalli | Narsipatnam | Narasannapeta | Kurupam | Palasa |
+            Chodavaram | Belthangady | West Siang | Pennadam | Addateegala |
+            Chirala | Yerragonda Palem | Kukanoor | Kushalnagar | Holenarasipur
+            | Madakasira | Kavali | Eedu | Bagalkot | Mahalingpur | Humnabad |
+            Yaragatti | Munger | Chilakaluripet | Bhimavaram | Narayanpet |
+            Jannaram | Rayaparthi | Mogullapally | Bhinga | Bhinmal | Mahadevpur
+            | Rudrangi | Bhawani Mandi | Bhilwara | Bhimtal | Bhind | Bhadohi |
+            Bhanpura | Bhatewar | Bhathat | Rewari | Chhoti Sadri | Katangi |
+            Aluva | Kayamkulam | Ezhupunna | Charkhi Dadri | Attingal |
+            Chhatarpur | Chamoli | Chandauli | Chandausi | Chanderi | Vaishali |
+            Tuensang | Choutuppal | Ladakh | Mananthavadi | Thodupuzha |
+            Kattappana | Vadakara | Kuthuparamba | Sonipat | Thamarassery |
+            Mundakayam | Rishikesh | Robertsganj | Aunrihar | Atarra | Azamgarh
+            | Auraiya | Babrala | Baberu | Badlapur | Baddi | Bageshwar |
+            Badnaur | Poonchh | Pratapgarh-RJ | Pilkhuwa | Pindwara | Piparcity
+            | Pithoragarh | Pokhran | Polay Kalan | Pooh | Poonch | Shamli |
+            Yemmiganur | Siyana | Tawang | Bagru | Mirzapur | East Kameng |
+            Mohali | Mohammadabad | Meham | Menhdawal | Merta | Milak |
+            Mohammadi | Morena | Mominpet | Rampur Naikin | Rampura Phul |
+            Memari | Bolpur | Ramganj Mandi | Bangaon | Habra | Tamluk |
+            Basirhat | Barakar | Chittaranjan | Gohana | Amritsar | Paota |
+            Paonta Sahib | Gummudipoondi | Pathankot | Parasia | Danthalapally |
+            Saundatti | Baraut | Rewa | Allagadda | Pauri | Patti-UP | Kittur |
+            Motebeennura | Haveri | Kalghatgi | Hangal | Harihara | Gadag |
+            Haliyal | Akola | Katol | Kendujhar | Godhra | Kawardha | Karimganj
+            | Karbi Anglong | Hathras | Yadgir | Khergam | Masrakh | Bakhtiarpur
+            | Hassan | Nagapattinam | Baripada | Soro | Shadnagar | Bhongir |
+            Kazipet | Tanakpur | Pamuru | Vyara | CHHENDIPADA | CHHAPRA | Chatra
+            | Madhugiri | Howrah | Hooghly | HINJILICUT | CHIKITI | Hosanagar |
+            Malavalli | IMAMGANJ | ILIPUR | Koratagere | Magadi | Madikeri |
+            Dabaspete | South Tripura | SULTANGANJ | South Garo Hills | South
+            Sikkim | SURAJGARHA | Surguja | Sundergarh | Shikohabad |
+            SWARUPNAGAR | Thoubal | Shivpuri | Shorapur | Afzalpur | Chincholi |
+            Dimapur | Jamkhandi | Sullia | Assaigoli | Virajpet | Pandua |
+            Koppal | Jamuria | Khairabad | Byndoor | Manvi | Amalapuram |
+            Addanki | Yavatmal | Wardha | Sihora | Panchkula | Naharlagun |
+            Ranebennur | Shiggaon | Savadatti | Sullurupeta | Makrana | Kuchaman
+            City | Zahirabad | Warora | Cochin | Arakkonam | Puducherry |
+            RUNNISAIDPUR | Rohtas | Nellore | Ambala | Agra | Madurai | Sircilla
+            District | South 24 Parganas District | Sultanpur District |
+            Pipariya | Faridabad | Raipur | Cherial | Saharsa | Malur | Hardoi |
+            Darbhanga | Gaya | Motihari | Angul | Chhindwara | Ganjam | Bassi |
+            Hindaun | Lalsot | Karauli | Dausa | Himachal Pradesh | Gangapur
+            City | Seoni | Poinachi | Chandrapur | KAMAKHYANAGAR | Surat |
+            Bagula | Sathupally | Ramgarh | Chirgaon | Pendra | Chintpurni |
+            Daryapur Banosa | Chittaurgarh | Amaravathi | Gwalior | Chitrakoot |
+            Allahabad | Bareilly | Jodhpur | Katihar | Palwal | Chomu | Wyra |
+            Cholapur | Pawai | Chunnar | Haripad | Ottapidaram | Sriperumbudur |
+            Thuckalay | Mayiladuthurai | Kesali | Kerakat | Gudalur | Moodabidri
+            | Katni | Kathua | Kelwara | Kadaba | Hoovina Hadagali | Karsog |
+            Kanjarakatte | Bijapur | S Kota | Gajapatinagaram | Thanesar | Araku
+            | Vidyanagar | Koyyuru | Seetharampram | Bheemunipatnam | Garividi |
+            Palakonda | Bobbili | Vadodara | Amarapuram | Kaikaluru | Martur |
+            Gokak | Bapatla | Atmakur-AP | Chimakurthy | Jangareddygudem |
+            Tungaturthi | Belur | Nuzvid | Athani | Turuvukere | Basavana
+            Bagewadi | Manipal | Mudarangady | Ramagundam | Nereducharla |
+            Asifabad | Mulugu | Bhupalpally | Koratla | Kusumanchi | Sikandrabad
+            | Sikriganj | Silwani | Tiryani | Dharmapuri-TS | Dabra |
+            Colonejganj | Punjab | Iddukki | Kannapuram | Narikkuni | Adoor |
+            Kuttiady | Adimali | Kallikkad | Neyyattinkara | Chopan | Shahabad
+            Markanda | Velgodu | Bhagpat | Srinagar | Shimla | Vijayawada-Guntur
+            | Lakhisarai | Thiruttani | Berachampa | Ramnagar | Andaman and
+            Nicobar | Ramannapeta | Padmajiwadi | Huzur Nagar | Madgulapally |
+            Patancheru | Dhanbad | Ashok Nagar | Choppadandi | Anuppur | Aonla |
+            Anantnag | Anpara | Anandnagar | Anandpur Sahib | Boath Buzurg |
+            Kosgi | Rudauli | RS Pura | Parvathipuram | Purba Bardhaman |
+            Vaniyambadi | Salcete | Paderu | Vilathikulam | Salempur | Sivakasi
+            | Weir | Zira | Karimnagar | Saidabad | Pudukkottai | Madhoganj |
+            Machhiwara | Mahendragarh-HR | Madwas | Mahoba | Maheshwar |
+            Mahrauni | Maholi | Maihar | Mahwa | Marthandam | Kovilpatti | Saran
+            | Pushpavanam | Mathura | Maharajapuram | Sundla | Hiranagar | West
+            Khasi Hills | Jhunku | Rampur | Sri City | Aurangabad | Halflong |
+            Kheri | Rath | Ras | Patti | Jehanabad | Dhamnod | Medinipur |
+            Modasa | Gopalganj | Nainital | Koraput | Shilong | Koruprolu |
+            KODALA | Koderma | Faridkot | Asind | Khorda | Howrah | Badnagar |
+            Deesa | Upper Siang | Warangal | Hanamkonda | ULUBERIA | Kannauj |
+            Farrukhabad | Bidhuna | Chhibramau | Khandwa | Khargone | Lakhimpur
+            | Bangarmau | Ramanagara | Ballia | Rawatsar | Guntur-Rural |
+            BONGAON | Boudh | BRAHMAPUR | BRAJRAJNAGAR | Cachar | Champhai |
+            CHANDANKIYARI | CHANDBALI | CHANDIKHOL | Amla | Ongole |
+            Rampachodavaram | Vellore | Thiruvananthapuram | Ujjain | Sikar |
+            Nadia | Bardoli | Bokaro | BACHHRAWAN | Chittor District |
+            Machilipatnam | North 24 Parganas | Godda | Sasaram | Hasanpur |
+            Wani | Ghughus | Shrimadhopur | Chameli | Amritsar | Mancherial |
+            Jagtial | Kumta | Gopalganj | GOPALAPUR | Goalpara | Giridh |
+            Hailakandi | Gumla | GUMIA | GOPALNAGAR | HANSKHALI | HAJIPUR |
+            Rajsamand | Sirohi | NIMAPARA | Singrauli | Seraikela-kharsawan |
+            Serchhip | Mysore | SHEOHAR | Pune | Hyderabad | Kolkata | Chennai |
+            Metpally | Mumbai | Nashik | SHEONAR | Sibsagar | Kodad | Warud |
+            Chandur Bazar | Dhar | Bina | Kalluru | Sitarganj | Kalmeshwar |
+            Morshi | Puttur | Vapi | Bhandara | Ganj Basoda | PEDDAPALLI |
+            Dhenkanal | Srikalahasti | Nagari | Nalanda | North Sikkim |
+            Pattukkottai | DIBRUGARH | Narmetta | Yellareddy | Tirupattur |
+            Kokrajhar | SONBARSA | Cuddalore | Achampet | Bhopal | Jaipur |
+            Ahmedabad-Gandhinagar | Noida-Ghaziabad | Meerut | Vizianagaram |
+            Medak District | East Godavari District | Nizamabad District |
+            Kamareddy District | Lucknow Rural | Noida Rural | Chennai Rural |
+            Vizag Rural | Hyderabad Rural | Kochi | Muzaffarpur | Chhutmalpur |
+            Sholinghur | Palacode | Kaptanganj | Namakkal | Byadagi | Aland |
+            Tenkasi | Thisayanvilai | Jukhala | Junnardeo | Jhalawar | Jubbal |
+            Kangra | Kapasan | KalolHP | Kangan | Chandpur | Tumakuru | Pangodu
+            | Suryapet District | Chaumahla | Edappal | Cherpulassery |
+            chungatra | Koduru | Pileru | Kambadur | Puttaparthi | Puttur-AP |
+            Koothattukulam | Nandikotkur | Gooty | Venkatagirikota | Rayachoti |
+            Manjeshwar | Degana | DeogarhRJ | Dasuya | Dataganj | Damoh |
+            Dariyabad | Dadri | Dalhousie | Kiphire | Deoli-RJ | Deoria |
+            Shoranur | Rajampet | Atmakur | Alur | Srisailam | Doranala |
+            Joginder Nagar | Jiyanpur | North Paravur | Jhansi | Nedumkandam |
+            Malappuram | Jhadol | Jhabua | Kollam | Jaunpur | Kishanganj | East
+            Garo Hills | ARWAL | Varanasi | Yerravaram | Pulivendula | Tezpur |
+            Umreth | Kheragarh | Gudur-TS | Jainoor | Barhalganj | Barhaj |
+            Husnabad | Dahegaon | Pregnapur | Kollapur | Bansi | Bangana |
+            Bandikui | Banda | Bareli | Armoor | Baran | Banswara | Semariya |
+            Raipur-RJ | Kumily | Venkatgiri | West Champaran | Vallioor |
+            Naidupeta | Soraba | Firozabad | Fatehnagar | Fatehpur-RJ |
+            Thalassery | Lohit | Patran | Sahaswan | Sagwara | Sabalgarh |
+            Rudrapur | Rudraprayag | Nawanshahr | Manasa | Manawar | Malout |
+            Malsisar | Malhera | Malihabad | Maksudangarh | Malanjkhand |
+            Mainpuri | Majhgawa | Sindhanur | Thiruvadanai | WAZIRGANJ | Arambag
+            | Azhagappapuram | Rourkela | Dhandhuka | Hayathnagar | Bareja |
+            Pardi | Nayagarh | Ladwa | Garkha | Hagaribommanahalli | KUCHAIKOTE
+            | Koriya | Lakhimpur | KUCHINDA | Angul | Latehar | Bantwal | Guntur
+            | Sanawad | Sitamarhi | Muzaffarpur | Kekri | Gulbaraga | Sambalpur
+            | Jharsuguda | Mandsaur | Dumraon | Jamui | Tripura | Samastipur |
+            Lower Subansiri | Darjiling | Utnoor | Vidisha | Bishnupur | BHUBAN
+            | Aizawl | Birbhum | Bilaspur(CGH) | BHANJANAGAR | BENIPUR | Bhojpur
+            | BHARWARA | Lower Dibang Valley | GOLAGHAT | BONGAIGAON | SILCHAR |
+            JORHAT | DULIAJAN | NAZIRA | SIVASAGAR | Rajnandgaon | MANGALDOI |
+            BAIHATA | Navsari | Hoshangabad | Patan | Siddhpur | Unjha | Kalol |
+            Kadi | Himatnagar | Mehsana | Siliguri | PLASSEY | Puri | Garhwa |
+            Gariaband | GARJANPUR | Gaya | Gajapati | PIPILI | DHOLI |
+            Jagatsinghapur | Debagarh | PIRO | Vissannapetaa | Uravakonda |
+            Malmaliya | KHODAGANJ | Rameswaram | Thalavadi | HELENCHA |
+            Hazaribag | HINGALGANJ | HILSA | Papum Pare | PETERBAR | PAVAPURI |
+            PHUSRO | Phek | Arani | Balaghat | Pandhurna | Sausar | KHIZASARAI |
+            BHORE | Asansol | Bihar Sharif | Ankleshwar | Palitana | Sagar |
+            Bharuch | Madhubani | Bettiah | Ramdurg | BOKAKHAT | SALIPUR |
+            Tadipatri | Nagpur | Hosur | Eluru | Ghaziabad | Muzzafarpur | Delhi
+            | Gurgaon | Bangalore | Chikkaballapura District | Srikakulam
+            Disctrict | Vizianagaram Disctrict | Yanam District | Modinagar
+            District | Coimbatore | Gautam Buddha Nagar District | Anantapur
+            District | SARAIYA | Nagercoil | Perambalur | Karaikal | Perunali |
+            Coonoor | Eral | Sankarapuram | Sattur | Karwar | Gurmatkal |
+            Lingasugur | Indi | Sheikhpura | Kolhar | Surathkal | Kunigal |
+            Gangapur-RJ | Saran | KENDRAPARA | Ikauna | Kozhenchery |
+            Venjaramoodu | Vuyyuru | Kathipudi | Rajahmundry | Kandukur |
+            Samarlakota | Bonakal | Tenali | Kondapi | Bikkavolu | Piduguralla |
+            Dhampur | Kodungallur | Deotalab | Kannur | Kasaragod | Munnar |
+            Dharamkot | Dhanghata | Dholpur | ChakiaUP | Kuthumkal | Perumbavoor
+            | UNNAO | Chinnur | SHRAVASTI | BAHRAICH | Jalore | Jatara |
+            Jayankondam | Kumbakonam | Jalalpur | Jalalpur-UP | Jalaun | Jalesar
+            | Jaisinghnagar | Jaitwara | Jakh | Jalalabad | Tadoor |
+            Yellareddipet | Bonli | Bhainsa | Banswada | Rajpipla | BIRPARA |
+            Pilani | Phulera | Pichhore | Phalsund | Phephna | Petlawad |
+            Phalodi | Pilibanga | Pilibhit | Mahabubabad | Balotra | Nakerakal |
+            Narsapur-TS | Narsampet | Aswaraopeta | Thirumalagiri | Bodhan |
+            Jogipet | Karim Nagar | Baijnath-UK | Bajag | Bajore | Bakewar |
+            Balaran | Balesar | Lal Gopalganj | Laksar | Lambhua | Lalitpur |
+            Laxmangarh | Lavkush Nagar | Linga | Laxmangarh-RJ | Lunkaransar |
+            Lohaghat | Sankaramangalam | Udham-Singh-Nagar | Shambhu | Ukhra |
+            Kozhikode | Valanchery | Fatehabad | Sitapur | Faridpur | Renwal |
+            Reodar | Nizamabad-UP | Nimbahera | Reckong Peo | Reengus | Rehli |
+            Renukoot | Neem ka Thana | Nawalgarh | Nawabganj-UP | Nawabganj |
+            Nighasan | Nichlaul | Nepanagar | Neemuch | Paschim Bardhaman |
+            Rupnagar | SHILLONG | Amreli | DINARA | Barabanki District | Kolasib
+            | Miyanganj | KHUNTI | Perambra | Talbahat | Tahliwal | Suratgarh |
+            Surajpur jhikla | Hatta | Sundar Nagar | Sunam | Herbertpur | Tarana
+            | Tanda | Ranikhet | Chandigarh Tricity | Nagarkurnool | Gadwal |
+            Jahangirabad | Anupshahar | Gudur | Khatauli | Baleswar | Balangir |
+            BAGNAN | BADAMBA | BADAGADA | BABUJANG | Aurangabad(BH) | AUL |
+            ASTARANGA | ASIKA | Vandavasi | Rudhauli | BEHRAMPUR | BENIPATTI |
+            Thiruvarur | Banka | Bankura | BALLIGUDA | BAMRA | BASIRHAT | Bastar
+            | Bardhaman | Bargarh | NAZIRPUR | GOGAMUKH | BARPETA | Nagaon |
+            DOOMDOOMA | TINSUKIA | Nuapada | NULL | DIGBOI | North Tripura |
+            Kamrup | NORTH LAKHIMPUR | North 24 Parganas | North Cachar Hills |
+            Dholka | Kheda | Thanjavur | Udaipura | Gadarwara | Jaora | Nagda |
+            Ratlam | Nadiad | Palanpur | Naina Devi | UTTAR PRADESH_3PL |
+            UTTARAKHAND_3PL | Shimoga | Jagaluru | Siruguppa | Nahan | Penugonda
+            | Hospet | RUNNISAIDPUR | Aklera | Kotturu | Almora | Najibabad |
+            kolar | RAJASTHAN_3PL | Sambalpur | Darrang | Jabalpur | Wanaparthy
+            | Dantewada | Balasore | Kendrapara | BHAGALPUR | RANGPO | Raigarh |
+            RAIRAKHOL | Puruliya | RAGHUNATHPUR-BR | Bhadrak District |
+            Konaseema District | Deoghar | DASPALLA | Theni | Tekkali | Vaidpura
+            | Munuvalli | Ponnamaravathi | Tiruvalla | Pennagaram | Udayagiri |
+            Rasipuram | Rajesultanpur | Narasaraopet | Sivaganga | Raisinghnagar
+            | Harur | Tanuku | Puthukkad | Ludhiana | Jalandhar | Indore |
+            Basavakalyan | Mhow | Pithampur | Ludhiana | Hapur | Bulandshahr |
+            East-Godavari-2 | Chittoor District | Tiruvallur District | Bidar
+            District | Sangareddy District | Ayodhya District | Pench | Raikot |
+            Saoner | Tirwanganj | Ranipet | Velur | Razole | Kovvur |
+            Ramanathapuram | Narsapur | Markapur | Avinashi | Podili | Karaikudi
+            | Gudivada | Aruppukkottai | Robertsonpet | Dwaraka Tirumala | Adoni
+            | Kotturu-AP | Macherla | Tadepalligudem | Chintalpudi | Salur |
+            Mandapeta | Pedapadu | Gannavaram | Koyilandy | Dibai | Ayoor |
+            Kottarakkara | Guruvayoor | Dinanagar | Doiwala | Karimba | Dostpur
+            | Dudhinagar | Karukachal | Areacode | Berhampur | Jahu | Roorkee |
+            Tinsukia | Achrol | Adampur | Abohar | Abu Road | Hisar | Malerkotla
+            | Ajeetgarh | Ajnala | Itawa | Itava | Jagdishpur-UP | Itia Thok |
+            Ramanathapura | Tandur-TL | Ankola | Bhalki | Sakleshpur | Badami |
+            Huliyar | Bhatkal | Dandeli | Channarayapatna | Cheyyar |
+            Rajapalayam | Gudiyattam | Sankari | Salem | Sankarankovil |
+            Khanapur | Paramakudi | Berasia | Beohari | Betul | Berinag | Bayana
+            | Bathinda | Begumganj | Begowal | Shajapur | Bhaderwah | Bhadaur |
+            Pandikkad | Perinthalmanna | Alappuzha | Balussery | Pulpally |
+            Kilimanoor | Manuguru | Babasagar | Bellampalli | Nirmal | Adilabad
+            | Devarakonda | Bhuvanagiri | Bejjanki | Alair | Khanapur-TS |
+            Thrissur | Tuni | Lakheri | Lakhnadon | Kushinagar | Bhadrachalam |
+            Kukshi | Kumarganj | Kotma | Kotputli | Kotdwara | Kalpetta | Tadvai
+            | Khambhat | Ratanpura | ShahpuraMP | Panna | Pansemal | Shahabad-UP
+            | Sewarhi | Shahganj | Shahdol | Shahpura | Shahgarh | Nohar | Nokha
+            | Orai | Pachore | PadampurRJ | Padrauna | Paithani | Pali
+            Birsinghpur | Palladam | Dhuri | Srirangapatna | Parappa | Palani |
+            Tikamgarh | Didihat | Srinagar-UK | Srivijaynagar | Sujangarh |
+            Didwana | Sojat | Someshwar | Soraon | Sri Hargobindpur | Dildar
+            Nagar | Chotila | Sultanpur Lodhi | Sumerpur | Sheopur | Parippally
+            | Amiliya | Changanacherry | Pehowa | Domariyaganj | KHALARI-JR |
+            Khagaria | Lunawada | Mansa | Begusarai | Bihta | ARRAH |
+            Narketpalle | Buxar | Multai | Alleppey | Naini | Lawngtlai | Araria
+            | Lunglei | Bhangar | Butibori | Longleng | Pilakhua District |
+            Kasganj | Tarakeswar | Kanker | Jaisalmer | Mecheda | Shri
+            Dungargarh | Visnagar | Itarsi | Khordha | Dewas | Mulbagal |
+            Kurukshetra | Madanapalle | Polur | Patna | Yamuna Nagar | Kaithal |
+            Ranihati | Mangalore | Mandideep | Madanpur | JHANJHARPUR |
+            Jehanabad | KADOBAHAL | Jharsuguda | Kalahandi | Kaimur (Bhabua) |
+            Manali | KALYANI | Kandhamal | Bulandshahr District | Hanskhali |
+            Guskhara | Thakurnagar | Kangeyam | Erode | Vellakovil | Hoshiarpur
+            | Taherpur | Ugar | Hanur | Molakalmuru | Nagamangala | Harpanahalli
+            | Channagiri | Shanivarasanthe | Shiralakoppa | Krishnarajngr |
+            Chaklasi | Kudligi | Sandur | West Sikkim | Rajgarh-MP | Rajgarh |
+            Dhone | COOCHBEHAR | DINHATA | MALDA | Mandya | AGARTALA |
+            JALPAIGURI | RAJGANJ | Parwanoo | Jajpur | Botad | Ashta |
+            ALIPURDUAR | JAIGAON | Kota | Upper Subansiri | Mussoorie | Amanganj
+            | Sidhi | Rajgarh-HP | Alwar | NAKASHIPARA | Nadia | Nalbari | Alote
+            | NARAYANPUR | NARASINGHPUR | Nayagarh | Nawada | Alirajpur |
+            Nabarangapur | Aliganj | Muddebihal | Mungra Badshahpur | Yelburga |
+            Mungaoli | Gurugram Rural | Indore Rural | Guwahati Rural | Bhopal
+            Rural | Coimbatore Rural | Bhubaneswar Rural | Kolkata Rural | Kochi
+            Rural | Bavla | Sonepur | Mokama | Nawada | Moga | Nakodar | Kanpur
+            | Nabha | Anand | Pavagada | Kamptee | Kapadvanj | Tindivanam |
+            Changlang | Virudhachalam | Sendhwa | Chinnasalem | Virudhunagar |
+            Perundurai | Kothapalli | Repalle | Tiruchengode | Draksharamam |
+            Oddanchatram | Denkanikottai | Avanigadda | Kapurthala | Nallajerla
+            | CumbumAP | Haryana | Tribeni | Gundlupet | Nipani | Ramgarh-RJ |
+            Sawai Madhopur | Kauriram | Sindagi | Sehore | Sathyamangalam |
+            Talikoti | Raipura | Harda | Haripurdhar | Hansi | Hanumangarh |
+            Hamirpur | Hamirpur-UP | Haidargarh | Haldwani | Etawah | Etah |
+            Falna | Faizabad | Dullahpur | Dulchehra | Dwarahat | Dungarpur |
+            Salumbar | Cumbum | Anthiyour | Thiruthuraipoondi | Chetpet |
+            Sirkazhi | Sanchore | Manamelkudi | Tuticorin | Ooty |
+            Tiruvannamalai | Supaul | Sedam | Piriyapatna | Navalgund | Mettala
+            | Ullal | Aurad | Shahapur | Hirekerur | Mundgod | Mettupalayam |
+            Honnavar | Mettur | Melur | Kadpadi | Attur | Uthangarai | Bariya |
+            Barmer | Barhi | Bari Sadri | Barwani | BassiRJ | Barnala | Barodia
+            | Basti | Batala | Nedumangad | Chengannur | Chavassery | Edavanna |
+            Kuttikol | Nenmara | Tirur | Muvattupuzha | Manopad | Pedabayalu |
+            Jhajjar | Yellamanchili | Nileshwar | Manthani | Kashipur |
+            Huzurabad | West Tripura | Krishna District | Usilampatti | Yellare
+            | Agali | West-Godavari | Pathanamthitta | Amarpatan | Muskara |
+            Nadoti | Nadaun | Muktsar | Mughal Sarai | Akbarpur-UP | Akbarpur |
+            Nagina | Nagaur | Ambuj Nagar | Amarwara | Ghator | Ghati Billan |
+            Ghatampur | Gharsana | Ghansali | Garoth | Garhshanker |
+            Ganjdundwara | Sarni | Satna | Sarada | Sardarshahr | Sangaria |
+            Sangrur | Ghosi | Ghazipur | Chingavanam | Songadh | Sultan Bathery
+            | Chintoor | Shujalpur | Shaheed Bhagat Singh Nagar | Tundla | Tonk
+            | Udhampur | Udaipurwati | Dhaurahara | Umaria | Vijayraghavgarh |
+            Uttarkashi | Waraseoni | Viratnagar | Lahar | Una-HP | Zunhebotto |
+            Madhepura | Chintamani | Ambur | Channapatna | Maddur | Nabadwip |
+            Katwa | Kharagpur | Mammit | Kothagudem | Malkangiri | MALMALIYA |
+            MAIRWA | MAKHDUMPUR | MAHARAJGANJ-BH | Mahasamund | Deosar | Parkal
+            | Dhariyawad | Kotkapura | Dharchula | Pazhayannur | Sirathu |
+            Thachanattukara | Vitla | Vikarabad | Churu | Kanthi | Dahegam |
+            Cuttack | Jangaon | Dindigul | Sihor | Dudu | Jagatsinghpur |
+            Udumalaipettai | Pollachi | Vijapur | Dharapuram | Canning | Tiptur
+            | Mehmedabad | Fatehpur | Krishnarajpet | Fatehgarh | Janjgir-champa
+            | Jashpur | Jamtara | Gobichettipalayam | Jaintia Hills | Jajapur |
+            Chinhat | JAGDISHPUR | Imphal West | JAGANNATHPRASAD | Davangere |
+            Visakhapatnam | Simalwara | Peralam | Tiruppur | Bilimora | Kurugodu
+            | Sira | Bethamangala | Nanjangud | Sagara | Kollegala | Shikaripur
+            | Gangavathi | Hiriyur | Hosadurga | Ariyalur | Madanapalli |
+            Tirupati | Miryalaguda | Kalwakurthy | Rayadurgam | Hajipur | Kadapa
+            | Ranchha | Sirvella | Hasnabad | Bhadrak | Pakur | PAKRIBARWAN |
+            East Midnapore | East Khasi Hills | East Sikkim | East Siang | EKMA
+            | East Singhbhum | Ganjam | GALLERI | West Midnapore | Bangalore
+            Rural | West Singhbhum | Galiveedu | Ratangarh-MP | Palamau | Siwani
+            | Gursahaiganj | BIJNOR | BALRAMPUR | Pakala | Rona | Chagalamarri |
+            Kalyandurg | Ratia | Puri | West Kameng | Nagpur Rural | Patna Rural
+            | Mumbai Rural | Mysore Rural | Vadodara Rural | Jaipur Rural | Pune
+            Rural | Surat Rural | Aligarh District | Amethi District | Sirsa |
+            Kishangarh | Nasirabad | Jammu Kashmir | Krishnagiri | Ramtek |
+            Moradabad | Shahjahanpur | Ajmer | Kottayam | Rajamahendravaram |
+            Kakinada | Kundli | Sahibganj | Gudiyatham | DehraDun | Ri Bhoi |
+            Rayagada | Aligarh | Bhogapuram | Bagepalli | Madhubani | Bhimadole
+            | Palakollu | Pamarru | Gokavaram | Kanigiri | Annur | Sompeta |
+            Singarayakonda | Karera-MP | Raniwara | Kodaikanal | Sambhal
+            District | Thuraiyur | Amravati | Jamshedpur | Kolhapur | Kalaburagi
+            | Guwahati | Bhubaneshwar-Cuttack | Gorantla | Raebareli District |
+            Khammam | Saharanpur District | Mudigere | Ratangarh | Saiha |
+            MARHOWARAH | Sohagi | Chitradurga | Siddipet District | Joshimath |
+            Bellary | Khimsar | Kherwara | Ganga Nagar | Khatu Khurd | Kishni |
+            Kinnaur | Khutar | Khinwara | Fazilka | Gulbarga | Konch | Kolayat |
+            Gairsain | Gajraula | Firozpur | Gahmar | Rasulabad | Bhavnagar |
+            Tiruchendur | Kerur | Sleemnabad | Ambasamudram | Kallakurichi |
+            Tirunelveli | Chikkanayakanahalli | Tiruchi | Kanchipuram |
+            Viluppuram | Vadipatti | Dera Bassi | Visakhapatnam District |
+            Phagwara | Jagraon | Narsinghpur | Kowthal | Devadurga | Kalasa |
+            Jewargi | Badvel | Kuppam | B Kothakota | Nandyal | Kudair |
+            Betamcherla | Srinivaspur | Pihani | Billawar | Bilaspur-UP |
+            Bilaspur-HR | Bilaspur-HP | Bilara | Bikaner | Bijpur | Bijainagar |
+            Bichhiya | Bhiwani | Atmakur-TS | Narayankhed | Chalakudy |
+            Kanjiramattom | Alakode | Arimbur | Chaksu | Akaloor | Burhanpur |
+            Bundi | Buhana | Budaun | Brijmanganj | Luxettipet | Bisalpur |
+            Binaganj | Pakyong | Amangal | Mothkur | Jammikunta | Yellandu |
+            CHERLA | Ichoda | Makthal | Navipet | Veenavanka | Sirikonda |
+            Rajkot | RAJGIR | Zirakpur | Anjumoorthy | Mallapur | MADHYA
+            PRADESH_3PL | Nainwa | Nagod | JAMMU & KASHMIR_3PL | Narnaul |
+            Narsinghgarh | PUNJAB_3PL | Nanpara | Naugarh | Nautanwa |
+            HARYANA_3PL | HIMACHAL PRADESH_3PL | Gopiganj | Gorakhpur | Gotan |
+            Gumkhal | Ghugri | Ghumarwin | Giddarbaha | Gogunda | Irinjalakuda |
+            Puranpur | Pukhrayan | Prithvipur | Guna | Chikkamagalur | Raipur
+            Karchulion | Raila | Lucknow | Durg | Rawatbhata | Thirthahalli |
+            Bahal | Tijara | Baheri | Theog | Thikri | Tendukheda | Tharali |
+            Tarsikka | Tehri | Taranagar | Tarn Taran Sahib | Mathania | Marwar
+            Junction | Mariahu | Mandphiya | Mandla | Mandi Dabwali | Mandalgarh
+            | Manda | Mauranipur | Mau | Sirsi | Panja | Mudigubba | Vijayapura
+            | Sidlaghatta | Hindupur | Kalna | Gauribidanur | Doddaballapura |
+            Jewar | Muradnagar | Kaghaznagar | Santipur | Palamaner | JAGDISHPUR
+            | Sultana | West Garo Hills | Borsad | Petlad | Valsad | Daman |
+            Silvassa | Bhojpur | Siwan | Ranchi | Jhunjhunu | West Godavari
+            District | Kundapura | Haldia | Chiramanangad | Bangarpet | Byadgi |
+            Dharampur | Bhadradri Kothagudem District | Channarayapattana |
+            Ghanpur | Athagad | Krishnarajanagara | Sidhauli | Malpura | Dharwad
+            | Barh | Bailhongal | ALNAVAR | Belgaum | Bankapura | Lohardaga |
+            Yellapur | KONARK | MINAKHAN | Mayurbhanj | MOHAMMADPUR | MIRGANJ |
+            Mokokchung | MOHANA | Murshidabad | Munger | Siddapur | Challakere |
+            Kadur | Chamarajanagar | Hunsur | Honnali | MASAURHI | Marigaon |
+            Sonapur | Siwan | Sonitpur | Beawar | SINGHIA | Simdega | Sitamarhi
+            | SIRDALA | Mudhol | South Dinajpur | South 24 Parganas | Kushtagi |
+            Ilkal | Karkala | Gonikoppal | Chittapur | Raibag | Chikodi | East
+            Champaran | DIGAPAHANDI | Dumka | Dhemaji | Dhubri | Dhalai |
+            Dhamtari | DHAKA | DHAKUAKHANA | Vempalli | Proddatur | Ranni |
+            Palakkad | Udgir | Kalinga Nagar | Tirora | Punganur
+          </span>
+        </div>
+        <hr id="hrN" />
+        <div id="lastDivN">
+          <div id="undivN1">
+            <h3>Popular Categories</h3>
+            <ul class="ulN">
+              <a href="" class="aN">Sunflower Oils</a>
+              <a href="" class="aN"> Wheat Atta</a>
+              <a href="" class="aN">Ghee</a>
+              <a href="" class="aN">Milk</a>
+              <a href="" class="aN"> Flakes</a>
+              <a href="" class="aN">Organic F&V</a>
+              <a href="" class="aN"> Namkeen</a>
+              <a href="" class="aN"> Eggs</a>
+              <a href="" class="aN">Floor Cleaners</a>
+              <a href="" class="aN"> Other Juices</a>
+              <a href="" class="aN"> Leafy Vegetables</a>
+              <a href="" class="aN">Frozen Veg Food</a>
+              <a href="" class="aN"> Diapers & Wipes</a>
+            </ul>
+          </div>
+          <div id="undivN2">
+            <h3>Popular Brands</h3>
+            <ul class="ulN ulN2">
+              <a href="" class="aN aN2">Amul</a>
+              <a href="" class="aN aN2"> Nescafe</a>
+              <a href="" class="aN aN2">MTR</a>
+              <a href="" class="aN aN2">RED BULL</a>
+              <a href="" class="aN aN2"> elite cake</a>
+              <a href="" class="aN aN2">Pediasure</a>
+              <a href="" class="aN aN2"> Yummiez</a>
+              <a href="" class="aN aN2"> Yera</a>
+              <a href="" class="aN aN2"> Yakult</a>
+              <a href="" class="aN aN2"> Britannia</a>
+              <a href="" class="aN aN2"> Wow!</a>
+              <a href="" class="aN aN2"> Momo </a>
+              <a href="" class="aN aN2"> Fortune</a>
+              <a href="" class="aN aN2"> Haldiram's </a>
+              <a href="" class="aN aN2"> Ferrero </a>
+              <a href="" class="aN aN2"> Ferrero </a>
+              <a href="" class="aN aN2"> Ferrero </a>
+              <a href="" class="aN aN2"> Patanjali </a>
+              <a href="" class="aN aN2"> McCain</a>
+              <a href="" class="aN aN2"> kwality </a>
+              <a href="" class="aN aN2"> walls </a>
+              <a href="" class="aN aN2"> Cadbury</a>
+              <a href="" class="aN aN2"> Dairy </a>
+              <a href="" class="aN aN2"> Milk </a>
+              <a href="" class="aN aN2"> Pedigree</a>
+            </ul>
+          </div>
+        </div>
+        <button id="btnN">Show less-</button>
+        <p id="PcopyN">
+          Copyright © 2023-2025 Supermarket Grocery Supplies Pvt Ltd
+        </p>
+      </footer>
+    </div>
+  </body>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/product.js" type="module"></script>
+  <script src="scripts/index.js" type="module"></script>
 </html>
