@@ -42,19 +42,25 @@ function renderProducts() {
   });
 }
 
+// function showProductDetails(index) {
+//   let product = arrays.flat()[index];
+//   document.getElementById("productName").innerText = product.name;
+//   document.getElementById("productImage").src = product.imgurl;
+//   document.getElementById("productBrand").innerText = "Brand: " + product.brand;
+//   document.getElementById("productDiscount").innerText = "Discount: " + product.discount;
+//   document.getElementById("productKg").innerText = "Weight: " + product.Kg;
+//   document.getElementById("productMRP").innerText = "MRP: Rs " + product.mrp;
+//   document.getElementById("productDelivery").innerText = "Delivery: " + product.dur;
+
+//   document.getElementById("bestsellers1").style.display = "none";
+//   document.getElementById("bestsellers2").style.display = "none";
+//   document.getElementById("productDetails").style.display = "block";
+// }
+
 function showProductDetails(index) {
   let product = arrays.flat()[index];
-  document.getElementById("productName").innerText = product.name;
-  document.getElementById("productImage").src = product.imgurl;
-  document.getElementById("productBrand").innerText = "Brand: " + product.brand;
-  document.getElementById("productDiscount").innerText = "Discount: " + product.discount;
-  document.getElementById("productKg").innerText = "Weight: " + product.Kg;
-  document.getElementById("productMRP").innerText = "MRP: Rs " + product.mrp;
-  document.getElementById("productDelivery").innerText = "Delivery: " + product.dur;
-
-  document.getElementById("bestsellers1").style.display = "none";
-  document.getElementById("bestsellers2").style.display = "none";
-  document.getElementById("productDetails").style.display = "block";
+  let queryString = `?name=${encodeURIComponent(product.name)}&imgurl=${encodeURIComponent(product.imgurl)}&brand=${encodeURIComponent(product.brand)}&discount=${encodeURIComponent(product.discount)}&Kg=${encodeURIComponent(product.Kg)}&mrp=${encodeURIComponent(product.mrp)}&dur=${encodeURIComponent(product.dur)};
+  window.location.href = productdetails.html${queryString}`;
 }
 
 function scrollSlide(direction, slideId) {
