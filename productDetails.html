@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+          href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+          integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="./style.css"/>
+        <link rel="stylesheet" href="ak_style.css">
+        <link rel="stylesheet" href="products.css">
+        <title>BigBasket</title>
+    </head>
+<body>
+    <nav class="">
+        <!-- mohan -->
+        <div class="nav-bar pb-1">
+          <div class="first-bar d-flex align-items-center mt-1">
+            <div class="d-flex align-items-center flex-column">
+              <div class="d-flex align-items-end">
+                <img
+                  src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
+                  width="25"
+                  alt=""
+                  height="25"
+                />
+                <span class="fs-5 fw-medium px-1" style="translate: 0 5px"
+                  ><b class="text-danger">big</b>basket</span
+                >
+              </div>
+              <p
+                class="fw-semibold text-primary lh-lg m-0"
+                style="font-size: 12px"
+              >
+                A <b>TATA</b> Enterprise
+              </p>
+            </div>
+  
+            <input
+              type="text"
+              placeholder="Search for Products..."
+              class="mx-4 px-3 rounded fs-6"
+              style="width: 450px; height: 45px; opacity: 0.7"
+            />
+  
+            <button class="p-2 me-4 border fw-semibold rounded">
+              <i class="fa-solid fa-location-dot"></i> Select Location
+            </button>
+  
+            <button
+              class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
+              style="font-size: 13px"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Login/Sign <br />Up
+            </button>
+  
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body d-flex p-0">
+                    <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+                      <p
+                        class="text-center text-opacity-25"
+                        style="font-size: 12px"
+                      >
+                        Why choose BigBasket?
+                      </p>
+                      <div class="d-flex flex-wrap p-2">
+                        <div
+                          class="w-50 mb-3 d-flex flex-column align-items-center"
+                        >
+                          <i
+                            class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
+                          ></i>
+                          <p style="font-size: 13px">Quality</p>
+                        </div>
+                        <div class="w-50 d-flex flex-column align-items-center">
+                          <i
+                            class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
+                          ></i>
+                          <p style="font-size: 13px">On time</p>
+                        </div>
+                        <div class="w-50 d-flex flex-column align-items-center">
+                          <i
+                            class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
+                          ></i>
+                          <p style="font-size: 13px">Return Policy</p>
+                        </div>
+                        <div class="w-50 d-flex flex-column align-items-center">
+                          <i
+                            class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
+                          ></i>
+                          <p style="font-size: 13px">Free Delivery</p>
+                        </div>
+                      </div>
+  
+                      <hr class="w-75 m-auto" style="border-width: 2.5px" />
+  
+                      <div
+                        class="p-3 mt-3 d-flex justify-content-center align-items-center"
+                      >
+                        <p
+                          class="d-inline-block me-4 mb-0 text-center text-opacity-25"
+                          style="font-size: 12px"
+                        >
+                          Find us on
+                        </p>
+  
+                        <div class="border border-dark rounded me-3">
+                          <img
+                            src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
+                            alt=""
+                            width="40"
+                          />
+                        </div>
+  
+                        <div class="p-1 px-2 border bg-light border-dark rounded">
+                          <i class="fa-brands fa-apple fs-3"></i>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="w-75 bg-black text-white p-3 px-5">
+                      <div class="d-flex justify-content-between">
+                      <h5 class="d-inline-block">Login/Sign Up</h5>
+                      <p
+                        class="status d-inline-block pb-1"
+                        style="border-bottom: 2px solid red"
+                      >
+                      </p>
+                    </div>
+  
+                      <form class="login" action="#">
+                        <input
+                          type="email"
+                          class="rounded w-75 p-1 px-2 mx-4 m-3"
+                          placeholder="Enter Email Id"
+                          required
+                        />
+  
+                        <input
+                          type="password"
+                          class="rounded w-75 p-1 px-2 mx-4"
+                          placeholder="Enter Password"
+                          minlength="8"
+                          required
+                        />
+  
+                        <input
+                          type="submit"
+                          class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
+                          value="Submit"
+                        />
+                      </form>
+  
+                      <p
+                        class="policy w-75 m-4 mt-1 text-center"
+                        style="font-size: 13px"
+                      >
+                        By continuing, I accept
+                        <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
+                        <a href="#">Privacy Policy</a> This site is protected by
+                        reCAPTCHA and the Google -
+                        <a href="#">Privacy Policy</a> and &
+                        <a href="#">Terms of Service</a> apply.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="p-2 rounded" style="background-color: pink; opacity: 0.7">
+              <div class="rounded-circle text-center" style="background-color: red;width:26px;height:26px">
+                <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+              </div>
+            </div>
+          </div>
+  
+          <div class="second-bar d-flex align-items-center mt-1">
+            <div class="category dropdown" style="width: 150px">
+              <a
+                class="btn text-white p-1 px-2 d-flex align-items-center justify-content-between dropdown-toggle fw-semibold"
+                style="font-size: 11px;background-color: rgb(94,148,0);"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <div class="">
+                <p class="m-0 text-start">Shop by</p> 
+                <p class="m-0" style="font-size:14px;">Category</p>
+              </div>
+              </a>
+  
+              <div class="dropdown-menu multi-column columns-3">
+                <div class="row">
+                  <div class="col">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Fruits & Vegetables</a></li>
+                      <li><a href="#">Foodgrains, Oil & Masala </a></li>
+                      <li>
+                        <a href="#">Bakery , Cakes & Dairy</a>
+                      </li>
+                      <li><a href="#">Beverages</a></li>
+                      <li><a href="#">Snacks & Branded Foods</a></li>
+                      <li><a href="#">Beauty & Hygiene</a></li>
+                      <li><a href="#">Cleaning & Household</a></li>
+                      <li>
+                        <a href="#">Kitchen, Garden & Pets</a>
+                      </li>
+                      <li><a href="#">Launch Boxes & Bags</a></li>
+                      <li><a href="#">Eggs,Meat & Fish</a></li>
+                      <li><a href="#">Gourmet & World Food</a></li>
+                      <li><a href="#">Baby Care</a></li>
+                    </ul>
+                  </div>
+  
+                  <div class="col">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Cuts & Sprouts</a></li>
+                      <li><a href="#">Exotic Fruits & Veggies</a></li>
+                      <li><a href="#">Flower Bouquets,Bunches</a></li>
+                      <li><a href="#">Fresh Fruits</a></li>
+                      <li><a href="#">Fresh Vegetables</a></li>
+                      <li><a href="#">Herbs & Seasonings</a></li>
+                      <li><a href="#">Organic Fruits & Vegetables</a></li>
+                    </ul>
+                  </div>
+  
+                  <div class="col">
+                    <ul class="multi-column-dropdown">
+                      <li><a href="#">Cut & Peeled Veggies</a></li>
+                      <li><a href="#">Cut Fruit,Tender Coconut</a></li>
+                      <li><a href="#">Fresh Juices & Milk Shakes</a></li>
+                      <li><a href="#">Fresh Salads & Sprouts</a></li>
+                      <li><a href="#">Recipe Packs</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="d-flex flex-grow-1 justify-content-evenly fs-6">
+              <a href="#">Exotic Fruits & V...</a>
+              <a href="#">Tea</a>
+              <a href="#">Ghee</a>
+              <a href="#">Nandini</a>
+  
+              <div class="dropdown">
+                <button
+                  class="border-0 bg-white"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <!-- <i class="fa-solid fa-circle-chevron-right"></i> -->
+                  <i class="fa-solid fa-chevron-right"></i
+                  ><i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <ul class="dropdown-menu rounded" style="width: 200px">
+                  <li><a class="dropdown-item my-2" href="#">Kellogs</a></li>
+                  <li><a class="dropdown-item my-2" href="#">Milk</a></li>
+                  <li><a class="dropdown-item my-2" href="#">Chocolates</a></li>
+                  <li>
+                    <a class="dropdown-item my-2" href="#">Fresh Chicken</a>
+                  </li>
+                  <li><a class="dropdown-item my-2" href="#">Eggs</a></li>
+                  <li><a class="dropdown-item my-2" href="#">Honey</a></li>
+                  <li>
+                    <a class="dropdown-item my-2" href="#">Cup Noodles</a>
+                  </li>
+                  <li><a class="dropdown-item my-2" href="#">Hair Care</a></li>
+                  <li><a class="dropdown-item my-2" href="#">Drinks</a></li>
+                </ul>
+              </div>
+            </div>
+  
+            <img
+              src="https://www.bigbasket.com/media/uploads/banner_images/Smart_basket-250124-1.png"
+              alt=""
+              class="me-4"
+            />
+  
+            <img
+              src="https://www.bigbasket.com/media/uploads/banner_images/hp_cmc_m_offer_28_220921_all.png"
+              alt=""
+            />
+          </div>
+        </div>
+    </nav>
+
+    <div class="product_container">
+         
+    </div>
+</body>
+
+<script src="scripts/index.js"></script>
+<script src="productPage.js"></script>
+</html>
