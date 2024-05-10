@@ -3,11 +3,12 @@ const loginBtn = document.querySelector(".auth");
 const loginStatus = document.querySelector(".status");
 const modal = new bootstrap.Modal(document.querySelector(".modal"));
 const links = document.querySelectorAll('a[href="product.html"]');
+const cart = document.querySelector('.cart');
 
-let user = JSON.parse(localStorage.getItem("user")) || "";
-export let category = JSON.parse(localStorage.getItem("category")) || "";
+let user = JSON.parse(localStorage.getItem('user')) || '';
+let category = JSON.parse(localStorage.getItem('category')) || '';
 
-//console.log(user,links);
+console.log(user);
 
 links.forEach((link) => {
   const value = link.innerText;
@@ -130,6 +131,11 @@ console.log(searchBtn);
 // searchBtn.addEventListener('click',(e)=>{
 //   console.log(e);
 // })
+
+console.log(cart);
+cart.addEventListener('click',()=>{
+  window.location.href='cart.html';
+})
 
 // add event to show less data
 
