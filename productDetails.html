@@ -111,6 +111,54 @@
               margin-top: 10px;
               margin-bottom: 20px;
             }
+
+
+
+            /* ak */
+            .discount {
+  width: 90%;
+  /* border: 1px solid red; */
+  height: 20px;
+  margin: auto;
+  margin-top: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-align: end;
+  color: red;
+  font-size:13px;
+}
+
+.detail {
+  width: 70%;
+  display: block;
+  margin: auto;
+  /* border: 1px solid yellow; */
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+.brand {
+  color: gray;
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 10px;
+  /* margin-left: 5px; */
+}
+.name {
+  color: black;
+}
+
+.select {
+  width: 90%;
+  display: block;
+  margin: auto;
+  height: 20px;
+  border: 1px solid gray;
+}
+.price {
+  display: flex;
+  /* width: 90%; */
+  /* border: 1px solid red; */
+}
+
         </style>
     </head>
 <body>
@@ -425,7 +473,6 @@
         <div class="rightdiv">
         <p id="brand"></p>
         <p id="name"></p>
-        <p><strike id="strikoff"></strike></p>
         <h2 id="price"></h2>
         <h5 id="saving"></h5>
         <input class="qty1" type="number" value="1" />
@@ -960,14 +1007,16 @@
 
 <script>
     let detail = JSON.parse(localStorage.getItem("productdetail"));
+    console.log(detail);
     detail.forEach(function (elem) {
         let img = document.createElement("img");
         img.setAttribute("src", elem.image);
-        img.setAttribute("class", "divimg");
+        img.setAttribute("class", "detail");
         document.querySelector("#imgapend").append(img);
         document.querySelector("#brand").innerText = elem.brand;
+        console.log(elem.brand_name);
         document.querySelector("#name").innerText = elem.name;
-        document.querySelector("#strikoff").innerText = elem.strike;
+        // document.querySelector("#strikoff").innerText = elem.strike;
         document.querySelector("#price").innerText = "Rs" + elem.price;
         document.querySelector("#pname").innerHTML = elem.name;
         document.querySelector("#pnameAgain").innerText = elem.name;

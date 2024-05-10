@@ -47,13 +47,13 @@ function renderProducts() {
 let detailArray = [];
 
 function runfunction(elem) {
-  console.log(elem.imgurl);
+  console.log(elem.image);
   let obj = {
-    image: elem.imgurl,
-    name: elem.name,
-    brand: elem.brand,
-    strike: elem.strike,
-    price: elem.mrp,
+    image: elem.image,
+    name: elem.product,
+    brand: elem.brand_name,
+    
+    price: elem.original_price,
   };
   detailArray.push(obj);
 
