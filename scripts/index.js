@@ -3,7 +3,6 @@ const loginBtn = document.querySelector('.auth');
 const loginStatus = document.querySelector('.status');
 const modal = new bootstrap.Modal(document.querySelector('.modal'));
 const links = document.querySelectorAll('a[href="product.html"]');
-
 let user = JSON.parse(localStorage.getItem('user')) || '';
 export let category = JSON.parse(localStorage.getItem('category')) || '';
 

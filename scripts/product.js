@@ -95,7 +95,7 @@ async function fetchData(params = '') {
 
   const data = await products.json();
   stats.innerText = `${category} (${data.length})`;
-  // console.log(data);
+  console.log(data);
   appendData(data);
 }
 
@@ -157,13 +157,21 @@ function createProductCard(productData) {
   let addButton = document.createElement('button');
   addButton.innerText = 'Add';
   addButton.classList.add('addButton');
-
   div.classList.add('card');
+
+
+  
+    addButton.addEventListener('click', () => {
+      alert('Item added to cart');
+    });
+  
+  
+ 
+
   div.append(imgDiv, brandName,h3, rating,p1,addButton);
 
   return div;
 }
-
 function appendData(data) {
   card_products.innerHTML = '';
 
@@ -172,3 +180,26 @@ function appendData(data) {
     card_products.append(productCard);
   });
 }
+
+
+
+
+// subhankar code for add to cart //
+
+// const addItems = document.getElementsByClassName("addButton");
+
+// Convert the collection to an array using Array.from
+// Array.from(addItems).forEach(item => {
+//   item.addEventListener("click", () => {
+//     alert("Item added to cart");
+//     console.log("clicked");
+//   });
+// });
+// const addButtons = document.querySelectorAll('.addButton');
+
+addButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    alert('Item added to cart');
+  });
+});
+
