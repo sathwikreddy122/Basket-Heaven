@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        zoom: 80%;
+      }
+
+      #navN {
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        height: 60px;
+      }
+
+      #ulN1 {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 20px;
+      }
+
+      #ulN1 li {
+        display: inline;
+      }
+
+      #ulN1 li a {
+        text-decoration: none;
+        font-size: large;
+      }
+
+      #ulN1 li a:hover {
+        color: #ccc;
+      }
+
+      #sectionN {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 0 auto;
+        max-width: 1200px;
+        padding: 0 20px;
+      }
+
+      #s1divN {
+        height: 700px;
+        width: 150%;
+      }
+      #s2div {
+        height: 500px;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        margin-left: 100px;
+        background-color: rgb(206, 211, 210);
+        margin-top: 100px;
+      }
+      #h1_N {
+        font-size: 40px;
+        text-align: center;
+        margin-top: 80px;
+      }
+      #h2_N {
+        font-size: 40px;
+        text-align: center;
+      }
+      #spanN1 {
+        font-size: 40px;
+        text-align: center;
+        color: green;
+      }
+      #PN {
+        text-align: center;
+      }
+      .BtN1 {
+        padding: 10px;
+        margin-left: 20px;
+        margin-top: 20px;
+        font-size: 15px;
+      }
+      .BtN1:hover {
+        background-color: green;
+      }
+      #InpNameN {
+        margin-top: 20px;
+        padding: 10px;
+        width: 70%;
+        margin-left: 40px;
+      }
+      #bt_N {
+        margin-top: 20px;
+      }
+      .footerN1 {
+        background-color: #f0f0f0;
+        padding: 20px 0;
+        text-align: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      footer p {
+        margin: 5px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navN">
+      <ul id="ulN1">
+        <li>
+          <a href="./index.html"
+            ><img
+              src="https://bbinstant.bigbasket.com/wp-content/uploads/2022/07/logo.png"
+          /></a>
+        </li>
+        <li><a href="#">How it works</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+    <section>
+      <div id="sectionN">
+        <div id="s1divN">
+          <h1 id="h1_N">Contact Us</h1>
+          <h2 id="h2_N">
+            to get <span id="spanN1"> bbinstant machine installed</span>
+          </h2>
+          <p id="PN">
+            Please complete the form and our executives will reach you shortly.
+            Alternatively, you can reach out to us directly
+          </p>
+
+          <div class="button-container">
+            <button class="BtN1" data-index="0">Delhi NCR</button>
+            <button class="BtN1" data-index="1">Mumbai</button>
+            <button class="BtN1" data-index="2">Bengaluru</button>
+            <button class="BtN1" data-index="3">Hyderabad</button>
+            <button class="BtN1" data-index="4">Pune</button>
+          </div>
+
+          <div
+            id="contactInfo"
+            style="display: none; margin-top: 20px; font-size: 25px"
+          >
+            <p id="contactName">Name:</p>
+
+            <p id="contactEmail">Email:</p>
+
+            <p id="contactPhone">Call / Whatsapp:</p>
+          </div>
+        </div>
+        <div id="s2div">
+          <form id="fromN">
+            <input type="text" id="InpNameN" placeholder="Name" required />
+            <input type="email" id="InpNameN" placeholder="Email" required />
+
+            <input type="number" id="InpNameN" placeholder="phone" required />
+
+            <input type="text" id="InpNameN" placeholder="Address" required />
+            <input type="text" id="InpNameN" placeholder="Message" required />
+            <input
+              type="submit"
+              placeholder="submit"
+              id="InpNameN"
+              style="
+                width: 80px;
+                margin-left: 150px;
+                border-radius: 5px;
+                background-color: red;
+                color: white;
+              "
+            />
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="footerN1">
+      <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+      <p>
+        <a href="/privacy-policy">Privacy Policy</a> |
+        <a href="/terms-of-service">Terms of Service</a>
+      </p>
+      <p>
+        Contact us: <a href="mailto:contact@example.com">contact@example.com</a>
+      </p>
+    </footer>
+  </body>
+  <script src="./scripts/contact.js"></script>
+</html>
