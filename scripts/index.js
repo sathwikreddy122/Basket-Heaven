@@ -5,9 +5,9 @@ const modal = new bootstrap.Modal(document.querySelector('.modal'));
 const links = document.querySelectorAll('a[href="product.html"]');
 
 let user = JSON.parse(localStorage.getItem('user')) || '';
-let category = JSON.parse(localStorage.getItem('category')) || '';
+export let category = JSON.parse(localStorage.getItem('category')) || '';
 
-console.log(user,links);
+//console.log(user,links);
 
 links.forEach(link => {
   const value=link.innerText;
@@ -123,3 +123,10 @@ loginBtn.addEventListener('click', () => {
     loginBtn.style.padding = '0';
   }
 });
+
+const searchBtn = document.querySelector('.search');
+console.log(searchBtn);
+
+// searchBtn.addEventListener('click',(e)=>{
+//   console.log(e);
+// })

@@ -1,142 +1,174 @@
-let category = JSON.parse(localStorage.getItem('category')) || '';
-const links = document.querySelectorAll('a[href="#"]');
+//let category = JSON.parse(localStorage.getItem('category')) || '';
+import {category} from './index.js';
 
-links.forEach((link) => {
+const links1 = document.querySelectorAll('.col>ul>li>a[href="#"]');
+const links2 = document.querySelectorAll('.links a[href="#"]');
+const card_products = document.getElementById('card_products');
+let main_container = document.getElementById('main_container');
+const filter_container = document.getElementById('filter_container');
+const ratings = document.querySelectorAll('#rating-filter>label>input');
+const prices = document.querySelectorAll('#price-filter>label>input');
+const discounts = document.querySelectorAll('#discount-filter>label>input');
+const stats = document.querySelector('.stats');
+
+//console.log(links1,links2);
+
+links2.forEach((link) => {
+  const value = link.innerText;
+
+  link.addEventListener('click', async(e) => {
+    e.preventDefault();
+    category = value;
+    localStorage.setItem('category', JSON.stringify(category));
+
+    const products = await fetch(
+      `http://localhost:3000/products/?product_like=${category}`
+    );
+  
+    const data = await products.json();
+    stats.innerText = `${category} (${data.length})`;
+    // console.log(data);
+    appendData(data);
+  });
+});
+
+links1.forEach((link) => {
   const value = link.innerText;
 
   link.addEventListener('click', (e) => {
+    e.preventDefault();
     category = value;
     localStorage.setItem('category', JSON.stringify(category));
+
     fetchData();
   });
 });
 
-async function fetchData() {
+ratings.forEach((rating) => {
+  const value = Number(rating.value);
+
+  rating.addEventListener('click', () => {
+    //console.log(value, typeof value);
+    if (rating.checked == true) {
+      fetchData(`rating_gte=${value - 1}&rating_lte=${value}`);
+      card_products.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+prices.forEach((price) => {
+  const value = price.value.split(',');
+  const high = Number(value[0]);
+  const low = Number(value[1]);
+
+  // console.log(value,low,high);
+
+  price.addEventListener('click', () => {
+    if (price.checked == true) {
+      fetchData(`discounted_price_lte=${low}&discounted_price_gte=${high}`);
+      card_products.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+discounts.forEach((discount) => {
+  const value = discount.value.split(',');
+  const high = Number(value[0]);
+  const low = Number(value[1]);
+
+  discount.addEventListener('click', () => {
+    if (discount.checked == true) {
+      fetchData(`discount_lte=${low}&discount_gte=${high}`);
+      card_products.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+async function fetchData(params = '') {
   const products = await fetch(
-    `http://localhost:3000/products/?category_like=${category}`
+    `http://localhost:3000/products/?category_like=${category}&${params}`
   );
 
-  const data = await products.json();
+  // console.log(
+  //   `http://localhost:3000/products/?category_like=${category}&${params}`
+  // );
 
-  console.log(data);
+  const data = await products.json();
+  stats.innerText = `${category} (${data.length})`;
+  // console.log(data);
+  appendData(data);
 }
 
 fetchData();
 
 function createProductCard(productData) {
-    // Create a div element to contain the product card
-    var productCard = document.createElement('div');
-    productCard.classList.add('product-card');
+  // Create a div element to contain the product card
+  let div = document.createElement('div');
+  div.addEventListener('click', () => {
+    console.log('clicked');
+    window.location.href = 'productDetails.html';
+  });
 
-    // Create a div element to display the discount
-    var discount = document.createElement('div');
-    discount.textContent = productData.discount;
-    discount.style.backgroundColor="green"
-    discount.style.width="100px";
-    // discount.style.margin="10px";
-    discount.style.borderTopLeftRadius="10px";
-    discount.style.borderBottomRightRadius="10px";
-    discount.style.padding="10px";
-    discount.style.fontSize="20px";
-    discount.style.color="white"
-    productCard.appendChild(discount);
-  
-    
-    var productImage = document.createElement('img');
-    productImage.src = productData.image;
-    productImage.alt = productData.product;
-    productImage.style.width = '280px'; // Adjust the width of the image
-    productImage.style.height = '250px'; // Adjust the height of the image
-    productImage.style.boxShadow = '2px 2px 4px 2px rgba(0, 0, 0, 0.1)';
+  var imgDiv = document.createElement('div');
+  var discount = document.createElement('div');
+  discount.textContent = `${productData.discount}% Off`;
+  discount.style.backgroundColor = 'green';
+  discount.style.position='absolute';
+  discount.style.borderTopLeftRadius = '10px';
+  discount.style.borderBottomRightRadius = '10px';
+  discount.style.padding = '5px 10px';
+  discount.style.fontSize = '12px';
+  discount.style.color = 'white';
+  discount.style.zIndex='1';
+  div.appendChild(discount);
 
-    // Create a container div to center the image column-wise
-    var containerDiv = document.createElement('div');
-    containerDiv.style.display = 'flex';
-    containerDiv.style.justifyContent = 'center'; // Center the content horizontally
-    containerDiv.style.marginBottom="15px";
-    containerDiv.appendChild(productImage);
-    productCard.appendChild(containerDiv);
+  div.style.minWidth = '24%';
+  let img = document.createElement('img');
+  img.src = productData.image;
+  img.classList.add('productImage');
+  img.style.padding='20px';
+  img.style.borderTopLeftRadius = '10px';
+  img.style.position='relative';
 
+  imgDiv.append(img);
   
-    // Create a div element to display the brand name
-    var brandName = document.createElement('div');
-    brandName.textContent = productData.brand_name;
-    brandName.style.marginLeft="15px";
-    brandName.style.fontWeight="10"
-    productCard.appendChild(brandName);
-    
-  
-    // Create a div element to display the product name
-    var productName = document.createElement('div');
-    productName.textContent = productData.product;
-    productName.style.marginLeft="15px";
-    productName.style.fontSize="30px"
-    productCard.appendChild(productName);
+  //img.alt = productData.name;
+  //img.addEventListener("click", () => showProductDetails(index));
+  var brandName = document.createElement('p');
+  brandName.textContent = productData.brand_name;
+  brandName.style.fontWeight = '10';
 
-    // Create a div element to display the rating
-    var rating = document.createElement('div');
-    rating.textContent = productData.rating+"☆";
-    rating.style.marginLeft="15px";
-    rating.style.fontSize="20px";
-    rating.style.backgroundColor="#E3F1CB"
-    rating.style.width="50px";
-    rating.style.borderRadius="5px"
-    productCard.appendChild(rating);
-  
-    // Create a div element to display the quantity
-    var quantity = document.createElement('div');
-    quantity.textContent = "Quantity "+productData.quantity;
-    quantity.style.marginLeft="15px";
-    quantity.style.fontSize="20px";
-    productCard.appendChild(quantity);
-    
+  var rating = document.createElement('div');
+  rating.textContent = productData.rating + '☆';
+  rating.style.fontSize = '13px';
+  rating.style.padding='2px 4px';
+  rating.style.backgroundColor = '#E3F1CB';
+  rating.style.width = 'max-content';
+  rating.style.borderRadius = '5px';
 
-  
-    // Create a div element to display the original price
-    var originalPrice = document.createElement('div');
-    originalPrice.textContent = productData.original_price;
-    productCard.appendChild(originalPrice);
-  
-    // Create a div element to display the discounted price
-    var discountedPrice = document.createElement('div');
-    discountedPrice.textContent = productData.discounted_price;
-    productCard.appendChild(discountedPrice);
-  
-    
-  
-    
-  
-    // Create a div element to display the category
-    var category = document.createElement('div');
-    category.textContent = 'Category: ' + productData.category;
-    productCard.appendChild(category);
-  
-    return productCard;
-  }
-  
-  // Example usage:
-  var productData = {
-    "image": "https://www.bigbasket.com/media/uploads/p/m/10000180_15-fresho-sapota.jpg?tr=w-1920,q=80",
-    "discount": "12% Off",
-    "product": "Chickoo",
-    "quantity": "1 kg",
-    "original_price": "₹90",
-    "discounted_price": "₹79",
-    "brand_name": "Farm Fresh",
-    "rating": 4.4,
-    "category": "Fruits & Vegetables"
-  };
-  
-  var productCard = createProductCard(productData);
-  var productCard1 = createProductCard(productData);
-  var productCard2 = createProductCard(productData);
-  var productCard3 = createProductCard(productData);
-  var productCard4 = createProductCard(productData);
-  var productCard5 = createProductCard(productData);
-  
-   // Append the product card to the document body or any other container element
-  let card_products = document.getElementById("card_products")
-  
-  card_products.append(productCard,productCard1,productCard2,productCard3,productCard4,productCard5)
-  
-  
+  let h3 = document.createElement('h3');
+  h3.innerText = productData.product;
+  h3.classList.add('title');
+  h3.style.height = '40px';
+
+  let p1 = document.createElement('p');
+  p1.innerHTML = `<b>₹${productData.original_price}</b>  <s style="font-size:11px;">₹${productData.discounted_price}</s>`;
+
+  let addButton = document.createElement('button');
+  addButton.innerText = 'Add';
+  addButton.classList.add('addButton');
+
+  div.classList.add('card');
+  div.append(imgDiv, brandName,h3, rating,p1,addButton);
+
+  return div;
+}
+
+function appendData(data) {
+  card_products.innerHTML = '';
+
+  data.forEach((product) => {
+    const productCard = createProductCard(product);
+    card_products.append(productCard);
+  });
+}
