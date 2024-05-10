@@ -1,21 +1,21 @@
-const loginForm = document.querySelector('.login');
-const loginBtn = document.querySelector('.auth');
-const loginStatus = document.querySelector('.status');
-const modal = new bootstrap.Modal(document.querySelector('.modal'));
+const loginForm = document.querySelector(".login");
+const loginBtn = document.querySelector(".auth");
+const loginStatus = document.querySelector(".status");
+const modal = new bootstrap.Modal(document.querySelector(".modal"));
 const links = document.querySelectorAll('a[href="product.html"]');
 
-let user = JSON.parse(localStorage.getItem('user')) || '';
-export let category = JSON.parse(localStorage.getItem('category')) || '';
+let user = JSON.parse(localStorage.getItem("user")) || "";
+export let category = JSON.parse(localStorage.getItem("category")) || "";
 
 //console.log(user,links);
 
-links.forEach(link => {
-  const value=link.innerText;
+links.forEach((link) => {
+  const value = link.innerText;
 
-  link.addEventListener('click',(e)=>{
+  link.addEventListener("click", (e) => {
     category = value;
-    localStorage.setItem('category',JSON.stringify(category));
-})
+    localStorage.setItem("category", JSON.stringify(category));
+  });
 });
 
 loginForm.addEventListener("submit", async (e) => {
@@ -91,15 +91,15 @@ function successful() {
   loginStatus.innerText = "Login Successful✅";
   // console.log(loginStatus.innerText);
 
-  loginStatus.style.display = 'inline';
-  loginStatus.style.borderBottomColor = 'green';
-  loginBtn.innerHTML = 'Logout';
-  loginBtn.style.padding = '12px 56px';
-  loginBtn.dataset.bsToggle = '';
+  loginStatus.style.display = "inline";
+  loginStatus.style.borderBottomColor = "green";
+  loginBtn.innerHTML = "Logout";
+  loginBtn.style.padding = "12px 56px";
+  loginBtn.dataset.bsToggle = "";
 
   setTimeout(() => {
     modal.hide();
-    loginStatus.innerText = '';
+    loginStatus.innerText = "";
   }, 1200);
 }
 
@@ -115,18 +115,31 @@ function failed() {
   }, 2500);
 }
 
-loginBtn.addEventListener('click', () => {
-  if (loginBtn.innerText == 'Logout') {
-    localStorage.setItem('user', JSON.stringify(''));
+loginBtn.addEventListener("click", () => {
+  if (loginBtn.innerText == "Logout") {
+    localStorage.setItem("user", JSON.stringify(""));
     loginBtn.innerHTML = `Login/Sign <br />Up`;
-    loginBtn.dataset.bsToggle = 'modal';
-    loginBtn.style.padding = '0';
+    loginBtn.dataset.bsToggle = "modal";
+    loginBtn.style.padding = "0";
   }
 });
 
-const searchBtn = document.querySelector('.search');
+const searchBtn = document.querySelector(".search");
 console.log(searchBtn);
 
 // searchBtn.addEventListener('click',(e)=>{
 //   console.log(e);
 // })
+
+// add event to show less data
+
+var btnN = document.getElementById("btnN");
+var ulN = document.querySelector(".ulN2");
+var aNList = ulN.querySelectorAll("a.aN2");
+btnN.addEventListener("click", function () {
+  for (var i = 12; i < aNList.length; i++) {
+    aNList[i].classList.toggle("hide");
+  }
+  btnN.textContent =
+    btnN.textContent === "Show less-" ? "Show more+" : "Show less-";
+});
