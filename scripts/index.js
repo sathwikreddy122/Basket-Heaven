@@ -18,9 +18,9 @@ links.forEach(link => {
 })
 });
 
-loginForm.addEventListener('submit', async (e) => {
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log('Hi');
+  console.log("Hi");
 
   const email = document.querySelector('.login>input[type="email"]').value;
   const password = document.querySelector(
@@ -33,12 +33,12 @@ loginForm.addEventListener('submit', async (e) => {
 
   status == 1 ? successful() : failed();
 
-  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem("user", JSON.stringify(user));
 });
 
 async function isUser(email, password) {
   try {
-    const users = await fetch('http://localhost:3000/users');
+    const users = await fetch("http://localhost:3000/users");
     const datas = await users.json();
 
     let status = 0;
@@ -72,10 +72,10 @@ async function addUser(email, password) {
       password,
     };
 
-    const users = await fetch('http://localhost:3000/users', {
-      method: 'POST',
+    const users = await fetch("http://localhost:3000/users", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
@@ -88,7 +88,7 @@ async function addUser(email, password) {
 }
 
 function successful() {
-  loginStatus.innerText = 'Login Successful✅';
+  loginStatus.innerText = "Login Successful✅";
   // console.log(loginStatus.innerText);
 
   loginStatus.style.display = 'inline';
@@ -104,14 +104,14 @@ function successful() {
 }
 
 function failed() {
-  loginStatus.innerText = 'Invalid Credentials❌';
+  loginStatus.innerText = "Invalid Credentials❌";
   // console.log(loginStatus.innerText);
 
-  loginStatus.style.display = 'inline';
-  loginStatus.style.borderBottomColor = 'red';
+  loginStatus.style.display = "inline";
+  loginStatus.style.borderBottomColor = "red";
 
   setTimeout(() => {
-    loginStatus.innerText = '';
+    loginStatus.innerText = "";
   }, 2500);
 }
 
