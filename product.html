@@ -211,151 +211,188 @@
           </button>
 
           <button
-            class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
-            style="font-size: 13px"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
-          >
-            Login/Sign <br />Up
-          </button>
-
+          class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
+          style="font-size: 13px"
+          data-bs-toggle="modal"
+          data-bs-target="#firstModal"
+        >
+          Login/Sign <br />Up
+        </button>
+        
           <div
-            class="modal fade"
-            id="exampleModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body d-flex p-0">
-                  <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+          class="modal firstModal fade"
+          id="firstModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body d-flex p-0">
+                <div class="bg-secondary-subtle bg-opacity-75 w-50 py-3">
+                  <p
+                    class="text-center text-opacity-25"
+                    style="font-size: 12px"
+                  >
+                    Why choose BigBasket?
+                  </p>
+                  <div class="d-flex flex-wrap p-2">
+                    <div
+                      class="w-50 mb-3 d-flex flex-column align-items-center"
+                    >
+                      <i
+                        class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
+                      ></i>
+                      <p style="font-size: 13px">Quality</p>
+                    </div>
+                    <div class="w-50 d-flex flex-column align-items-center">
+                      <i
+                        class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
+                      ></i>
+                      <p style="font-size: 13px">On time</p>
+                    </div>
+                    <div class="w-50 d-flex flex-column align-items-center">
+                      <i
+                        class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
+                      ></i>
+                      <p style="font-size: 13px">Return Policy</p>
+                    </div>
+                    <div class="w-50 d-flex flex-column align-items-center">
+                      <i
+                        class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
+                      ></i>
+                      <p style="font-size: 13px">Free Delivery</p>
+                    </div>
+                  </div>
+
+                  <hr class="w-75 m-auto" style="border-width: 2.5px" />
+
+                  <div
+                    class="p-3 mt-3 d-flex justify-content-center align-items-center"
+                  >
                     <p
-                      class="text-center text-opacity-25"
+                      class="d-inline-block me-4 mb-0 text-center text-opacity-25"
                       style="font-size: 12px"
                     >
-                      Why choose BigBasket?
+                      Find us on
                     </p>
-                    <div class="d-flex flex-wrap p-2">
-                      <div
-                        class="w-50 mb-3 d-flex flex-column align-items-center"
-                      >
-                        <i
-                          class="fa-solid fa-star p-2 mb-1 rounded-circle bg-light"
-                        ></i>
-                        <p style="font-size: 13px">Quality</p>
-                      </div>
-                      <div class="w-50 d-flex flex-column align-items-center">
-                        <i
-                          class="fa-solid fa-clock p-2 mb-1 rounded-circle bg-light"
-                        ></i>
-                        <p style="font-size: 13px">On time</p>
-                      </div>
-                      <div class="w-50 d-flex flex-column align-items-center">
-                        <i
-                          class="fa-solid fa-truck p-2 mb-1 rounded-circle bg-light"
-                        ></i>
-                        <p style="font-size: 13px">Return Policy</p>
-                      </div>
-                      <div class="w-50 d-flex flex-column align-items-center">
-                        <i
-                          class="fa-solid fa-arrow-rotate-right p-2 mb-1 rounded-circle bg-light"
-                        ></i>
-                        <p style="font-size: 13px">Free Delivery</p>
-                      </div>
+
+                    <div class="border border-dark rounded me-3">
+                      <img
+                        src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
+                        alt=""
+                        width="40"
+                      />
                     </div>
 
-                    <hr class="w-75 m-auto" style="border-width: 2.5px" />
-
-                    <div
-                      class="p-3 mt-3 d-flex justify-content-center align-items-center"
-                    >
-                      <p
-                        class="d-inline-block me-4 mb-0 text-center text-opacity-25"
-                        style="font-size: 12px"
-                      >
-                        Find us on
-                      </p>
-
-                      <div class="border border-dark rounded me-3">
-                        <img
-                          src="https://static.vecteezy.com/system/resources/previews/022/484/501/original/google-play-store-icon-logo-symbol-free-png.png"
-                          alt=""
-                          width="40"
-                        />
-                      </div>
-
-                      <div class="p-1 px-2 border bg-light border-dark rounded">
-                        <i class="fa-brands fa-apple fs-3"></i>
-                      </div>
+                    <div class="p-1 px-2 border bg-light border-dark rounded">
+                      <i class="fa-brands fa-apple fs-3"></i>
                     </div>
                   </div>
-
-                  <div class="w-75 bg-black text-white p-3 px-5">
-                    <div class="d-flex justify-content-between">
-                      <h5 class="d-inline-block">Login/Sign Up</h5>
-                      <p
-                        class="status d-inline-block pb-1"
-                        style="border-bottom: 2px solid red"
-                      ></p>
-                    </div>
-
-                    <form class="login" action="#">
-                      <input
-                        type="email"
-                        class="rounded w-75 p-1 px-2 mx-4 m-3"
-                        placeholder="Enter Email Id"
-                        required
-                      />
-
-                      <input
-                        type="password"
-                        class="rounded w-75 p-1 px-2 mx-4"
-                        placeholder="Enter Password"
-                        minlength="8"
-                        required
-                      />
-
-                      <input
-                        type="submit"
-                        class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
-                        value="Submit"
-                      />
-                    </form>
-
+                </div>
+                <div class="w-75 bg-black text-white p-3 px-5">
+                  <div class="d-flex justify-content-between">
+                    <h5 class="d-inline-block">Login/Sign Up</h5>
                     <p
-                      class="policy w-75 m-4 mt-1 text-center"
-                      style="font-size: 13px"
-                    >
-                      By continuing, I accept
-                      <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
-                      <a href="#">Privacy Policy</a> This site is protected by
-                      reCAPTCHA and the Google -
-                      <a href="#">Privacy Policy</a> and &
-                      <a href="#">Terms of Service</a> apply.
-                    </p>
+                      class="status d-inline-block pb-1"
+                      style="border-bottom: 2px solid red"
+                    ></p>
                   </div>
+
+                  <form class="login" action="#">
+                    <input
+                      type="email"
+                      class="rounded w-75 p-1 px-2 mx-4 m-3"
+                      placeholder="Enter Email Id"
+                      required
+                    />
+
+                    <input
+                      type="password"
+                      class="rounded w-75 p-1 px-2 mx-4"
+                      placeholder="Enter Password"
+                      minlength="8"
+                      required
+                    />
+
+                    <input
+                      type="submit"
+                      class="rounded w-75 p-2 px-2 m-3 mx-4 mb-0 bg-danger text-white"
+                      value="Submit"
+                    />
+                  </form>
+
+                  <p
+                    class="policy w-75 m-4 mt-1 text-center"
+                    style="font-size: 13px"
+                  >
+                    By continuing, I accept
+                    <a href="#">TCP - bigbasket’s Terms and Conditions</a> &
+                    <a href="#">Privacy Policy</a> This site is protected by
+                    reCAPTCHA and the Google -
+                    <a href="#">Privacy Policy</a> and &
+                    <a href="#">Terms of Service</a> apply.
+                  </p>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
-          <div class="p-2 cart rounded" style="background-color: pink; opacity: 0.7">
+        <div
+          class="modal secondModal fade"
+          id="secondModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <h5 class="text-center">Do you want to log out??</h5>
+              </div>
+              <div class="modal-footer border-0">
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-danger">Log Out</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="p-2 rounded border cart btn btn-primary position-relative" style="background-color: pink; opacity: 0.7">
             <div
               class="rounded-circle text-center"
               style="background-color: red; width: 26px; height: 26px"
             >
               <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+              <span class="count p-1 position-absolute translate-middle badge rounded bg-black">
+                99
+                <!-- <span class="visually-hidden">unread messages</span> -->
+              </span>
             </div>
-          </div>
+            </div>
         </div>
 
         <div class="second-bar d-flex align-items-center mt-1">

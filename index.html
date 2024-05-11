@@ -16,13 +16,111 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="ak_style.css" />
-    <link rel="icon" href="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b" type="image/png">
+    <link
+      rel="icon"
+      href="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
+      type="image/png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
 
     <title>BigBasket</title>
+    <style>
+      #containerN {
+        background-color: black;
+        height: 100%;
+        width: 100%;
+      }
+      #MaindivN {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        font-size: 0.875rem;
+      }
+
+      #ImgN {
+        margin-top: 30px;
+      }
+      .aN {
+        color: white;
+        text-decoration: none;
+      }
+      .aN:hover {
+        text-decoration: underline;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .hide {
+        display: none;
+      }
+      #hrN {
+        margin-left: 100px;
+        margin-right: 100px;
+        border: none;
+        height: 1px;
+        background-image: linear-gradient(to right, white 33%, transparent 0%);
+        background-size: 6px 1px;
+      }
+      #h3N {
+        color: white;
+        text-align: center;
+      }
+      .iconN {
+        display: flex;
+        margin-top: 10px;
+        gap: 40px;
+      }
+      .iconN i {
+        font-size: 30px;
+      }
+
+      .SpanN {
+        color: white;
+        text-align: center;
+        /* margin-right: 5px; */
+      }
+      #divSpanN {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .liN {
+        margin-top: 10px;
+      }
+      #lastDivN {
+        display: flex;
+        gap: 10px;
+        color: white;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .ulN {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6%;
+      }
+      #undivN1 {
+        height: 300px;
+        width: 600px;
+      }
+      #undivN2 {
+        height: 300px;
+        width: 600px;
+      }
+      #btnN {
+        margin-top: 80px;
+        margin-left: 400px;
+      }
+      #PcopyN {
+        margin-left: 200px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <nav class="">
@@ -64,14 +162,14 @@
             class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
             style="font-size: 13px"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#firstModal"
           >
             Login/Sign <br />Up
           </button>
 
           <div
-            class="modal fade"
-            id="exampleModal"
+            class="modal firstModal fade"
+            id="firstModal"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
@@ -148,7 +246,6 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="w-75 bg-black text-white p-3 px-5">
                     <div class="d-flex justify-content-between">
                       <h5 class="d-inline-block">Login/Sign Up</h5>
@@ -198,14 +295,58 @@
             </div>
           </div>
 
-          <div class="p-2 rounded cart" style="background-color: pink; opacity: 0.7">
+          <div
+            class="modal secondModal fade"
+            id="secondModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <h5 class="text-center">Do you want to log out??</h5>
+                </div>
+                <div class="modal-footer border-0">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-danger">Log Out</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-2 rounded border cart btn btn-primary position-relative"
+            style="background-color: pink; opacity: 0.7"
+          >
             <div
               class="rounded-circle text-center"
               style="background-color: red; width: 26px; height: 26px"
             >
               <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+              <span
+                class="count p-1 position-absolute translate-middle badge rounded bg-black"
+              >
+                99
+                <!-- <span class="visually-hidden">unread messages</span> -->
+              </span>
             </div>
           </div>
+
         </div>
 
         <div class="second-bar d-flex align-items-center mt-1">
@@ -229,7 +370,9 @@
                 <div class="col">
                   <ul class="multi-column-dropdown">
                     <li><a href="product.html">Fruits & Vegetables</a></li>
-                    <li><a href="product.html">Foodgrains, Oil & Masala </a></li>
+                    <li>
+                      <a href="product.html">Foodgrains, Oil & Masala </a>
+                    </li>
                     <li>
                       <a href="product.html">Bakery , Cakes & Dairy</a>
                     </li>
@@ -255,7 +398,9 @@
                     <li><a href="product.html">Fresh Fruits</a></li>
                     <li><a href="product.html">Fresh Vegetables</a></li>
                     <li><a href="product.html">Herbs & Seasonings</a></li>
-                    <li><a href="product.html">Organic Fruits & Vegetables</a></li>
+                    <li>
+                      <a href="product.html">Organic Fruits & Vegetables</a>
+                    </li>
                   </ul>
                 </div>
 
@@ -263,7 +408,9 @@
                   <ul class="multi-column-dropdown">
                     <li><a href="product.html">Cut & Peeled Veggies</a></li>
                     <li><a href="product.html">Cut Fruit,Tender Coconut</a></li>
-                    <li><a href="product.html">Fresh Juices & Milk Shakes</a></li>
+                    <li>
+                      <a href="product.html">Fresh Juices & Milk Shakes</a>
+                    </li>
                     <li><a href="product.html">Fresh Salads & Sprouts</a></li>
                     <li><a href="product.html">Recipe Packs</a></li>
                   </ul>
@@ -290,19 +437,41 @@
                 ><i class="fa-solid fa-chevron-right"></i>
               </button>
               <ul class="dropdown-menu rounded" style="width: 200px">
-                <li><a class="dropdown-item my-2" href="product.html">Kellogs</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Milk</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Chocolates</a></li>
                 <li>
-                  <a class="dropdown-item my-2" href="product.html">Fresh Chicken</a>
+                  <a class="dropdown-item my-2" href="product.html">Kellogs</a>
                 </li>
-                <li><a class="dropdown-item my-2" href="product.html">Eggs</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Honey</a></li>
                 <li>
-                  <a class="dropdown-item my-2" href="product.html">Cup Noodles</a>
+                  <a class="dropdown-item my-2" href="product.html">Milk</a>
                 </li>
-                <li><a class="dropdown-item my-2" href="product.html">Hair Care</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Drinks</a></li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Chocolates</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Fresh Chicken</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html">Eggs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html">Honey</a>
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Cup Noodles</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Hair Care</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html">Drinks</a>
+                </li>
               </ul>
             </div>
           </div>
@@ -356,42 +525,68 @@
         </div>
       </section>
 
-      <div class="sa_links_container">
-        <div class="link_box">
-          <a href="">EGGS, MEAT AND FISH</a>
+        <div class="sa_links_container">
+            <div class="link_box">
+                <a href="">EGGS, MEAT AND FISH</a>
+            </div>
+            <div class="link_box">
+                <a href=""><img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250923_02.png?tr=w-3840,q=80" alt=""></a>
+            </div>
+            <div class="link_box" id="ayurveda">
+                <a href="" id="ayurveda">AYURVEDA</a>
+            </div>
+            <div class="link_box">
+                <a href="">BUY MORE SAVE MORE</a>
+            </div>
+            <div class="link_box">
+                <a href="">DEALS OF THE WEEK</a>
+            </div>
+            <div class="link_box" id="combo">
+                <a href="">COMBO STORE</a>
+            </div>
         </div>
-        <div class="link_box">
-          <a href=""
-            ><img
-              src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250923_02.png?tr=w-3840,q=80"
-              alt=""
-          /></a>
-        </div>
-        <div class="link_box" id="ayurveda">
-          <a href="" id="ayurveda">AYURVEDA</a>
-        </div>
-        <div class="link_box">
-          <a href="">BUY MORE SAVE MORE</a>
-        </div>
-        <div class="link_box">
-          <a href="">DEALS OF THE WEEK</a>
-        </div>
-        <div class="link_box" id="combo">
-          <a href="">COMBO STORE</a>
-        </div>
-      </div>
 
-      <div id="bestsellers">
-        <h2>
-          Best Sellers
-          <button><a href="#">Show More</a></button>
-        </h2>
-        <hr />
-        <div id="bestsellersSlide">
-          <button>&raquo;</button>
-          <button>&laquo;</button>
+        <div id="bestsellers1">
+          <h2>Best Sellers 
+            <button onclick="scrollSlide('left', 'bestsellersSlide1')">&laquo;</button>
+            <button onclick="scrollSlide('right', 'bestsellersSlide1')">&raquo;</button>
+          </h2>
+          <hr />
+          <div id="bestsellersSlide1">
+
+          </div>
         </div>
-      </div>
+      
+      
+        <div id="sa_bank_cards">
+            <h4>BANK OFFERS</h4>
+          <div class="sa_cards">
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_neucard_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_indus20_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_icici-cc_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_icici-amz_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div id="bestsellers2">
+          <h2>Most Purchesed
+              <button onclick="scrollSlide('left', 'bestsellersSlide2')">&laquo;</button>
+              <button onclick="scrollSlide('right', 'bestsellersSlide2')">&raquo;</button>
+          </h2>
+          <hr />
+          <div id="bestsellersSlide2">
+           
+          </div>
+        </div>
+      
 
       <section>
         <!-- akash from top offers till home and kitchen -->
