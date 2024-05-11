@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+
+        h2{
+            width:50%;
+            margin:15px auto;
+        }
+
+        .checkoutbox>div>h4{
+            margin:0;
+            color:white;
+        }
+
+        .home{
+            background-color: chocolate;
+            padding:12px;
+            text-align: center;
+        }
+
+        .home>a{
+            text-decoration: none;
+            color:white;
+            padding:12px;
+
+        }
+
+        .checkoutbox{
+            margin:auto ;
+            width:50%;
+            background-color: black;
+            color:white;
+            border-radius: 12px;
+            display:flex;
+            padding:20px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .checkoutbox>div>button{
+            width:170px;
+            height:35px;
+            background-color: red;
+            border:none;
+            color:white;
+            font-size: 15px;
+            border-radius: 6px;
+        }
+
+        .card{
+            margin:auto ;
+            width:50%;
+            border:1px solid red;
+            border-radius: 12px;
+            display:flex;
+            padding:20px;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="home"><a href="index.html">Home</a></div>
+        <h2>Your Basket</h2>
+      <div class="checkoutbox">
+        <div>
+          <h4 class="price"></h4>
+          <p class="savings" style="color:rgb(14, 205, 14);margin:0"></p>
+        </div>
+        <div>
+          <button>checkout</button>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>

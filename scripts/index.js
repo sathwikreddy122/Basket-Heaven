@@ -1,14 +1,29 @@
-const loginForm = document.querySelector('.login');
-const loginBtn = document.querySelector('.auth');
-const loginStatus = document.querySelector('.status');
-const modal = new bootstrap.Modal(document.querySelector('.modal'));
+const loginForm = document.querySelector(".login");
+const loginBtn = document.querySelector(".auth");
+const loginStatus = document.querySelector(".status");
+const firstModal = new bootstrap.Modal(document.querySelector(".firstModal"));
+const secondModal = new bootstrap.Modal(document.querySelector(".secondModal"));
+const links = document.querySelectorAll('a[href="product.html"]');
+const cart = document.querySelector('.cart');
+const count = document.querySelector('.count');
+
 let user = JSON.parse(localStorage.getItem('user')) || '';
+let category = JSON.parse(localStorage.getItem('category')) || '';
 
 console.log(user);
 
-loginForm.addEventListener('submit', async (e) => {
+links.forEach((link) => {
+  const value = link.innerText;
+
+  link.addEventListener("click", (e) => {
+    category = value;
+    localStorage.setItem("category", JSON.stringify(category));
+  });
+});
+
+loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  console.log('Hi');
+  console.log("Hi");
 
   const email = document.querySelector('.login>input[type="email"]').value;
   const password = document.querySelector(
@@ -21,12 +36,12 @@ loginForm.addEventListener('submit', async (e) => {
 
   status == 1 ? successful() : failed();
 
-  localStorage.setItem('user', JSON.stringify(user));
+  localStorage.setItem("user", JSON.stringify(user));
 });
 
 async function isUser(email, password) {
   try {
-    const users = await fetch('http://localhost:3000/users');
+    const users = await fetch("http://localhost:3000/users");
     const datas = await users.json();
 
     let status = 0;
@@ -60,10 +75,10 @@ async function addUser(email, password) {
       password,
     };
 
-    const users = await fetch('http://localhost:3000/users', {
-      method: 'POST',
+    const users = await fetch("http://localhost:3000/users", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
@@ -76,38 +91,96 @@ async function addUser(email, password) {
 }
 
 function successful() {
-  loginStatus.innerText = 'Login Successful✅';
+  loginStatus.innerText = "Login Successful✅";
   // console.log(loginStatus.innerText);
 
-  loginStatus.style.display = 'inline';
-  loginStatus.style.borderBottomColor = 'green';
+  loginStatus.style.display = "inline";
+  loginStatus.style.borderBottomColor = "green";
 
   setTimeout(() => {
-    modal.hide();
-    loginStatus.innerText = '';
-    loginBtn.innerHTML = 'Logout';
-    loginBtn.style.padding = '12px 56px';
-    loginBtn.dataset.bsToggle = '';
+    firstModal.hide();
+    loginStatus.innerText = "";
   }, 1200);
 }
 
 function failed() {
-  loginStatus.innerText = 'Invalid Credentials❌';
+  loginStatus.innerText = "Invalid Credentials❌";
   // console.log(loginStatus.innerText);
 
-  loginStatus.style.display = 'inline';
-  loginStatus.style.borderBottomColor = 'red';
+  loginStatus.style.display = "inline";
+  loginStatus.style.borderBottomColor = "red";
 
   setTimeout(() => {
-    loginStatus.innerText = '';
+    loginStatus.innerText = "";
   }, 2500);
 }
 
-loginBtn.addEventListener('click',()=>{
-    if(loginBtn.innerText=='Logout'){
-        localStorage.setItem('user', JSON.stringify(''));
-        loginBtn.innerHTML=`Login/Sign <br />Up`;
-        loginBtn.dataset.bsToggle = 'modal';
-        loginBtn.style.padding = '0';
+const logout = document.querySelector('.modal-footer .btn-danger');
+  
+  logout.addEventListener('click',()=>{
+    localStorage.setItem('user',JSON.stringify(''));
+    getCount();
+    secondModal.hide();
+  })
+
+loginBtn.setAttribute('data-bs-target','');
+
+loginBtn.addEventListener("click", (e) => {
+  
+  user = JSON.parse(localStorage.getItem('user'));
+  // console.log("hi",user);
+
+    if (user != '') {
+      secondModal.show();
+      firstModal.hide();
+
+    } else {
+      secondModal.hide();
+      firstModal.show();
     }
+  
+    console.log(loginBtn);
+});
+
+const searchBtn = document.querySelector(".search");
+console.log(searchBtn);
+
+// searchBtn.addEventListener('click',(e)=>{
+//   console.log(e);
+// })
+
+console.log(cart);
+cart.addEventListener('click',()=>{
+  if(user==''){
+    alert('Please Log in.');
+    return;
+  }
+  window.location.href='cart.html';
 })
+
+async function getCount(){
+  const result = await fetch('http://localhost:3000/cart-items');
+  const data = await result.json();
+
+  let total = 0;
+  data.forEach(item => {
+    if(item.user == user)
+      total++;
+
+  })
+  count.innerText = `${total}`;
+}
+
+getCount();
+// add event to show less data
+
+var btnN = document.getElementById("btnN");
+var ulN = document.querySelector(".ulN2");
+var aNList = ulN.querySelectorAll("a.aN2");
+btnN.addEventListener("click", function () {
+  for (var i = 12; i < aNList.length; i++) {
+    aNList[i].classList.toggle("hide");
+  }
+  btnN.textContent =
+    btnN.textContent === "Show less-" ? "Show more+" : "Show less-";
+});
