@@ -2072,19 +2072,6 @@
       "id": 1
     },
     {
-      "image": "https://www.bigbasket.com/media/uploads/p/m/40216157_6-sri-sri-tattva-organic-brown-sugar.jpg?tr=w-1920,q=80",
-      "discount": 10,
-      "product": "Organic Brown Rice",
-      "quantity": 1,
-      "original_price": 300,
-      "discounted_price": 270,
-      "brand_name": "Nature's Best",
-      "rating": 4.1,
-      "category": "Foodgrains, Oil & Masala",
-      "user": "m@gmail.com",
-      "id": 2
-    },
-    {
       "image": "https://www.bigbasket.com/media/uploads/p/m/1228372_1-fortune-premium-kachi-ghani-pure-mustard-oil.jpg?tr=w-1920,q=80",
       "discount": 8,
       "product": "Fortune Mustard Oil",
@@ -2226,6 +2213,58 @@
       "category": "Foodgrains, Oil & Masala",
       "user": "m@gmail.com",
       "id": 13
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/40033824_23-fresho-apple-red-delicious-regular.jpg?tr=w-1920,q=80",
+      "discount": 20,
+      "product": "Fresh Organic Apples",
+      "quantity": 1,
+      "original_price": 120,
+      "discounted_price": 96,
+      "brand_name": "Organica",
+      "rating": 4.1,
+      "category": "Fruits & Vegetables",
+      "user": "m@gmail.com",
+      "id": 14
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/266109_23-maggi-2-minute-instant-noodles-masala.jpg?tr=w-1920,q=80",
+      "discount": 15,
+      "product": "Maggi Masala Noodles",
+      "quantity": 1,
+      "original_price": 60,
+      "discounted_price": 51,
+      "brand_name": "Maggi",
+      "rating": 4.1,
+      "category": "Snacks & Branded Foods",
+      "user": "m@gmail.com",
+      "id": 15
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/10000407_13-bb-royal-refined-sugar-sulphurless.jpg?tr=w-1920,q=80",
+      "discount": 18,
+      "product": "Uttam Sugar Sulphurless Sugar",
+      "quantity": 2,
+      "original_price": 65,
+      "discounted_price": 53,
+      "brand_name": "Uttam",
+      "rating": 4.1,
+      "category": "Foodgrains, Oil & Masala",
+      "user": "nag@gmail.com",
+      "id": 16
+    },
+    {
+      "image": "https://www.bigbasket.com/media/uploads/p/m/1227711_1-tata-sampann-unpolished-toor-dalarhar-dal.jpg?tr=w-1920,q=80",
+      "discount": 10,
+      "product": "Unpolished Toor Dal/Arhar Dal",
+      "quantity": 1,
+      "original_price": 150,
+      "discounted_price": 135,
+      "brand_name": "Local Brand",
+      "rating": 3.3,
+      "category": "Foodgrains, Oil & Masala",
+      "user": "nag@gmail.com",
+      "id": 19
     }
   ]
 }

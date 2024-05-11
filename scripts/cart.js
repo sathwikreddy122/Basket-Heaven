@@ -16,7 +16,7 @@ async function fetchData() {
 function appendData(items) {
   items.forEach((item) => {
     if (item.user == user) {
-      total_price += item.discounted_price;
+      total_price += item.quantity*item.discounted_price;
       savings += item.quantity*(item.original_price - item.discounted_price);
 
       const card = createCard(item);
@@ -65,14 +65,12 @@ function createCard(item) {
   decrease.innerText = '-';
   decrease.style.backgroundColor = 'red';
   decrease.style.color = 'white';
+  decrease.style.padding='6px 10px';
   decrease.style.border = 'none';
+  decrease.style.cursor='pointer';
 
   decrease.addEventListener('click', async() => {
     item.quantity = item.quantity - 1;
-
-    let newItem = {
-      ...item
-    };
 
     if (!item.quantity||item.quantity == 1) {
       await fetch(`http://localhost:3000/cart-items/${item.id}`, {
@@ -87,7 +85,7 @@ function createCard(item) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(newItem),
+        body: JSON.stringify(item),
       });
     }
 
@@ -102,22 +100,20 @@ function createCard(item) {
   increase.style.backgroundColor = 'green';
   increase.style.color = 'white';
   increase.style.border = 'none';
+  increase.style.cursor='pointer';
+  increase.style.padding='6px 10px';
 
   increase.addEventListener('click', async () => {
     item.quantity = item.quantity+1;
 
-    let newItem = {
-      ...item
-    };
-
-    console.log(item,newItem);
+    // console.log(item,newItem);
 
     await fetch(`http://localhost:3000/cart-items/${item.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(newItem)
+      body: JSON.stringify(item)
     });
 
     fetchData();
