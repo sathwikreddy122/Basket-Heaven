@@ -1,9 +1,11 @@
 const loginForm = document.querySelector(".login");
 const loginBtn = document.querySelector(".auth");
 const loginStatus = document.querySelector(".status");
-const modal = new bootstrap.Modal(document.querySelector(".modal"));
+const firstModal = new bootstrap.Modal(document.querySelector(".firstModal"));
+const secondModal = new bootstrap.Modal(document.querySelector(".secondModal"));
 const links = document.querySelectorAll('a[href="product.html"]');
 const cart = document.querySelector('.cart');
+const count = document.querySelector('.count');
 
 let user = JSON.parse(localStorage.getItem('user')) || '';
 let category = JSON.parse(localStorage.getItem('category')) || '';
@@ -94,12 +96,9 @@ function successful() {
 
   loginStatus.style.display = "inline";
   loginStatus.style.borderBottomColor = "green";
-  loginBtn.innerHTML = "Logout";
-  loginBtn.style.padding = "12px 56px";
-  loginBtn.dataset.bsToggle = "";
 
   setTimeout(() => {
-    modal.hide();
+    firstModal.hide();
     loginStatus.innerText = "";
   }, 1200);
 }
@@ -116,13 +115,31 @@ function failed() {
   }, 2500);
 }
 
-loginBtn.addEventListener("click", () => {
-  if (loginBtn.innerText == "Logout") {
-    localStorage.setItem("user", JSON.stringify(""));
-    loginBtn.innerHTML = `Login/Sign <br />Up`;
-    loginBtn.dataset.bsToggle = "modal";
-    loginBtn.style.padding = "0";
-  }
+const logout = document.querySelector('.modal-footer .btn-danger');
+  
+  logout.addEventListener('click',()=>{
+    localStorage.setItem('user',JSON.stringify(''));
+    getCount();
+    secondModal.hide();
+  })
+
+loginBtn.setAttribute('data-bs-target','');
+
+loginBtn.addEventListener("click", (e) => {
+  
+  user = JSON.parse(localStorage.getItem('user'));
+  // console.log("hi",user);
+
+    if (user != '') {
+      secondModal.show();
+      firstModal.hide();
+
+    } else {
+      secondModal.hide();
+      firstModal.show();
+    }
+  
+    console.log(loginBtn);
 });
 
 const searchBtn = document.querySelector(".search");
@@ -134,9 +151,27 @@ console.log(searchBtn);
 
 console.log(cart);
 cart.addEventListener('click',()=>{
+  if(user==''){
+    alert('Please Log in.');
+    return;
+  }
   window.location.href='cart.html';
 })
 
+async function getCount(){
+  const result = await fetch('http://localhost:3000/cart-items');
+  const data = await result.json();
+
+  let total = 0;
+  data.forEach(item => {
+    if(item.user == user)
+      total++;
+
+  })
+  count.innerText = `${total}`;
+}
+
+getCount();
 // add event to show less data
 
 var btnN = document.getElementById("btnN");

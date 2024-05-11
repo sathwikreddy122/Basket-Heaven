@@ -9,6 +9,7 @@ const ratings = document.querySelectorAll('#rating-filter>label>input');
 const prices = document.querySelectorAll('#price-filter>label>input');
 const discounts = document.querySelectorAll('#discount-filter>label>input');
 const stats = document.querySelector('.stats');
+const count = document.querySelector('.count');
 
 //console.log(links1,links2,links3);
 
@@ -190,7 +191,8 @@ function createProductCard(productData) {
     const user = JSON.parse(localStorage.getItem('user')) || '';
 
     if(user == ''){
-      alert('Please login first');
+      alert('Please login first..Heading to main page.');
+      window.location.href='index.html';
       return;
     }
 
@@ -224,9 +226,25 @@ function appendData(data) {
     const productCard = createProductCard(product);
     card_products.append(productCard);
   });
+
+  getCount();
 }
 
 const cart = document.querySelector('.cart');
 cart.addEventListener('click',()=>{
   window.location.href='cart.html';
 })
+
+async function getCount(){
+  const result = await fetch('http://localhost:3000/cart-items');
+  const data = await result.json();
+  
+  let total = 0;
+  data.forEach(item => {
+    if(item.user == user)
+      total++;
+
+  })
+}
+
+getCount();

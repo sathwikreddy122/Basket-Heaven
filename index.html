@@ -16,7 +16,11 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="ak_style.css" />
-    <link rel="icon" href="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b" type="image/png">
+    <link
+      rel="icon"
+      href="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
+      type="image/png"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -64,14 +68,14 @@
             class="auth px-3 me-2 border fw-semibold bg-black text-white rounded"
             style="font-size: 13px"
             data-bs-toggle="modal"
-            data-bs-target="#exampleModal"
+            data-bs-target="#firstModal"
           >
             Login/Sign <br />Up
           </button>
 
           <div
-            class="modal fade"
-            id="exampleModal"
+            class="modal firstModal fade"
+            id="firstModal"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
@@ -148,7 +152,6 @@
                       </div>
                     </div>
                   </div>
-
                   <div class="w-75 bg-black text-white p-3 px-5">
                     <div class="d-flex justify-content-between">
                       <h5 class="d-inline-block">Login/Sign Up</h5>
@@ -198,14 +201,58 @@
             </div>
           </div>
 
-          <div class="p-2 rounded cart" style="background-color: pink; opacity: 0.7">
+          <div
+            class="modal secondModal fade"
+            id="secondModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <h5 class="text-center">Do you want to log out??</h5>
+                </div>
+                <div class="modal-footer border-0">
+                  <button
+                    type="button"
+                    class="btn btn-success"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="button" class="btn btn-danger">Log Out</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-2 rounded border cart btn btn-primary position-relative"
+            style="background-color: pink; opacity: 0.7"
+          >
             <div
               class="rounded-circle text-center"
               style="background-color: red; width: 26px; height: 26px"
             >
               <i class="fa-solid fa-bag-shopping text-white fs-6"></i>
+              <span
+                class="count p-1 position-absolute translate-middle badge rounded bg-black"
+              >
+                99
+                <!-- <span class="visually-hidden">unread messages</span> -->
+              </span>
             </div>
           </div>
+
         </div>
 
         <div class="second-bar d-flex align-items-center mt-1">
@@ -229,7 +276,9 @@
                 <div class="col">
                   <ul class="multi-column-dropdown">
                     <li><a href="product.html">Fruits & Vegetables</a></li>
-                    <li><a href="product.html">Foodgrains, Oil & Masala </a></li>
+                    <li>
+                      <a href="product.html">Foodgrains, Oil & Masala </a>
+                    </li>
                     <li>
                       <a href="product.html">Bakery , Cakes & Dairy</a>
                     </li>
@@ -255,7 +304,9 @@
                     <li><a href="product.html">Fresh Fruits</a></li>
                     <li><a href="product.html">Fresh Vegetables</a></li>
                     <li><a href="product.html">Herbs & Seasonings</a></li>
-                    <li><a href="product.html">Organic Fruits & Vegetables</a></li>
+                    <li>
+                      <a href="product.html">Organic Fruits & Vegetables</a>
+                    </li>
                   </ul>
                 </div>
 
@@ -263,7 +314,9 @@
                   <ul class="multi-column-dropdown">
                     <li><a href="product.html">Cut & Peeled Veggies</a></li>
                     <li><a href="product.html">Cut Fruit,Tender Coconut</a></li>
-                    <li><a href="product.html">Fresh Juices & Milk Shakes</a></li>
+                    <li>
+                      <a href="product.html">Fresh Juices & Milk Shakes</a>
+                    </li>
                     <li><a href="product.html">Fresh Salads & Sprouts</a></li>
                     <li><a href="product.html">Recipe Packs</a></li>
                   </ul>
@@ -290,19 +343,41 @@
                 ><i class="fa-solid fa-chevron-right"></i>
               </button>
               <ul class="dropdown-menu rounded" style="width: 200px">
-                <li><a class="dropdown-item my-2" href="product.html">Kellogs</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Milk</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Chocolates</a></li>
                 <li>
-                  <a class="dropdown-item my-2" href="product.html">Fresh Chicken</a>
+                  <a class="dropdown-item my-2" href="product.html">Kellogs</a>
                 </li>
-                <li><a class="dropdown-item my-2" href="product.html">Eggs</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Honey</a></li>
                 <li>
-                  <a class="dropdown-item my-2" href="product.html">Cup Noodles</a>
+                  <a class="dropdown-item my-2" href="product.html">Milk</a>
                 </li>
-                <li><a class="dropdown-item my-2" href="product.html">Hair Care</a></li>
-                <li><a class="dropdown-item my-2" href="product.html">Drinks</a></li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Chocolates</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Fresh Chicken</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html">Eggs</a>
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html">Honey</a>
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Cup Noodles</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html"
+                    >Hair Care</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item my-2" href="product.html">Drinks</a>
+                </li>
               </ul>
             </div>
           </div>
