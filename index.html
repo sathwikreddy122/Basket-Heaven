@@ -881,27 +881,28 @@
       <section>
         <!-- subhankar from carousel till footer -->
         <div
+          
           id="carouselExampleAutoplaying"
           class="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner" style="border-radius: 10px">
-            <div class="carousel-item active">
-              <img
+          <div class="carousel-inner" style="border-radius: 10px" >
+            <div class="carousel-item active" >
+              <img onclick="redirectToAnotherPage()"
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item">
-              <img
+            <div class="carousel-item" >
+              <img onclick="redirectToAnotherPage()"
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_health_suppliment_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item">
-              <img
+            <div class="carousel-item" >
+              <img onclick="redirectToAnotherPage()"
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
@@ -1511,5 +1512,11 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/index.js" type="module"></script>
     <script src="scripts/sa_index.js"></script>
+    <script>
+      function redirectToAnotherPage() {
+          // Redirect to another HTML page
+          window.location.href = 'product.html';
+      }
+  </script>
   </body>
 </html>

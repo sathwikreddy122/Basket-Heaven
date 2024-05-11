@@ -114,7 +114,7 @@ async function fetchData(params = '') {
 
   const data = await products.json();
   stats.innerText = `${category} (${data.length})`;
-  // console.log(data);
+  console.log(data);
   appendData(data);
 }
 
@@ -218,7 +218,6 @@ function createProductCard(productData) {
 
   return div;
 }
-
 function appendData(data) {
   card_products.innerHTML = '';
 
