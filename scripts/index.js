@@ -193,8 +193,12 @@ function createCard(item){
   const product = document.createElement('a');
 
   product.innerText=item.product;
-  product.href='product.html';
   product.classList.add('searchCard');
+
+  product.addEventListener('click',()=>{
+     runfunction(item);
+     window.location.href = "productDetails.html";
+  })
 
   li.append(product);
   li.style.padding='10px';
@@ -209,6 +213,23 @@ cart.addEventListener('click',()=>{
   }
   window.location.href='cart.html';
 })
+
+function runfunction(elem) {
+  console.log(elem.image);
+  let obj = {
+    image: elem.image,
+    product: elem.product,
+    brand_name: elem.brand_name,
+    original_price: elem.original_price,
+    category : elem.category,
+    quantity : elem.quantity,
+    discounted_price : elem.discounted_price,
+    discount: elem.discount
+  };
+  
+  console.log(obj);
+  localStorage.setItem("productdetail", JSON.stringify(obj));
+}
 
 async function getCount(){
   const result = await fetch('http://localhost:3000/cart-items');
