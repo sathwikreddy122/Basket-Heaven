@@ -146,6 +146,7 @@ function createProductCard(productData) {
   let div = document.createElement('div');
   div.addEventListener('click', () => {
     console.log('clicked');
+    runfunction(productData);
     window.location.href = 'productDetails.html';
   });
 
@@ -197,7 +198,7 @@ function createProductCard(productData) {
   var quantity = document.createElement('div');
   quantity.textContent = 'Quantity ' + productData.quantity;
   quantity.style.fontSize = '11px';
-  quantity.style.marginTop = '20px';
+  quantity.style.marginTop = '0px';
 
   let addButton = document.createElement('button');
   addButton.innerText = 'Add';
@@ -239,6 +240,24 @@ function createProductCard(productData) {
 
   return div;
 }
+
+function runfunction(elem) {
+  console.log(elem.image);
+  let obj = {
+    image: elem.image,
+    product: elem.product,
+    brand_name: elem.brand_name,
+    original_price: elem.original_price,
+    category : elem.category,
+    quantity : elem.quantity,
+    discounted_price : elem.discounted_price,
+    discount: elem.discount
+  };
+  
+  console.log(obj);
+  localStorage.setItem("productdetail", JSON.stringify(obj));
+}
+
 function appendData(data) {
   card_products.innerHTML = '';
 
