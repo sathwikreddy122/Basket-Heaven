@@ -107,13 +107,14 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   margin: 40px 0;
 }
 
 .sa_links_container .link_box {
   width: 140px;
   height: 50px;
-  margin: 0 35px;
+  margin: 0 6px;
   background-color: lightgray;
   text-align: center;
   border-radius: 10px;
@@ -158,7 +159,7 @@ nav {
 #sa_bank_cards .sa_img_card {
   width: 310px;
   height: 190px;
-  margin: 0 40px;
+  margin: 0 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 15px;
   overflow: hidden;
@@ -183,6 +184,191 @@ nav {
   display: grid;
   grid-template-columns: 50% 50%;
 }
+
+
+
+
+
+#bestsellers1 {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: rgb(247,247,247);
+}
+#bestsellers1 > div{
+  /* border: 2px solid rgb(108, 108, 108); */
+  display: flex;
+  /* gap: 0.1rem; */
+  padding: 10px;
+  padding-bottom: 20px;
+}
+#bestsellers1 > div > div {
+  /* border: 1px solid rgb(0, 0, 0); */
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0px 8px;
+  height: 430px;
+  position: relative;
+}
+
+.productImage{
+  width: 190px;
+  height: 200px;
+  border: 1px solid rgb(189, 189, 189);
+}
+#bestsellers1 > div > div > P:nth-child(2) {
+  margin: 8px 0px 0px 0px;
+  color: gray;
+}
+
+#bestsellers1 > div > div > h3 {
+  margin-bottom: 6px;
+  font-size: 17px;
+} 
+
+#bestsellers1 > div > div > select {
+  width: 100%;
+  background-color: white;
+  border: 1px solid gray;
+  height: 22px;
+}
+
+#bestsellers1 > div > div > div {
+  width: 94%;
+  background-color: red;
+  padding: 6px;
+  font-size: 13px;
+  color: black;
+}
+
+#bestsellers1 > div > div > div > input {
+  height: 20px;
+  width: 50px;
+}
+
+#bestsellers1 > div > div > div > button {
+  box-sizing: border-box;
+  height: 25px;
+  margin: 8px 0px;
+  background-color: #fade7a;
+  border: hidden;
+  margin-left: 8px;
+  padding: 0px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#bestsellers1 > div > div > div > span:nth-child(5) {
+  width: 20px;
+  height: 100px;
+  font-size: 15px;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid gray;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+#bestsellers1 > div > div > img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+.addButton{
+  border: 1px solid red;
+  background-color: white;
+  width: 85%;
+  height: 35px;
+  position: absolute;
+  bottom: 20px;
+  font-size: 19px;
+  border-radius: 10px;
+}
+.addButton:hover{
+  background-color: rgb(198, 0, 0);
+  color: white;
+}
+#bestsellers1 > div > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#bestsellers1 > div > button {
+  width: 30px;
+  height: 40px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  background-color: white;
+  border: 1px solid rgba(185, 185, 185, 0.5);
+}
+
+#bestsellers1 > div > button:hover {
+  cursor: pointer;
+}
+
+#bestsellers1 > div > button:nth-child(1) {
+  right: -10px;
+}
+
+#bestsellers1 > div > button:nth-child(2) {
+  left: -20px;
+}
+#bestsellersSlide1 {
+  overflow: hidden;
+}
+.button_container{
+  position: relative;
+  left: 0;
+}
+
+#bestsellers1 > h2 {
+  color: rgb(51, 50, 50);
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-weight: lighter;
+  position: relative;
+  font-weight: 700;
+}
+
+#bestsellers1 > h2 > button:nth-last-of-type(1) {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 5px;
+  right: 5px;
+  width: 30px;
+  background-color: #a3a3a3;
+  color: #f6fbef;
+  border-radius: 5px;
+  border: none;
+  margin: 0 30px;
+}
+#bestsellers1 > h2 > button:nth-last-of-type(2) {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 5px;
+  right: 5px;
+  width: 30px;
+  background-color: #a3a3a3;
+  color: #f6fbef;
+  border-radius: 5px;
+  border: none;
+  margin: 0 80px;
+}
+
+#bestsellers1 > h2 > button > a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 2px;
+}
+
+#bestsellers1 > h2 + hr {
+  border: 0.5px solid #ebebeb;
+  margin-bottom: 20px;
+}
+
+
 
 #bestsellers {
   width: 95%;
@@ -437,3 +623,183 @@ ul {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+#bestsellers2 {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: rgb(247,247,247);
+}
+#bestsellers2 > div{
+  /* border: 2px solid rgb(108, 108, 108); */
+  display: flex;
+  /* gap: 0.1rem; */
+  padding: 10px;
+  padding-bottom: 20px;
+}
+#bestsellers2 > div > div {
+  /* border: 1px solid rgb(0, 0, 0); */
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0px 8px;
+  height: 430px;
+  position: relative;
+}
+
+.productImage{
+  width: 190px;
+  height: 200px;
+  border: 1px solid rgb(189, 189, 189);
+}
+#bestsellers2 > div > div > P:nth-child(2) {
+  margin: 8px 0px 0px 0px;
+  color: gray;
+}
+
+#bestsellers2 > div > div > h3 {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+#bestsellers2 > div > div > select {
+  width: 100%;
+  background-color: white;
+  border: 1px solid gray;
+  height: 22px;
+}
+
+#bestsellers2 > div > div > div {
+  width: 94%;
+  background-color: red;
+  padding: 6px;
+  font-size: 13px;
+  color: black;
+}
+
+#bestsellers2 > div > div > div > input {
+  height: 20px;
+  width: 50px;
+}
+
+#bestsellers2 > div > div > div > button {
+  box-sizing: border-box;
+  height: 25px;
+  margin: 8px 0px;
+  background-color: #fade7a;
+  border: hidden;
+  margin-left: 8px;
+  padding: 0px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#bestsellers2 > div > div > div > span:nth-child(5) {
+  width: 20px;
+  height: 100px;
+  font-size: 15px;
+  border-radius: 5px 0px 0px 5px;
+  border: 1px solid gray;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+#bestsellers2 > div > div > img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+  cursor: pointer;
+}
+.addButton{
+  border: 1px solid red;
+  background-color: white;
+  width: 85%;
+  height: 35px;
+  position: absolute;
+  bottom: 20px;
+  font-size: 19px;
+  border-radius: 10px;
+}
+.addButton:hover{
+  background-color: rgb(198, 0, 0);
+  color: white;
+}
+#bestsellers2 > div > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+#bestsellers2 > div > button {
+  width: 30px;
+  height: 40px;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  background-color: white;
+  border: 1px solid rgba(185, 185, 185, 0.5);
+}
+
+#bestsellers2 > div > button:hover {
+  cursor: pointer;
+}
+
+#bestsellers2 > div > button:nth-child(1) {
+  right: -10px;
+}
+
+#bestsellers2 > div > button:nth-child(2) {
+  left: -20px;
+}
+#bestsellersSlide2 {
+  overflow: hidden;
+}
+
+.button_container{
+  position: relative;
+  left: 0;
+}
+
+#bestsellers2 > h2 {
+  color: rgb(51, 50, 50);
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-weight: lighter;
+  position: relative;
+  font-weight: 700;
+}
+
+#bestsellers2 > h2 > button:nth-last-of-type(1) {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 5px;
+  right: 5px;
+  width: 30px;
+  background-color: #a3a3a3;
+  color: #f6fbef;
+  border-radius: 5px;
+  border: none;
+  margin: 0 30px;
+}
+#bestsellers2 > h2 > button:nth-last-of-type(2) {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 5px;
+  right: 5px;
+  width: 30px;
+  background-color: #a3a3a3;
+  color: #f6fbef;
+  border-radius: 5px;
+  border: none;
+  margin: 0 80px;
+}
+
+#bestsellers2 > h2 > button > a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 2px;
+}
+
+#bestsellers2 > h2 + hr {
+  border: 0.5px solid #ebebeb;
+  margin-bottom: 20px;
+}
