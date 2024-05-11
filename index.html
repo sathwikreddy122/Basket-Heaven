@@ -43,6 +43,100 @@
         background-color: grey;
       }
     </style>
+    <style>
+      #containerN {
+        background-color: black;
+        height: 100%;
+        width: 100%;
+      }
+      #MaindivN {
+        display: flex;
+        justify-content: space-evenly;
+        color: white;
+        font-size: 0.875rem;
+      }
+
+      #ImgN {
+        margin-top: 30px;
+      }
+      .aN {
+        color: white;
+        text-decoration: none;
+      }
+      .aN:hover {
+        text-decoration: underline;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+      .hide {
+        display: none;
+      }
+      #hrN {
+        margin-left: 100px;
+        margin-right: 100px;
+        border: none;
+        height: 1px;
+        background-image: linear-gradient(to right, white 33%, transparent 0%);
+        background-size: 6px 1px;
+      }
+      #h3N {
+        color: white;
+        text-align: center;
+      }
+      .iconN {
+        display: flex;
+        margin-top: 10px;
+        gap: 40px;
+      }
+      .iconN i {
+        font-size: 30px;
+      }
+
+      .SpanN {
+        color: white;
+        text-align: center;
+        /* margin-right: 5px; */
+      }
+      #divSpanN {
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .liN {
+        margin-top: 10px;
+      }
+      #lastDivN {
+        display: flex;
+        gap: 10px;
+        color: white;
+        margin-left: 100px;
+        margin-right: 100px;
+      }
+      .ulN {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6%;
+      }
+      #undivN1 {
+        height: 300px;
+        width: 600px;
+      }
+      #undivN2 {
+        height: 300px;
+        width: 600px;
+      }
+      #btnN {
+        margin-top: 80px;
+        margin-left: 400px;
+      }
+      #PcopyN {
+        margin-left: 200px;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <nav class="">
@@ -455,42 +549,68 @@
         </div>
       </section>
 
-      <div class="sa_links_container">
-        <div class="link_box">
-          <a href="">EGGS, MEAT AND FISH</a>
+        <div class="sa_links_container">
+            <div class="link_box">
+                <a href="">EGGS, MEAT AND FISH</a>
+            </div>
+            <div class="link_box">
+                <a href=""><img src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250923_02.png?tr=w-3840,q=80" alt=""></a>
+            </div>
+            <div class="link_box" id="ayurveda">
+                <a href="" id="ayurveda">AYURVEDA</a>
+            </div>
+            <div class="link_box">
+                <a href="">BUY MORE SAVE MORE</a>
+            </div>
+            <div class="link_box">
+                <a href="">DEALS OF THE WEEK</a>
+            </div>
+            <div class="link_box" id="combo">
+                <a href="">COMBO STORE</a>
+            </div>
         </div>
-        <div class="link_box">
-          <a href=""
-            ><img
-              src="https://www.bigbasket.com/media/uploads/banner_images/hp_topstrip_m_250923_02.png?tr=w-3840,q=80"
-              alt=""
-          /></a>
-        </div>
-        <div class="link_box" id="ayurveda">
-          <a href="" id="ayurveda">AYURVEDA</a>
-        </div>
-        <div class="link_box">
-          <a href="">BUY MORE SAVE MORE</a>
-        </div>
-        <div class="link_box">
-          <a href="">DEALS OF THE WEEK</a>
-        </div>
-        <div class="link_box" id="combo">
-          <a href="">COMBO STORE</a>
-        </div>
-      </div>
 
-      <div id="bestsellers">
-        <h2>
-          Best Sellers
-          <button><a href="#">Show More</a></button>
-        </h2>
-        <hr />
-        <div id="bestsellersSlide">
-          <button>&raquo;</button>
-          <button>&laquo;</button>
+        <div id="bestsellers1">
+          <h2>Best Sellers 
+            <button onclick="scrollSlide('left', 'bestsellersSlide1')">&laquo;</button>
+            <button onclick="scrollSlide('right', 'bestsellersSlide1')">&raquo;</button>
+          </h2>
+          <hr />
+          <div id="bestsellersSlide1">
+
+          </div>
         </div>
-      </div>
+      
+      
+        <div id="sa_bank_cards">
+            <h4>BANK OFFERS</h4>
+          <div class="sa_cards">
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_neucard_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_indus20_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_icici-cc_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+            <div class="sa_img_card">
+                <img src="https://www.bigbasket.com/media/customPage/b01eee88-e6bc-410e-993c-dedd012cf04b/91e53046-98e0-4c5b-ae53-7d073e5210e1/3c5df782-1789-4bea-8403-9fd766652b34/t1_hp_aff_m_icici-amz_060524.jpg?tr=w-3840,q=80" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div id="bestsellers2">
+          <h2>Most Purchesed
+              <button onclick="scrollSlide('left', 'bestsellersSlide2')">&laquo;</button>
+              <button onclick="scrollSlide('right', 'bestsellersSlide2')">&raquo;</button>
+          </h2>
+          <hr />
+          <div id="bestsellersSlide2">
+           
+          </div>
+        </div>
+      
 
       <section>
         <!-- akash from top offers till home and kitchen -->
@@ -785,27 +905,28 @@
       <section>
         <!-- subhankar from carousel till footer -->
         <div
+          
           id="carouselExampleAutoplaying"
           class="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner" style="border-radius: 10px">
-            <div class="carousel-item active">
-              <img
+          <div class="carousel-inner" style="border-radius: 10px" >
+            <div class="carousel-item active" >
+              <img onclick="redirectToAnotherPage()"
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item">
-              <img
+            <div class="carousel-item" >
+              <img onclick="redirectToAnotherPage()"
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_health_suppliment_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item">
-              <img
+            <div class="carousel-item" >
+              <img onclick="redirectToAnotherPage()"
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
@@ -1415,5 +1536,11 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/index.js" type="module"></script>
     <script src="scripts/sa_index.js"></script>
+    <script>
+      function redirectToAnotherPage() {
+          // Redirect to another HTML page
+          window.location.href = 'product.html';
+      }
+  </script>
   </body>
 </html>

@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.product_container{
+    max-width: 78%;
+}
+
+.imageAndText{
+    display: flex;
+}
