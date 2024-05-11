@@ -28,22 +28,6 @@
 
     <title>BigBasket</title>
     <style>
-      .searchCard{
-        text-decoration: none;
-        color:white;
-        display:block;
-        font-size: 14px;
-      }
-
-      .dropdown-menu>li{
-        border-radius: 12px;
-      }
-
-      .dropdown-menu>li:hover{
-        background-color: grey;
-      }
-    </style>
-    <style>
       #containerN {
         background-color: black;
         height: 100%;
@@ -144,7 +128,7 @@
       <div class="nav-bar pb-1">
         <div class="first-bar d-flex align-items-center mt-1">
           <div class="d-flex align-items-center flex-column">
-            <div class="d-flex direct align-items-end">
+            <div class="d-flex align-items-end">
               <img
                 src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
                 width="25"
@@ -163,20 +147,12 @@
             </p>
           </div>
 
-          <div class="dropdown">
-            <input
+          <input
             type="text"
             placeholder="Search for Products..."
-            class="mx-4 px-3 rounded search fs-6 dropdown-toggle"
+            class="mx-4 px-3 rounded search fs-6"
             style="width: 450px; height: 45px; opacity: 0.7"
-            data-bs-toggle="dropdown" aria-expanded="false"
           />
-            <ul class="mt-2 p-0 dropdown-menu">
-              <!-- <li><button class="dropdown-item" type="button">Action</button></li>
-              <li><button class="dropdown-item" type="button">Another action</button></li>
-              <li><button class="dropdown-item" type="button">Something else here</button></li> -->
-            </ul>
-          </div>
 
           <button class="p-2 me-4 border fw-semibold rounded">
             <i class="fa-solid fa-location-dot"></i> Select Location
@@ -576,11 +552,10 @@
             <button onclick="scrollSlide('right', 'bestsellersSlide1')">&raquo;</button>
           </h2>
           <hr />
-          <div id="bestsellersSlide1">
-
+          <div class="bestsellersSlide1">
+            
           </div>
         </div>
-      
       
         <div id="sa_bank_cards">
             <h4>BANK OFFERS</h4>
@@ -606,7 +581,7 @@
               <button onclick="scrollSlide('right', 'bestsellersSlide2')">&raquo;</button>
           </h2>
           <hr />
-          <div id="bestsellersSlide2">
+          <div class="bestsellersSlide2">
            
           </div>
         </div>
@@ -905,28 +880,27 @@
       <section>
         <!-- subhankar from carousel till footer -->
         <div
-          
           id="carouselExampleAutoplaying"
           class="carousel slide"
           data-bs-ride="carousel"
         >
-          <div class="carousel-inner" style="border-radius: 10px" >
-            <div class="carousel-item active" >
-              <img onclick="redirectToAnotherPage()"
+          <div class="carousel-inner" style="border-radius: 10px">
+            <div class="carousel-item active">
+              <img
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_bcd_m_bcd_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item" >
-              <img onclick="redirectToAnotherPage()"
+            <div class="carousel-item">
+              <img
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_health_suppliment_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
               />
             </div>
-            <div class="carousel-item" >
-              <img onclick="redirectToAnotherPage()"
+            <div class="carousel-item">
+              <img
                 src="https://www.bigbasket.com/media/uploads/banner_images/hp_m_babycare_250923_400.jpg?tr=w-3840,q=80"
                 class="d-block w-100"
                 alt="..."
@@ -1536,11 +1510,6 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/index.js" type="module"></script>
     <script src="scripts/sa_index.js"></script>
-    <script>
-      function redirectToAnotherPage() {
-          // Redirect to another HTML page
-          window.location.href = 'product.html';
-      }
-  </script>
+    <script src="scripts/product.js"></script>
   </body>
 </html>

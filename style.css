@@ -803,3 +803,29 @@ ul {
   border: 0.5px solid #ebebeb;
   margin-bottom: 20px;
 }
+
+
+/* productPage styles */
+.flex_Container{
+  display: flex;
+  gap: 50px;
+  border: 2px solid black;
+  margin: 30px;
+}
+.flex_Container #imgapend{
+  flex: 0.5;
+}
+.flex_Container .rightdiv{
+  flex: 0.5;
+}
+.flex_Container #addtocart{
+  border: none;
+  background-color: red;
+  padding: 11px 30px;
+  color: white;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+#quantity{
+  margin: 15px 0;
+}
