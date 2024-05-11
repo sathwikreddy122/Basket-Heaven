@@ -6,6 +6,14 @@ const secondModal = new bootstrap.Modal(document.querySelector(".secondModal"));
 const links = document.querySelectorAll('a[href="product.html"]');
 const cart = document.querySelector('.cart');
 const count = document.querySelector('.count');
+const dropwdown = document.querySelector('.dropdown');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+const searchBtn = document.querySelector(".search");
+
+const width= window.getComputedStyle(searchBtn).width;
+dropdownMenu.style.width =width;
+// dropdownMenu.style.padding='10px';
+dropdownMenu.style.backgroundColor='black';
 
 let user = JSON.parse(localStorage.getItem('user')) || '';
 let category = JSON.parse(localStorage.getItem('category')) || '';
@@ -142,14 +150,58 @@ loginBtn.addEventListener("click", (e) => {
     console.log(loginBtn);
 });
 
-const searchBtn = document.querySelector(".search");
-console.log(searchBtn);
+const direct = document.querySelector('.direct');
 
-// searchBtn.addEventListener('click',(e)=>{
-//   console.log(e);
-// })
+direct.addEventListener('click',()=>{
+  window.location.href="index.html";
+  console.log('clicked');
+})
+//console.log(searchBtn);
 
-console.log(cart);
+searchBtn.addEventListener('input',async(e)=>{
+  //console.log(e.target.value);
+  try{
+    // if(e.target.value>0){
+    const products = await fetch(
+      `http://localhost:3000/products/?product_like=${e.target.value}`
+    );
+
+    const data = await products.json();
+    //console.log(data);
+    const newData = data.slice(0,10);
+    appendData(newData);
+  //}
+
+  }catch(error){
+    console.log(error);
+  }
+})
+
+function appendData(data){
+  dropdownMenu.innerHTML='';
+
+  data.forEach((item)=>{
+      const card = createCard(item);
+      dropdownMenu.append(card);
+  })
+}
+
+//<li><button class="dropdown-item" type="button">Action</button></li>
+
+function createCard(item){
+  const li = document.createElement('li');
+  const product = document.createElement('a');
+
+  product.innerText=item.product;
+  product.href='product.html';
+  product.classList.add('searchCard');
+
+  li.append(product);
+  li.style.padding='10px';
+  return li;
+
+}
+//console.log(cart);
 cart.addEventListener('click',()=>{
   if(user==''){
     alert('Please Log in.');

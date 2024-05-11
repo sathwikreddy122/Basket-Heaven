@@ -10,8 +10,29 @@ const prices = document.querySelectorAll('#price-filter>label>input');
 const discounts = document.querySelectorAll('#discount-filter>label>input');
 const stats = document.querySelector('.stats');
 const count = document.querySelector('.count');
+const searchBtn = document.querySelector('.search');
+const direct = document.querySelector('.direct');
 
+direct.addEventListener('click',()=>{
+  window.location.href="index.html";
+  console.log('clicked');
+})
 //console.log(links1,links2,links3);
+searchBtn.addEventListener('change',async(e)=>{
+  try{
+    const products = await fetch(
+      `http://localhost:3000/products/?product_like=${e.target.value}`
+    );
+
+    const data = await products.json();
+    stats.innerText = `${category} (${data.length})`;
+    // console.log(data);
+    appendData(data);
+    stats.scrollIntoView({ behavior: 'smooth' });
+  }catch(error){
+    console.log(error);
+  }
+})
 
 links2.forEach((link) => {
   const value = link.innerText;
@@ -238,7 +259,8 @@ cart.addEventListener('click',()=>{
 async function getCount(){
   const result = await fetch('http://localhost:3000/cart-items');
   const data = await result.json();
-  
+  let user = JSON.parse(localStorage.getItem('user'))||'';
+
   let total = 0;
   data.forEach(item => {
     if(item.user == user)

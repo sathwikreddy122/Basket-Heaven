@@ -27,6 +27,22 @@
     />
 
     <title>BigBasket</title>
+    <style>
+      .searchCard{
+        text-decoration: none;
+        color:white;
+        display:block;
+        font-size: 14px;
+      }
+
+      .dropdown-menu>li{
+        border-radius: 12px;
+      }
+
+      .dropdown-menu>li:hover{
+        background-color: grey;
+      }
+    </style>
   </head>
   <body>
     <nav class="">
@@ -34,7 +50,7 @@
       <div class="nav-bar pb-1">
         <div class="first-bar d-flex align-items-center mt-1">
           <div class="d-flex align-items-center flex-column">
-            <div class="d-flex align-items-end">
+            <div class="d-flex direct align-items-end">
               <img
                 src="https://d2q79iu7y748jz.cloudfront.net/s/_logo/ce83dfa8730f38b75a95e4145c41b05b"
                 width="25"
@@ -53,12 +69,20 @@
             </p>
           </div>
 
-          <input
+          <div class="dropdown">
+            <input
             type="text"
             placeholder="Search for Products..."
-            class="mx-4 px-3 rounded search fs-6"
+            class="mx-4 px-3 rounded search fs-6 dropdown-toggle"
             style="width: 450px; height: 45px; opacity: 0.7"
+            data-bs-toggle="dropdown" aria-expanded="false"
           />
+            <ul class="mt-2 p-0 dropdown-menu">
+              <!-- <li><button class="dropdown-item" type="button">Action</button></li>
+              <li><button class="dropdown-item" type="button">Another action</button></li>
+              <li><button class="dropdown-item" type="button">Something else here</button></li> -->
+            </ul>
+          </div>
 
           <button class="p-2 me-4 border fw-semibold rounded">
             <i class="fa-solid fa-location-dot"></i> Select Location

@@ -1,16 +1,47 @@
 const container = document.querySelector('.container');
 const priceTag = document.querySelector('.price');
 const savingsTag = document.querySelector('.savings');
+const checkout = document.querySelector('.checkout');
 
 const user = JSON.parse(localStorage.getItem('user'));
 let total_price = 0;
 let savings = 0;
 
-async function fetchData() {
+checkout.addEventListener('click',async(e)=>{
   const res = await fetch('http://localhost:3000/cart-items');
   const items = await res.json();
+  //console.log(items);
+  let cnt=0;
 
+  items.forEach((item) => {
+    if (item.user == user) {
+      cnt++;
+      fetch(`http://localhost:3000/cart-items/${item.id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    }
+
+    if(cnt>0){
+      alert('Thanks for the purchase❤️')
+    }else{
+      alert('Please add items🛒')
+    }
+})
+})
+
+async function fetchData() {
+  try{
+  const res = await fetch('http://localhost:3000/cart-items');
+  const items = await res.json();
+   
+  //console.log(items);
   appendData(items);
+  }catch(err){
+    console.log(err);
+  }
 }
 
 function appendData(items) {
