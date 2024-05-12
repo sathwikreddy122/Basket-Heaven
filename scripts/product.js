@@ -21,7 +21,7 @@ direct.addEventListener('click',()=>{
 searchBtn.addEventListener('change',async(e)=>{
   try{
     const products = await fetch(
-      `http://localhost:3000/products/?product_like=${e.target.value}`
+      `Basket-Heaven.onrender.com/products/?product_like=${e.target.value}`
     );
 
     const data = await products.json();
@@ -44,7 +44,7 @@ links2.forEach((link) => {
       localStorage.setItem('category', JSON.stringify(category));
 
       const products = await fetch(
-        `http://localhost:3000/products/?product_like=${category}`
+        `Basket-Heaven.onrender.com/products/?product_like=${category}`
       );
 
       const data = await products.json();
@@ -126,12 +126,9 @@ discounts.forEach((discount) => {
 
 async function fetchData(params = '') {
   const products = await fetch(
-    `http://localhost:3000/products/?category_like=${category}&${params}`
+    `Basket-Heaven.onrender.com/products/?category_like=${category}&${params}`
   );
 
-  // console.log(
-  //   `http://localhost:3000/products/?category_like=${category}&${params}`
-  // );
 
   const data = await products.json();
   stats.innerText = `${category} (${data.length})`;
@@ -225,7 +222,7 @@ function createProductCard(productData) {
       quantity:1
     };
 
-    const item = await fetch('http://localhost:3000/cart-items',{
+    const item = await fetch('Basket-Heaven.onrender.com/cart-items',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -275,7 +272,7 @@ cart.addEventListener('click',()=>{
 })
 
 async function getCount(){
-  const result = await fetch('http://localhost:3000/cart-items');
+  const result = await fetch('Basket-Heaven.onrender.com/cart-items');
   const data = await result.json();
   let user = JSON.parse(localStorage.getItem('user'))||'';
 
