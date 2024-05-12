@@ -116,7 +116,7 @@ function renderProducts(arrays) {
           quantity:1
         };
     
-        fetch('Basket-Heaven.onrender.com/cart-items',{
+        fetch('https://Basket-Heaven.onrender.com/cart-items',{
           method:'POST',
           headers:{
             'Content-Type':'application/json',
@@ -175,7 +175,7 @@ function renderProductsTwo(arrays) {
           user,
           quantity:1
         };
-         fetch('Basket-Heaven.onrender.com/cart-items',{
+         fetch('https://Basket-Heaven.onrender.com/cart-items',{
           method:'POST',
           headers:{
             'Content-Type':'application/json',

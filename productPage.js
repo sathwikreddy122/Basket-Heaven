@@ -52,7 +52,7 @@ addButton.addEventListener('click', async(e) => {
     quantity:1
   };
   console.log(product)
-   fetch('Basket-Heaven.onrender.com/cart-items',{
+   fetch('https://Basket-Heaven.onrender.com/cart-items',{
     method:'POST',
     headers:{
       'Content-Type':'application/json',
