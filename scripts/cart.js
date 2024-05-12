@@ -8,7 +8,7 @@ let total_price = 0;
 let savings = 0;
 
 checkout.addEventListener('click',async(e)=>{
-  const res = await fetch('http://localhost:3000/cart-items');
+  const res = await fetch('Basket-Heaven.onrender.com/cart-items');
   const items = await res.json();
   //console.log(items);
   let cnt=0;
@@ -16,7 +16,7 @@ checkout.addEventListener('click',async(e)=>{
   items.forEach((item) => {
     if (item.user == user) {
       cnt++;
-      fetch(`http://localhost:3000/cart-items/${item.id}`, {
+      fetch(`Basket-Heaven.onrender.com/cart-items/${item.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ checkout.addEventListener('click',async(e)=>{
 
 async function fetchData() {
   try{
-  const res = await fetch('http://localhost:3000/cart-items');
+  const res = await fetch('Basket-Heaven.onrender.com/cart-items');
   const items = await res.json();
    
   //console.log(items);
@@ -104,14 +104,14 @@ function createCard(item) {
     item.quantity = item.quantity - 1;
 
     if (!item.quantity||item.quantity == 1) {
-      await fetch(`http://localhost:3000/cart-items/${item.id}`, {
+      await fetch(`Basket-Heaven.onrender.com/cart-items/${item.id}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
         },
       });
     } else {
-      await fetch(`http://localhost:3000/cart-items/${item.id}`, {
+      await fetch(`Basket-Heaven.onrender.com/cart-items/${item.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -139,7 +139,7 @@ function createCard(item) {
 
     // console.log(item,newItem);
 
-    await fetch(`http://localhost:3000/cart-items/${item.id}`, {
+    await fetch(`Basket-Heaven.onrender.com/cart-items/${item.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

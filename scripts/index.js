@@ -49,7 +49,7 @@ loginForm.addEventListener("submit", async (e) => {
 
 async function isUser(email, password) {
   try {
-    const users = await fetch("http://localhost:3000/users");
+    const users = await fetch("Basket-Heaven.onrender.com/users");
     const datas = await users.json();
 
     let status = 0;
@@ -83,7 +83,7 @@ async function addUser(email, password) {
       password,
     };
 
-    const users = await fetch("http://localhost:3000/users", {
+    const users = await fetch("Basket-Heaven.onrender.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -163,7 +163,7 @@ searchBtn.addEventListener('input',async(e)=>{
   try{
     // if(e.target.value>0){
     const products = await fetch(
-      `http://localhost:3000/products/?product_like=${e.target.value}`
+      `Basket-Heaven.onrender.com/products/?product_like=${e.target.value}`
     );
 
     const data = await products.json();
@@ -232,7 +232,7 @@ function runfunction(elem) {
 }
 
 async function getCount(){
-  const result = await fetch('http://localhost:3000/cart-items');
+  const result = await fetch('Basket-Heaven.onrender.com/cart-items');
   const data = await result.json();
 
   let total = 0;
